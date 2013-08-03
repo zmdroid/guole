@@ -1,0 +1,20 @@
+﻿* html .u2_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="企业平台_files/u2_normal.png");
+}
+
+* html .u8_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="企业平台_files/u8_normal.png");
+}
+
+* html .u14_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="企业平台_files/u14_normal.png");
+}
+
+* html .u20_line {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="企业平台_files/u20_line.png");
+}
+

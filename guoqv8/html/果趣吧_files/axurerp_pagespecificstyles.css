@@ -1,0 +1,1732 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../果趣吧_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:-15px;
+    top:0px;
+    width:1640px;
+    height:50px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:1646px;
+    height:56px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:1636px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2 {
+    position:absolute;
+    left:140px;
+    top:4px;
+    width:378px;
+    height:42px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3 {
+    position:absolute;
+    left:253px;
+    top:22px;
+    width:168px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../果趣吧_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:355px;
+    top:14px;
+    width:185px;
+    height:28px;
+}
+
+#u4_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:191px;
+    height:34px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:181px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6_normal {
+    background-image: url('../果趣吧_files/u6_normal.png');
+}
+
+.u6_container {
+    position:absolute;
+    left:510px;
+    top:14px;
+    width:34px;
+    height:26px;-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+}
+
+#u6_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:34px;
+    height:26px;
+}
+
+.u7 {
+    position:absolute;
+    left:2px;
+    top:5px;
+    width:30px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u8_normal {
+    background-image: url('../果趣吧_files/u8_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:1180px;
+    top:9px;
+    width:48px;
+    height:34px;
+}
+
+#u8_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:48px;
+    height:34px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:9px;
+    width:44px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:1087px;
+    top:14px;
+    width:126px;
+    height:24px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11_normal {
+    background-image: url('../果趣吧_files/u11_normal.png');
+}
+
+.u11_container {
+    position:absolute;
+    left:877px;
+    top:64px;
+    width:351px;
+    height:96px;
+}
+
+#u11_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:357px;
+    height:102px;
+}
+
+.u12 {
+    position:absolute;
+    left:2px;
+    top:40px;
+    width:347px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u13_container {
+    position:absolute;
+    left:140px;
+    top:64px;
+    width:720px;
+    height:320px;
+}
+
+#u13_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:720px;
+    height:320px;
+}
+
+.u14 {
+    position:absolute;
+    left:2px;
+    top:152px;
+    width:716px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u15_line {
+    background-image: url('../果趣吧_files/u15_line.png');
+}
+
+.u15_line {
+    position:absolute;
+    left:0px;
+    top:2px;
+    width:42px;
+    height:7px;
+}
+
+.u15 {
+    position:absolute;
+    left:162px;
+    top:359px;
+    width:42px;
+    height:10px;
+    
+}
+
+.u16_line {
+    background-image: url('../果趣吧_files/u16_line.png');
+}
+
+.u16_line {
+    position:absolute;
+    left:0px;
+    top:3px;
+    width:42px;
+    height:5px;
+}
+
+.u16 {
+    position:absolute;
+    left:214px;
+    top:359px;
+    width:42px;
+    height:10px;
+    
+}
+
+.u17_line {
+    background-image: url('../果趣吧_files/u17_line.png');
+}
+
+.u17_line {
+    position:absolute;
+    left:0px;
+    top:3px;
+    width:42px;
+    height:5px;
+}
+
+.u17 {
+    position:absolute;
+    left:267px;
+    top:359px;
+    width:42px;
+    height:10px;
+    
+}
+
+.u18_normal {
+    background-image: url('../果趣吧_files/u18_normal.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:788px;
+    top:330px;
+    width:42px;
+    height:37px;
+}
+
+#u18_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:42px;
+    height:37px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:38px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20_normal {
+    background-image: url('../果趣吧_files/u20_normal.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:735px;
+    top:330px;
+    width:43px;
+    height:37px;
+}
+
+#u20_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:43px;
+    height:37px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:39px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22 {
+    position:absolute;
+    left:138px;
+    top:400px;
+    width:540px;
+    height:42px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23_container {
+    position:absolute;
+    left:877px;
+    top:64px;
+    width:353px;
+    height:96px;
+}
+
+#u23_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:353px;
+    height:96px;
+}
+
+.u24 {
+    position:absolute;
+    left:2px;
+    top:40px;
+    width:349px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25 {
+    position:absolute;
+    left:910px;
+    top:79px;
+    width:259px;
+    height:66px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26_container {
+    position:absolute;
+    left:877px;
+    top:288px;
+    width:353px;
+    height:96px;
+}
+
+#u26_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:353px;
+    height:96px;
+}
+
+.u27 {
+    position:absolute;
+    left:2px;
+    top:40px;
+    width:349px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u28 {
+    position:absolute;
+    left:908px;
+    top:303px;
+    width:259px;
+    height:66px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29_container {
+    position:absolute;
+    left:877px;
+    top:178px;
+    width:353px;
+    height:96px;
+}
+
+#u29_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:353px;
+    height:96px;
+}
+
+.u30 {
+    position:absolute;
+    left:2px;
+    top:40px;
+    width:349px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31 {
+    position:absolute;
+    left:910px;
+    top:193px;
+    width:259px;
+    height:66px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u32_normal {
+    background-image: url('../果趣吧_files/u32_normal.png');
+}
+
+.u32_container {
+    position:absolute;
+    left:190px;
+    top:1287px;
+    width:42px;
+    height:36px;
+}
+
+#u32_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:48px;
+    height:42px;
+}
+
+.u33 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:38px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34 {
+    position:absolute;
+    left:240px;
+    top:1296px;
+    width:140px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35 {
+    position:absolute;
+    left:190px;
+    top:1332px;
+    width:140px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u36 {
+    position:absolute;
+    left:190px;
+    top:1380px;
+    width:140px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37 {
+    position:absolute;
+    left:190px;
+    top:1429px;
+    width:140px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38_normal {
+    background-image: url('../果趣吧_files/u38_normal.png');
+}
+
+.u38_container {
+    position:absolute;
+    left:342px;
+    top:1287px;
+    width:37px;
+    height:36px;
+}
+
+#u38_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:43px;
+    height:42px;
+}
+
+.u39 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:33px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40 {
+    position:absolute;
+    left:387px;
+    top:1296px;
+    width:123px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u41 {
+    position:absolute;
+    left:349px;
+    top:1332px;
+    width:123px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42 {
+    position:absolute;
+    left:349px;
+    top:1380px;
+    width:123px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43 {
+    position:absolute;
+    left:349px;
+    top:1429px;
+    width:123px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../果趣吧_files/u44_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:489px;
+    top:1287px;
+    width:40px;
+    height:36px;
+}
+
+#u44_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:46px;
+    height:42px;
+}
+
+.u45 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:36px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46 {
+    position:absolute;
+    left:537px;
+    top:1296px;
+    width:133px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u47 {
+    position:absolute;
+    left:496px;
+    top:1334px;
+    width:133px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48 {
+    position:absolute;
+    left:496px;
+    top:1382px;
+    width:133px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u49 {
+    position:absolute;
+    left:496px;
+    top:1431px;
+    width:133px;
+    height:20px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50_line {
+    background-image: url('../果趣吧_files/u50_line.png');
+}
+
+.u50_line {
+    position:absolute;
+    left:0px;
+    top:2px;
+    width:1092px;
+    height:7px;
+}
+
+.u50 {
+    position:absolute;
+    left:138px;
+    top:1254px;
+    width:1092px;
+    height:10px;
+    
+}
+
+.u51 {
+    position:absolute;
+    left:442px;
+    top:1474px;
+    width:480px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u52 {
+    position:absolute;
+    left:0px;
+    top:1264px;
+    width:1611px;
+    height:266px;
+    overflow:hidden;
+}
+
+#pd0u52 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:1611px;
+    height:266px;
+    
+}
+
+.u53_container {
+    position:absolute;
+    left:138px;
+    top:1028px;
+    width:353px;
+    height:202px;
+}
+
+#u53_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:353px;
+    height:202px;
+}
+
+.u54 {
+    position:absolute;
+    left:2px;
+    top:93px;
+    width:349px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u55 {
+    position:absolute;
+    left:169px;
+    top:1060px;
+    width:259px;
+    height:66px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u56_container {
+    position:absolute;
+    left:508px;
+    top:1028px;
+    width:353px;
+    height:202px;
+}
+
+#u56_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:353px;
+    height:202px;
+}
+
+.u57 {
+    position:absolute;
+    left:2px;
+    top:93px;
+    width:349px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u58_container {
+    position:absolute;
+    left:875px;
+    top:1028px;
+    width:353px;
+    height:202px;
+}
+
+#u58_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:353px;
+    height:202px;
+}
+
+.u59 {
+    position:absolute;
+    left:2px;
+    top:93px;
+    width:349px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u60 {
+    position:absolute;
+    left:545px;
+    top:1060px;
+    width:259px;
+    height:33px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u61 {
+    position:absolute;
+    left:910px;
+    top:1060px;
+    width:259px;
+    height:33px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62_container {
+    position:absolute;
+    left:1072px;
+    top:1362px;
+    width:156px;
+    height:60px;
+}
+
+#u62_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:156px;
+    height:60px;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:152px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64 {
+    position:absolute;
+    left:136px;
+    top:978px;
+    width:540px;
+    height:42px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u65 {
+    position:absolute;
+    left:570px;
+    top:20px;
+    width:50px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u66 {
+    position:absolute;
+    left:626px;
+    top:20px;
+    width:50px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u67 {
+    position:absolute;
+    left:686px;
+    top:20px;
+    width:74px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u68 {
+    position:absolute;
+    left:780px;
+    top:20px;
+    width:74px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u69_normal {
+    background-image: url('../果趣吧_files/u69_normal.png');
+}
+
+.u69_container {
+    position:absolute;
+    left:138px;
+    top:443px;
+    width:362px;
+    height:257px;
+}
+
+#u69_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:368px;
+    height:263px;
+}
+
+.u70 {
+    position:absolute;
+    left:2px;
+    top:120px;
+    width:358px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u71_container {
+    position:absolute;
+    left:163px;
+    top:463px;
+    width:314px;
+    height:147px;
+}
+
+#u71_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:147px;
+}
+
+.u72 {
+    position:absolute;
+    left:2px;
+    top:66px;
+    width:310px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u73 {
+    position:absolute;
+    left:138px;
+    top:610px;
+    width:352px;
+    height:94px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u74 {
+    position:absolute;
+    left:400px;
+    top:648px;
+    width:70px;
+    height:32px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u75 {
+    position:absolute;
+    left:400px;
+    top:656px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u76_normal {
+    background-image: url('../果趣吧_files/u69_normal.png');
+}
+
+.u76_container {
+    position:absolute;
+    left:500px;
+    top:443px;
+    width:362px;
+    height:257px;
+}
+
+#u76_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:368px;
+    height:263px;
+}
+
+.u77 {
+    position:absolute;
+    left:2px;
+    top:120px;
+    width:358px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u78_container {
+    position:absolute;
+    left:525px;
+    top:463px;
+    width:314px;
+    height:147px;
+}
+
+#u78_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:147px;
+}
+
+.u79 {
+    position:absolute;
+    left:2px;
+    top:66px;
+    width:310px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u80 {
+    position:absolute;
+    left:500px;
+    top:610px;
+    width:352px;
+    height:94px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u81 {
+    position:absolute;
+    left:762px;
+    top:648px;
+    width:70px;
+    height:32px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u82 {
+    position:absolute;
+    left:762px;
+    top:656px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u83_normal {
+    background-image: url('../果趣吧_files/u69_normal.png');
+}
+
+.u83_container {
+    position:absolute;
+    left:862px;
+    top:443px;
+    width:362px;
+    height:257px;
+}
+
+#u83_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:368px;
+    height:263px;
+}
+
+.u84 {
+    position:absolute;
+    left:2px;
+    top:120px;
+    width:358px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u85_container {
+    position:absolute;
+    left:887px;
+    top:463px;
+    width:314px;
+    height:147px;
+}
+
+#u85_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:147px;
+}
+
+.u86 {
+    position:absolute;
+    left:2px;
+    top:66px;
+    width:310px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u87 {
+    position:absolute;
+    left:862px;
+    top:610px;
+    width:352px;
+    height:94px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u88 {
+    position:absolute;
+    left:1124px;
+    top:648px;
+    width:70px;
+    height:32px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u89 {
+    position:absolute;
+    left:1124px;
+    top:656px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u90_normal {
+    background-image: url('../果趣吧_files/u69_normal.png');
+}
+
+.u90_container {
+    position:absolute;
+    left:138px;
+    top:699px;
+    width:362px;
+    height:257px;
+}
+
+#u90_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:368px;
+    height:263px;
+}
+
+.u91 {
+    position:absolute;
+    left:2px;
+    top:120px;
+    width:358px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u92_container {
+    position:absolute;
+    left:163px;
+    top:719px;
+    width:314px;
+    height:147px;
+}
+
+#u92_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:147px;
+}
+
+.u93 {
+    position:absolute;
+    left:2px;
+    top:66px;
+    width:310px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u94 {
+    position:absolute;
+    left:138px;
+    top:866px;
+    width:352px;
+    height:94px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u95 {
+    position:absolute;
+    left:400px;
+    top:904px;
+    width:70px;
+    height:32px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u96 {
+    position:absolute;
+    left:400px;
+    top:912px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u97_normal {
+    background-image: url('../果趣吧_files/u69_normal.png');
+}
+
+.u97_container {
+    position:absolute;
+    left:500px;
+    top:699px;
+    width:362px;
+    height:257px;
+}
+
+#u97_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:368px;
+    height:263px;
+}
+
+.u98 {
+    position:absolute;
+    left:2px;
+    top:120px;
+    width:358px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u99_container {
+    position:absolute;
+    left:525px;
+    top:719px;
+    width:314px;
+    height:147px;
+}
+
+#u99_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:147px;
+}
+
+.u100 {
+    position:absolute;
+    left:2px;
+    top:66px;
+    width:310px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u101 {
+    position:absolute;
+    left:500px;
+    top:866px;
+    width:352px;
+    height:94px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u102 {
+    position:absolute;
+    left:762px;
+    top:904px;
+    width:70px;
+    height:32px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u103 {
+    position:absolute;
+    left:762px;
+    top:912px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u104_normal {
+    background-image: url('../果趣吧_files/u69_normal.png');
+}
+
+.u104_container {
+    position:absolute;
+    left:862px;
+    top:699px;
+    width:362px;
+    height:257px;
+}
+
+#u104_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:368px;
+    height:263px;
+}
+
+.u105 {
+    position:absolute;
+    left:2px;
+    top:120px;
+    width:358px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u106_container {
+    position:absolute;
+    left:887px;
+    top:719px;
+    width:314px;
+    height:147px;
+}
+
+#u106_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:314px;
+    height:147px;
+}
+
+.u107 {
+    position:absolute;
+    left:2px;
+    top:66px;
+    width:310px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u108 {
+    position:absolute;
+    left:862px;
+    top:866px;
+    width:352px;
+    height:94px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u109 {
+    position:absolute;
+    left:1124px;
+    top:904px;
+    width:70px;
+    height:32px;
+    ;
+    ;
+    ;
+    background-image: url('../resources/images/transparent.gif');
+    overflow:hidden;
+}
+
+.u110 {
+    position:absolute;
+    left:1124px;
+    top:912px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

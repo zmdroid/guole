@@ -1,0 +1,1140 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../鲜果详细页_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:20px;
+    top:20px;
+    width:995px;
+    height:1960px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:1001px;
+    height:1966px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:972px;
+    width:991px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2_normal {
+    background-image: url('../鲜果详细页_files/u2_normal.png');
+}
+
+.u2_container {
+    position:absolute;
+    left:12px;
+    top:20px;
+    width:995px;
+    height:39px;
+}
+
+#u2_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:1001px;
+    height:45px;
+}
+
+.u3 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:991px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4 {
+    position:absolute;
+    left:70px;
+    top:32px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:700px;
+    top:32px;
+    width:40px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:740px;
+    top:32px;
+    width:40px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9 {
+    position:absolute;
+    left:790px;
+    top:32px;
+    width:40px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:820px;
+    top:32px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11 {
+    position:absolute;
+    left:900px;
+    top:32px;
+    width:40px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_normal {
+    background-image: url('../鲜果详细页_files/u12_normal.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:66px;
+    top:69px;
+    width:84px;
+    height:82px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:84px;
+    height:82px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:33px;
+    width:80px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14_normal {
+    background-image: url('../鲜果详细页_files/u14_normal.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:160px;
+    top:80px;
+    width:110px;
+    height:40px;
+}
+
+#u14_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:116px;
+    height:46px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:106px;
+    height:33px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16 {
+    position:absolute;
+    left:160px;
+    top:130px;
+    width:110px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17 {
+    position:absolute;
+    left:320px;
+    top:80px;
+    width:220px;
+    height:40px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u18 {
+    position:absolute;
+    left:540px;
+    top:80px;
+    width:50px;
+    height:40px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u19 {
+    position:absolute;
+    left:320px;
+    top:130px;
+    width:220px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20_normal {
+    background-image: url('../鲜果详细页_files/u2_normal.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:12px;
+    top:181px;
+    width:995px;
+    height:39px;
+}
+
+#u20_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:1001px;
+    height:45px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:991px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22_container {
+    position:absolute;
+    left:670px;
+    top:181px;
+    width:50px;
+    height:39px;
+}
+
+#u22_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:39px;
+}
+
+.u23 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24 {
+    position:absolute;
+    left:730px;
+    top:191px;
+    width:120px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25 {
+    position:absolute;
+    left:83px;
+    top:191px;
+    width:50px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27 {
+    position:absolute;
+    left:160px;
+    top:191px;
+    width:50px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29 {
+    position:absolute;
+    left:230px;
+    top:191px;
+    width:50px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31 {
+    position:absolute;
+    left:300px;
+    top:191px;
+    width:60px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33 {
+    position:absolute;
+    left:380px;
+    top:191px;
+    width:80px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34_line {
+    background-image: url('../鲜果详细页_files/u34_line.png');
+}
+
+.u34_line {
+    position:absolute;
+    left:0px;
+    top:4px;
+    width:755px;
+    height:3px;
+}
+
+.u34 {
+    position:absolute;
+    left:62px;
+    top:1730px;
+    width:755px;
+    height:10px;
+    
+}
+
+.u35_container {
+    position:absolute;
+    left:62px;
+    top:1770px;
+    width:360px;
+    height:145px;
+}
+
+#u35_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:360px;
+    height:145px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:64px;
+    width:356px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37_container {
+    position:absolute;
+    left:460px;
+    top:1840px;
+    width:156px;
+    height:60px;
+}
+
+#u37_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:156px;
+    height:60px;
+}
+
+.u38 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:152px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39 {
+    position:absolute;
+    left:292px;
+    top:1934px;
+    width:366px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40_line {
+    background-image: url('../鲜果详细页_files/u40_line.png');
+}
+
+.u40_line {
+    position:absolute;
+    left:0px;
+    top:3px;
+    width:764px;
+    height:5px;
+}
+
+.u40 {
+    position:absolute;
+    left:70px;
+    top:266px;
+    width:764px;
+    height:10px;
+    
+}
+
+.u41 {
+    position:absolute;
+    left:68px;
+    top:240px;
+    width:245px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42_container {
+    position:absolute;
+    left:68px;
+    top:300px;
+    width:284px;
+    height:210px;
+}
+
+#u42_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:284px;
+    height:210px;
+}
+
+.u43 {
+    position:absolute;
+    left:2px;
+    top:97px;
+    width:280px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../鲜果详细页_files/u44_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:68px;
+    top:520px;
+    width:22px;
+    height:50px;
+}
+
+#u44_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:28px;
+    height:56px;
+}
+
+.u45 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:18px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46_normal {
+    background-image: url('../鲜果详细页_files/u44_normal.png');
+}
+
+.u46_container {
+    position:absolute;
+    left:330px;
+    top:520px;
+    width:22px;
+    height:50px;
+}
+
+#u46_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:28px;
+    height:56px;
+}
+
+.u47 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:18px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48_container {
+    position:absolute;
+    left:90px;
+    top:520px;
+    width:50px;
+    height:50px;
+}
+
+#u48_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u49 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50_container {
+    position:absolute;
+    left:210px;
+    top:520px;
+    width:50px;
+    height:50px;
+}
+
+#u50_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u51 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52_container {
+    position:absolute;
+    left:150px;
+    top:520px;
+    width:50px;
+    height:50px;
+}
+
+#u52_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u53 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54_container {
+    position:absolute;
+    left:270px;
+    top:520px;
+    width:50px;
+    height:50px;
+}
+
+#u54_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u55 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u56 {
+    position:absolute;
+    left:400px;
+    top:320px;
+    width:150px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u57 {
+    position:absolute;
+    left:400px;
+    top:362px;
+    width:160px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u58 {
+    position:absolute;
+    left:400px;
+    top:439px;
+    width:80px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u59_normal {
+    background-image: url('../鲜果详细页_files/u59_normal.png');
+}
+
+.u59_container {
+    position:absolute;
+    left:480px;
+    top:439px;
+    width:20px;
+    height:16px;
+}
+
+#u59_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:26px;
+    height:22px;
+}
+
+.u60 {
+    position:absolute;
+    left:2px;
+    top:0px;
+    width:16px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u61 {
+    position:absolute;
+    left:510px;
+    top:435px;
+    width:30px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u62_normal {
+    background-image: url('../鲜果详细页_files/u59_normal.png');
+}
+
+.u62_container {
+    position:absolute;
+    left:550px;
+    top:439px;
+    width:20px;
+    height:16px;
+}
+
+#u62_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:26px;
+    height:22px;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:0px;
+    width:16px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64 {
+    position:absolute;
+    left:400px;
+    top:475px;
+    width:80px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u65_container {
+    position:absolute;
+    left:480px;
+    top:470px;
+    width:168px;
+    height:29px;
+}
+
+#u65_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:168px;
+    height:29px;
+}
+
+.u66 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:164px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u67_container {
+    position:absolute;
+    left:390px;
+    top:520px;
+    width:311px;
+    height:58px;
+}
+
+#u67_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:311px;
+    height:58px;
+}
+
+.u68 {
+    position:absolute;
+    left:2px;
+    top:21px;
+    width:307px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u69_container {
+    position:absolute;
+    left:68px;
+    top:610px;
+    width:766px;
+    height:51px;
+}
+
+#u69_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:766px;
+    height:51px;
+}
+
+.u70 {
+    position:absolute;
+    left:2px;
+    top:18px;
+    width:762px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u71_container {
+    position:absolute;
+    left:68px;
+    top:671px;
+    width:766px;
+    height:439px;
+}
+
+#u71_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:766px;
+    height:439px;
+}
+
+.u72 {
+    position:absolute;
+    left:2px;
+    top:212px;
+    width:762px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u73_container {
+    position:absolute;
+    left:68px;
+    top:1150px;
+    width:766px;
+    height:220px;
+}
+
+#u73_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:766px;
+    height:220px;
+}
+
+.u74 {
+    position:absolute;
+    left:2px;
+    top:102px;
+    width:762px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u75_container {
+    position:absolute;
+    left:68px;
+    top:1410px;
+    width:762px;
+    height:262px;
+}
+
+#u75_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:762px;
+    height:262px;
+}
+
+.u76 {
+    position:absolute;
+    left:2px;
+    top:123px;
+    width:758px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u77 {
+    position:absolute;
+    left:400px;
+    top:402px;
+    width:100px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
