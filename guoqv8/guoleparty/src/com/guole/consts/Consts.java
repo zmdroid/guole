@@ -50,6 +50,26 @@ public class Consts {
 	public static final int WITHDRAWING_STATE_CN_REFUSE = 1;
 	public static final int WITHDRAWING_STATE_CN_APPROVE = 2;
 	
+	/**
+	 * 账单流水交易类型
+	 */
+	public static final int BILL_TRADETYPE_RECHARGE = 1;
+	public static final int BILL_TRADETYPE_LINE = 2;
+	public static final int BILL_TRADETYPE_REFUND = 3;
+	
+	/**
+	 * 充值/返款/账单流水交易方式
+	 */
+	public static final int RECHARGE_TYPE_ALIPAY = 3;
+	public static final int RECHARGE_TYPE_OFFLINE = 2;
+	public static final int RECHARGE_TYPE_GIFTCARD = 4;
+	public static final int RECHARGE_TYPE_PLATFORM =1;
+	
+	/**
+	 * 流水类型
+	 */
+	public static final int BILL_TYPE_INCOME = 1;
+	public static final int BILL_TYPE_PAY = 2;
 	
 	/**
 	 * 消息未读信息数KEY

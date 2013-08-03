@@ -6,8 +6,8 @@
 <mapper namespace="com.guole.dao.bill.BillDao">
     <!-- 定义要操作的SQL语句 -->  
     <insert id="insertBill" parameterType="billVO">  
-        insert into t_bill (userId,tradeId,tradetype,tradechannel,currtime,money,type,balance,virtual)
-        values(#{userId},#{tradeId},#{tradetype},#{tradechannel},#{currtime},#{money},#{type},#{balance},#{virtual}) 
+        insert into t_bill (userId,tradeId,tradetype,tradechannel,currtime,money,type,balance)
+        values(#{userId},#{tradeId},#{tradetype},#{tradechannel},#{currtime},#{money},#{type},#{balance}) 
         <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="sn" >  
           SELECT LAST_INSERT_ID()  
         </selectKey>

@@ -22,5 +22,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is my JSP page. <br>
+    <a href="${pageContext.request.contextPath}/login">登录</a> <br>
+    <a href="${pageContext.request.contextPath}/humanRegister">个人注册</a> <br>
+    <a href="${pageContext.request.contextPath}/companyRegister">企业注册</a> <br>
+    <a href="${pageContext.request.contextPath}/giftCards">礼品卡礼品卷</a> <br>
+    <a href="${pageContext.request.contextPath}/comments">客户留言页</a> <br>
   </body>
 </html>

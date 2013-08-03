@@ -13,7 +13,7 @@ import com.guole.vo.UserInfoVO;
  */
 public class UserInfoServiceImpl implements UserInfoService{
     
-    public UserInfoDao userInfoDao;//用户信息持久层接口
+    private UserInfoDao userInfoDao;//用户信息持久层接口
     
     /**
      * 根据用户编号获取用户虚拟账户列表

@@ -23,6 +23,8 @@
     <bean id="rechargeService" class="com.guole.service.recharge.RechargeServiceImpl">
 		<property name="billDao" ref="billDao"></property>
 		<property name="rechargeDao" ref="rechargeDao"></property>
+		<property name="giftCardService" ref="giftCardService"></property>
+		<property name="userInfoDao" ref="userInfoDao"></property>
 	</bean>
 	
 	

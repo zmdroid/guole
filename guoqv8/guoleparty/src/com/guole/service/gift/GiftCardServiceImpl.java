@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import com.guole.dao.gift.GiftCardDao;
 import com.guole.util.Config;
 import com.guole.vo.GiftCardTypeVO;
+import com.guole.vo.GiftCardVO;
 
 public class GiftCardServiceImpl implements GiftCardService {
 
@@ -39,6 +40,29 @@ public class GiftCardServiceImpl implements GiftCardService {
 			return null;
 		}
 	}
+	
+	
+	@Override
+	public GiftCardTypeVO getGiftCardTypeByTypeId(int cardId) {
+		// TODO Auto-generated method stub
+		return giftCardDao.getGiftCardTypeById(cardId);
+	}
+
+
+
+
+	@Override
+	public GiftCardVO getGiftCardInfo(GiftCardVO giftCardVO) {
+		// TODO Auto-generated method stub
+		return giftCardDao.getGiftCardInfo(giftCardVO);
+	}
+
+	@Override
+	public boolean modifyGiftCardState(GiftCardVO giftCardVO) {
+		// TODO Auto-generated method stub
+		return giftCardDao.updateGiftCardInfo(giftCardVO)>0;
+	}
+
 
 	public GiftCardDao getGiftCardDao() {
 		return giftCardDao;

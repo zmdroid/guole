@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<td class="CA">备注:</td>
-					<td><input class="WMid" type="text" id="remark1"> 元</td>
+					<td><input class="WMid" type="text" id="remark1"></td>
 				</tr>
 				<tr>
 					<td class="CA"></td>
@@ -60,7 +60,7 @@
 				</tr>
 				<tr>
 					<td class="CA">备注:</td>
-					<td><input class="WMid" type="text" id="remark2"> 元</td>
+					<td><input class="WMid" type="text" id="remark2"></td>
 				</tr>
 				<tr>
 					<td class="CA"></td>
@@ -80,12 +80,32 @@
 				</tr>
 				<tr>
 					<td class="CA">备注:</td>
-					<td><input class="WMid" type="text" id="remark3"> 元</td>
+					<td><input class="WMid" type="text" id="remark3"></td>
 				</tr>
 				<tr>
 					<td class="CA"></td>
 					<td>
-						<a href="javascript:void(0)" onclick="recharge(2)" class="But">确认充值</a>
+						<a href="javascript:void(0)" onclick="recharge(3)" class="But">确认充值</a>
+					</td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="CA">充值方式:</td>
+					<td>礼品卷兑换</td>
+				</tr>
+				<tr>
+					<td class="CA">礼品卷编号:</td>
+					<td><input class="WMid" type="text" id="cardId"> 元</td>
+				</tr>
+				<tr>
+					<td class="CA">礼品卷密码:</td>
+					<td><input class="WMid" type="text" id="cardPwd"></td>
+				</tr>
+				<tr>
+					<td class="CA"></td>
+					<td>
+						<a href="javascript:void(0)" onclick="rechargeCard()" class="But">确认充值</a>
 					</td>
 				</tr>
 			</table>
@@ -130,6 +150,37 @@
 					"rechargeVO.remark":remark
 				},
 				function(rs) {
+					if (rs === 'true') {
+					alert('申请成功');
+					top.location.href = '${pageContext.request.contextPath}/pcenter/rechargeHistory';
+					}
+			});
+	}
+	
+	/**
+	* 礼品卷充值
+	*/
+	function rechargeCard() {
+		var cardId,cardPwd;
+		cardId = $('#cardId').val();
+		cardPwd = $('#cardPwd').val();
+		if (!cardId) {
+			alert('填写礼品卷编号');
+			return;
+		}
+		if (!cardPwd) {
+			alert('填写礼品卷密码');
+			return;
+		}
+		$.post(
+				"${pageContext.request.contextPath}/rechargeCard.do?r="+new Date(),
+				{
+					"giftCardVO.cardNum" : cardId,
+					"giftCardVO.pwd":cardPwd
+				},
+				function(rs) {
+					alert(rs);
+					
 					if (rs === 'true') {
 					alert('申请成功');
 					top.location.href = '${pageContext.request.contextPath}/pcenter/rechargeHistory';

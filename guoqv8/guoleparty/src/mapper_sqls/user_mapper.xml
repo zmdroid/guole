@@ -99,4 +99,17 @@
 		 WHERE userId=#{userId}
         ]]>
 	</update>
+	
+	    <!-- 更新用户虚拟账户余额信息 -->  
+	<update id="modifyUserBalance" parameterType="java.util.Map">
+        <![CDATA[
+         UPDATE t_account 
+		 SET   balance=#{balance}
+		 WHERE userId=#{userId}
+        ]]>
+	</update>
+     <!-- 获取用户虚拟账户余额信息 -->  
+    <select id="queUserBalance" resultType="double" parameterType="int">
+        SELECT a.balance FROM t_account a WHERE userId=#{userId}
+    </select>
 </mapper>

@@ -6,14 +6,17 @@ import java.util.Map;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.guole.consts.Consts;
 import com.guole.service.bill.BillService;
+import com.guole.service.gift.GiftCardService;
 import com.guole.service.recharge.RechargeService;
 import com.guole.service.user.UserInfoService;
 import com.guole.util.MD5Encrypt;
 import com.guole.util.ResponseUtil;
+import com.guole.vo.GiftCardVO;
 import com.guole.vo.RechargeVO;
 import com.guole.vo.UserAccountVO;
 import com.guole.vo.UserInfoVO;
@@ -33,14 +36,17 @@ public class AccountManageAction extends ActionSupport implements SessionAware{
 	 * 
 	 */
 	private static final long serialVersionUID = -3259090528804103039L;
+	
+	private static final Logger logger = Logger.getLogger(AccountManageAction.class);
 	private BillService billService;//账单服务
 	private RechargeService rechargeService;//充值服务
 	private UserInfoService userInfoService;//用户信息服务
 	
 	private RechargeVO rechargeVO;//充值单
+	private GiftCardVO giftCardVO;//礼品卡
 	
 	private Map<String,Object> session;
-	
+	private String result;
 	
 	/**
 	 * 查询充值单
@@ -95,6 +101,37 @@ public class AccountManageAction extends ActionSupport implements SessionAware{
 	}
 	
 	/**
+	 * 使用礼品卡充值
+	 * @author Ming Zhou
+	 * @version 1.0
+	 * @createtime 2012-08-04
+	 *		版本		修改者	时间		修改内容
+	 */
+	public void rechargeCard(){
+		UserInfoVO user = (UserInfoVO)session.get(Consts.CURRENT_USER_INFO);
+		if(user==null){
+			ResponseUtil.sendResult("error");
+			return;
+		}
+		boolean rs;
+		try {
+			rs = rechargeService.giftCardRecharge(user.getUserId(), giftCardVO);
+			if(rs){
+				result = "success";
+			}else{
+				result = "error";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			logger.error("礼品卡充值失败", e);
+			result = "error";
+		}
+		ResponseUtil.sendResult(result);
+	}
+	
+	
+	/**
 	 * 查询充值记录
 	 */
 	public void getRechargeList(){
@@ -145,7 +182,14 @@ public class AccountManageAction extends ActionSupport implements SessionAware{
 	public void setBillService(BillService billService) {
 		this.billService = billService;
 	}
+	
+	public GiftCardVO getGiftCardVO() {
+		return giftCardVO;
+	}
 
+	public void setGiftCardVO(GiftCardVO giftCardVO) {
+		this.giftCardVO = giftCardVO;
+	}
 	
 	@Override
 	public void setSession(Map<String, Object> session) {

@@ -1,5 +1,7 @@
 package com.guole.dao.user;
 
+import java.util.HashMap;
+
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -110,5 +112,23 @@ public interface UserInfoDao {
      * @return 
      */
     public int getUserCountByUserAccount(String userAccount);
+    
+	/**
+	 * 更新用户的账户余额
+	 * @param userId,balance
+	 * @return boolean
+	 * @throws Exception
+	 */
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
+	public boolean modifyUserBalance(HashMap<String, Object> param) throws Exception;
+	
+	/**
+	 * 获取用户的账户余额
+	 * @param userId,balance
+	 * @return boolean
+	 * @throws Exception
+	 */
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
+	public double queUserBalance(int userId) throws Exception;
 
 }

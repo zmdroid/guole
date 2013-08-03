@@ -13,4 +13,18 @@
     <select id="getGiftCardTypeCount" resultType="int" parameterType="java.util.Map">  
        SELECT count(*) FROM t_gift_card_type WHERE state=1
     </select>
+    <!-- 根据礼品卡类型编号获取礼品卡类型信息 -->  
+    <select id="getGiftCardTypeById" resultType="giftCardType" parameterType="int">  
+       SELECT * FROM t_gift_card_type WHERE id=#{id}
+    </select>
+    
+    <!-- 根据礼品卡编号和礼品卡密码 礼品卡状态获取礼品卡信息 -->  
+    <select id="getGiftCardInfo" resultType="giftCardVO" parameterType="giftCardVO">  
+       SELECT * FROM t_gift_card WHERE UPPER(cardNum)=UPPER(#{cardNum}) AND UPPER(pwd)=UPPER(#{pwd}) and state=#{state}
+    </select>
+    
+    <!-- 使用礼品卡 修改礼品卡状态 礼品卡使用时间 -->
+    <update id="updateGiftCardInfo" parameterType="giftCardVO">
+        UPDATE t_gift_card SET state=2,useTime=#{useTime} WHERE id=#{id};
+    </update>
 </mapper>

@@ -7,6 +7,7 @@
 		<action name="getBills" method="getBills" class="com.guole.action.AccountManageAction"/>
 		<action name="getAccountInfo" method="getAccountInfo" class="com.guole.action.AccountManageAction"/>
 		<action name="recharge" method="recharge" class="com.guole.action.AccountManageAction"/>
+		<action name="rechargeCard" method="rechargeCard" class="com.guole.action.AccountManageAction"/>
 		<action name="getRechargeList" method="getRechargeList" class="com.guole.action.AccountManageAction"/>
 		<action name="getRecharge" method="getRecharge" class="com.guole.action.AccountManageAction"/>
 	</package>

@@ -8,6 +8,7 @@
          <typeAlias type="com.guole.vo.UserInfoVO" alias="user"/>
         <typeAlias type="com.guole.vo.UserAccountVO" alias="userAccount"/>
         <typeAlias type="com.guole.vo.GiftCardTypeVO" alias="giftCardType"/>
+        <typeAlias type="com.guole.vo.GiftCardVO" alias="giftCardVO"/>
         <typeAlias type="com.guole.vo.BillVO" alias="billVO"/>
         <typeAlias type="com.guole.vo.RechargeVO" alias="rechargeVO"/>
         <typeAlias type="com.guole.vo.MessageVO" alias="messageVO"/>

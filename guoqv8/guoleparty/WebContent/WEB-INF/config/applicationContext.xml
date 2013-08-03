@@ -60,6 +60,6 @@
     <import resource="accountManage_spring.xml"/>
     <!-- 消息信息配置 -->  
     <import resource="postbox_spring.xml"/>
-    <!-- 消息信息配置 -->  
+    <!-- 问答信息配置 -->  
     <import resource="comment_spring.xml"/>
 </beans>

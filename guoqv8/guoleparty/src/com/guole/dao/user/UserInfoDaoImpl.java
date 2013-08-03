@@ -1,5 +1,7 @@
 package com.guole.dao.user;
 
+import java.util.HashMap;
+
 import org.mybatis.spring.SqlSessionTemplate;
 
 import com.guole.dao.base.BaseDaoImpl;
@@ -84,6 +86,29 @@ public class UserInfoDaoImpl extends BaseDaoImpl implements UserInfoDao {
 	public int getUserCountByUserAccount(String userAccount) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	/**
+	 * 更新用户的账户余额
+	 * @param userId,balance
+	 * @return boolean
+	 * @throws Exception
+	 */
+	@Override
+	public boolean modifyUserBalance(HashMap<String, Object> param)
+			throws Exception {
+		return sqlSessionTemplate.update("modifyUserBalance") > 0;
+	}
+
+	/**
+	 * 获取用户的账户余额
+	 * @param userId,balance
+	 * @return boolean
+	 * @throws Exception
+	 */
+	@Override
+	public double queUserBalance(int userId) throws Exception {
+		return sqlSessionTemplate.selectOne("queUserBalance");
 	}
 
 }

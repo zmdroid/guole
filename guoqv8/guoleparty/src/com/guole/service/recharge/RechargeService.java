@@ -4,6 +4,7 @@ package com.guole.service.recharge;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.guole.vo.GiftCardVO;
 import com.guole.vo.RechargeVO;
 
 /**
@@ -35,4 +36,13 @@ public interface RechargeService{
 	 * @return
 	 */
 	RechargeVO getRecharge(int userId,int orderNo);
+	
+	/**
+	 * 礼品卡充值
+	 * @param userId
+	 * @param orderNo
+	 * @return
+	 */
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.REQUIRES_NEW)
+	boolean giftCardRecharge(int userId,GiftCardVO giftCardVO) throws Exception;
 }

@@ -14,11 +14,11 @@ public class BillVO {
 	private long sn          ;//交易流水号
 	private int userId      ;//用户id
 	private int tradeId     ;//业务id
-	private char tradetype   ;//交易类型(充值、提现、交易、返款、佣金)
-	private char tradechannel;//交易方式(1.支付宝 2.线下 3.支票 4.平台内)
+	private int tradetype   ;//交易类型(充值、提现、交易、返款、佣金)
+	private int tradechannel;//交易方式(1.平台内 2.线下 3.支付宝 4.礼品卡)
 	private Date currtime    ;//当前时间
 	private double money       ;//交易金额
-	private char type     ;//流水类型(1.收入/2.支出)
+	private int type     ;//流水类型(1.收入/2.支出)
 	private double balance;//余额
 	private int virtual;//公司进账资金的实虚，1为虚账
 	
@@ -40,13 +40,13 @@ public class BillVO {
 	public void setTradeId(int tradeId) {
 		this.tradeId = tradeId;
 	}
-	public char getTradetype() {
+	public int getTradetype() {
 		return tradetype;
 	}
-	public void setTradetype(char tradetype) {
+	public void setTradetype(int tradetype) {
 		this.tradetype = tradetype;
 	}
-	public char getTradechannel() {
+	public int getTradechannel() {
 		return tradechannel;
 	}
 	public Date getCurrtime() {
@@ -61,13 +61,13 @@ public class BillVO {
 	public void setMoney(double money) {
 		this.money = money;
 	}
-	public char getType() {
+	public int getType() {
 		return type;
 	}
-	public void setType(char type) {
+	public void setType(int type) {
 		this.type = type;
 	}
-	public void setTradechannel(char tradechannel) {
+	public void setTradechannel(int tradechannel) {
 		this.tradechannel = tradechannel;
 	}
 	public double getBalance() {

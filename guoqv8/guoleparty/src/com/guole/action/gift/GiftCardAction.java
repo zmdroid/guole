@@ -1,6 +1,5 @@
 package com.guole.action.gift;
 
-import java.util.List;
 import java.util.Map;
 
 import net.sf.json.JSONArray;
@@ -10,8 +9,9 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.guole.action.user.UserInfoAction;
 import com.guole.service.gift.GiftCardService;
+import com.guole.util.MD5Encrypt;
 import com.guole.util.ResponseUtil;
-import com.guole.vo.GiftCardTypeVO;
+import com.guole.vo.GiftCardVO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class GiftCardAction extends ActionSupport implements SessionAware {
@@ -41,8 +41,6 @@ public class GiftCardAction extends ActionSupport implements SessionAware {
 		result = JSONArray.fromObject(obj).toString();
 		ResponseUtil.sendResult(result);
 	}
-	
-	
 	
 	
 	@Override

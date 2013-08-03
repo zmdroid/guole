@@ -24,6 +24,7 @@ public class GiftCardVO {
 	 * 状态 (1:正常 2:关闭)
 	 */
 	private int state;
+	
 	/**
 	 * 描述
 	 */
