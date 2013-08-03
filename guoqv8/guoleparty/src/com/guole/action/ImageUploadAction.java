@@ -146,60 +146,6 @@ public class ImageUploadAction extends ActionSupport implements SessionAware{
 	}
 	
 	private int weddingNo;//婚礼编号
-	/**
-	 * 上传结婚照片
-	 * @return
-	 */
-	public void uploadWeddingPhoto(){
-		if(this.errorInfo!=null && this.errorInfo.length()>0){
-			if(this.errorInfo.indexOf("maximum")>-1 || this.errorInfo.indexOf("large")>-1)ResponseUtil.sendResult("0101");
-			if(this.errorInfo.indexOf("Content-Type")>-1)ResponseUtil.sendResult("0102");
-			return;
-		}
-		//上传结婚照片
-		String[] imageURI = ImageUtil.upload(imageFile, imageFileFileName, imageFileContentType);
-		String weddingPath = Config.getInstance().get("family.wedding.picture")+"";
-		File destDir = new File(weddingPath);
-		if(!destDir.exists()){
-			destDir.mkdirs();
-		}
-		String destPath = destDir+"/"+weddingNo;
-		try {
-			/**********************网页背景图处理************************/
-			//背景图压缩尺寸
-			int maxW =  Integer.parseInt(Config.getInstance().get("image.weddingBgWidth")+"");
-			int maxH = Integer.parseInt(Config.getInstance().get("image.weddingBgHeight")+"");
-			ImageUtil.copy(imageFile, new File(destPath));
-			Image img = null;
-			try {
-				img = ImageIO.read(imageFile);
-				if(img==null){
-					ResponseUtil.sendResult("0103");
-					return;
-				}
-			} catch (IOException e) {
-				logger.error("",e);
-				return;
-			}
-			int w = img.getWidth(null);
-			int h = img.getHeight(null);
-			img.flush();
-			if(w>maxW || h>maxH)
-			ImageUtil.resize(destPath,w>maxW?maxW:w, h>maxH?maxH:h,true);
-			/**********************压缩原图处理************************/
-			//保存压缩原图
-			maxW =  Integer.parseInt(Config.getInstance().get("image.weddingPhotoWidth")+"");
-			ImageUtil.copy(imageFile, new File(destPath+"c500"));
-			ImageUtil.resize(destPath+"c500",maxW, h,true);
-			//删除临时图
-			ImageUtil.delete(imageURI[0]);
-			//更新数据库
-		} catch (IOException e) {
-			logger.error("",e);
-		}
-		
-		ResponseUtil.sendResult("200");
-	}
 
 	public File getImageFile() {
 		return imageFile;

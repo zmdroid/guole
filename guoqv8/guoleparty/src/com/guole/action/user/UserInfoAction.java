@@ -18,9 +18,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 用户信息Action
- * @author zhenhua.kou
+ * @author mingzhou
  * @version V1.0
- * @createTime   2013-05-24
+ * @createTime   2013-08-03
  * @history  版本	修改者	   时间	修改内容
  */
 public class UserInfoAction extends ActionSupport implements SessionAware{
@@ -28,6 +28,7 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 	private static final long serialVersionUID = 1415146777060554880L;
 
 	private final static Logger logger = Logger.getLogger(UserInfoAction.class);
+	private static final Config config = Config.getInstance();
 	
 	public UserInfoService userInfoService;
 	
@@ -187,17 +188,20 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 	/**
 	 *更新用户头像
 	 */
+	
 	public void updateHead(){
 		result = "FAILURE";
 		try{
 			userInfoVO = (UserInfoVO) session.get(Consts.CURRENT_USER_INFO);
 			if(userInfoVO != null){
-				File src = new File(Config.getInstance().get("tmpDir")+"/"+img);
-				File dir = new File(Config.getInstance().get("resRootUrl")+"/head/");
+				String srcPath = config.getString("resRootUrl")+config.getString("imageDir")+config.getString("resTmp")+"/";
+				String dPath = config.getString("resRootUrl")+config.getString("imageDir")+config.getString("headDir")+"/";
+				File src = new File(srcPath+img);
+				File dir = new File(dPath);
 				if(!dir.exists())dir.mkdirs();
-				File dest = new File(Config.getInstance().get("resRootUrl")+"/head/"+img);
+				File dest = new File(dPath+img);
 				ImageUtil.copy(src, dest);
-				userInfoVO.setAvatar("/head/"+img);
+				userInfoVO.setAvatar("/"+img);
 				result = (userInfoService.modifyUserHead(userInfoVO) ? "SUCCESS" :"ERROR");
 				if (result.equals("SUCCESS")){
 					//刷新用户SESSION
@@ -208,6 +212,7 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 			
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			logger.error("更新用户头像出错!", e);
 			result = "ERROR";
 		}

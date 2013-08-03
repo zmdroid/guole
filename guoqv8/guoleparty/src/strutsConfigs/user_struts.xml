@@ -37,6 +37,6 @@
 	        <interceptor-ref name="defaultStack"/>
 			<result name="success">/Page/family/uploadPicture.jsp</result>
 		</action>
-		<action name="updatePic" method="updatePic" class="com.guole.action.user.UserInfoAction" />
+		<action name="updateHead" method="updateHead" class="com.guole.action.user.UserInfoAction" />
 	</package>
 </struts>

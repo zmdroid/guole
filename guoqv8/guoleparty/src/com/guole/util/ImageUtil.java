@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
 
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
-import com.tts.util.Config;
+import com.guole.util.Config;
 import com.guole.util.ImageUtil;
 
 
@@ -131,7 +131,7 @@ final public class ImageUtil {
 	public static File genStoreImageFile(String fileFullName){
 		String path = "";
 		//获取根目录(临时目录)
-		String rootPath = config.get("tmpDir")+"";
+		String rootPath = config.getString("resRootUrl")+config.getString("imageDir")+config.getString("resTmp");
 		//获取全路径
 		String fullPath = getFullPath();
 		//构造目标路径
