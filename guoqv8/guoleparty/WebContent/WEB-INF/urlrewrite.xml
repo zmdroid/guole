@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+	<rule>
+	    <name>登录页</name>
+	    <from>/login$</from>
+	    <to>/login.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人注册页</name>
+	    <from>/humanRegister$</from>
+	    <to>/humanRegister.jsp</to>
+	</rule>
+	<rule>
+	    <name>企业注册页</name>
+	    <from>/companyRegister$</from>
+	    <to>/companyRegister.jsp</to>
+	</rule>
+	
+	<rule>
+	    <name>礼品卡礼品卷</name>
+	    <from>/giftCards$</from>
+	    <to>/page/giftcard/giftcardtype.jsp</to>
+	</rule>
+	
+	<rule>
+	    <name>客户留言页</name>
+	    <from>/comments$</from>
+	    <to>/page/comment/comment.jsp</to>
+	</rule>
+
+	<!-- 个人中心 -->
+	<rule>
+	    <name>个人中心-首页</name>
+	    <from>/pcenter/home$</from>
+	    <to>/page/pcenter/index.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人中心-基本信息</name>
+	    <from>/pcenter/baseInfo$</from>
+	    <to>/page/pcenter/baseInfo.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人中心-密码修改</name>
+	    <from>/pcenter/modifypwd$</from>
+	    <to>/page/pcenter/modifyPwd.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人中心-密码修改</name>
+	    <from>/pcenter/accountManage$</from>
+	    <to>/page/pcenter/bill.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人中心-充值页</name>
+	    <from>/pcenter/recharge$</from>
+	    <to>/page/pcenter/recharge.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人中心-充值详细页</name>
+	    <from>/pcenter/rechargeDetail/([0-9]+)$</from>
+	    <to>/page/pcenter/recharge_detail.jsp?no=$1</to>
+	</rule>
+	<rule>
+	    <name>个人中心-充值历史记录页</name>
+	    <from>/pcenter/rechargeHistory$</from>
+	    <to>/page/pcenter/recharge_history.jsp</to>
+	</rule>
+	<rule>
+	    <name>个人中心-消息中心页</name>
+	    <from>/pcenter/message$</from>
+	    <to>/page/pcenter/message.jsp</to>
+	</rule>
+</urlrewrite>
