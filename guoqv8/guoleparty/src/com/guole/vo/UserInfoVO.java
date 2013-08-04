@@ -24,12 +24,11 @@ public class UserInfoVO {
 	private String integration;//用户积分
 	
 	private String corname;//公司名称
-	
+	private int cornum;//公司名称
 	private String coraddr;//公司地址
-	
-	private String officephone;//公司电话
-	
-    private String officefax;//公司传真
+	private String corLinkMan;//公司联系人
+    private String corLinkphone;//公司联系电话
+    private String corEmail;//公司联系邮箱
 	
     private String userAccount;//登陆账号
 	
@@ -40,6 +39,8 @@ public class UserInfoVO {
     public static int USER_TYPE_1 = 1;//个人
     
     public static int USER_TYPE_2 = 2;//企业
+    
+    private int cardId;//会员卡编号
 		
     private int state;//用户状态
     
@@ -123,22 +124,6 @@ public class UserInfoVO {
 		this.coraddr = coraddr;
 	}
 
-	public String getOfficephone() {
-		return officephone;
-	}
-
-	public void setOfficephone(String officephone) {
-		this.officephone = officephone;
-	}
-
-	public String getOfficefax() {
-		return officefax;
-	}
-
-	public void setOfficefax(String officefax) {
-		this.officefax = officefax;
-	}
-
 	public String getUserAccount() {
 		return userAccount;
 	}
@@ -169,6 +154,46 @@ public class UserInfoVO {
 
 	public void setState(int state) {
 		this.state = state;
+	}
+
+	public int getCornum() {
+		return cornum;
+	}
+
+	public void setCornum(int cornum) {
+		this.cornum = cornum;
+	}
+
+	public String getCorLinkMan() {
+		return corLinkMan;
+	}
+
+	public void setCorLinkMan(String corLinkMan) {
+		this.corLinkMan = corLinkMan;
+	}
+
+	public String getCorLinkphone() {
+		return corLinkphone;
+	}
+
+	public void setCorLinkphone(String corLinkphone) {
+		this.corLinkphone = corLinkphone;
+	}
+
+	public String getCorEmail() {
+		return corEmail;
+	}
+
+	public void setCorEmail(String corEmail) {
+		this.corEmail = corEmail;
+	}
+
+	public int getCardId() {
+		return cardId;
+	}
+
+	public void setCardId(int cardId) {
+		this.cardId = cardId;
 	}
     
     

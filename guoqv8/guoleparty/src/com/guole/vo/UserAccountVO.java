@@ -13,12 +13,6 @@ public class UserAccountVO {
 	
 	private int userId;//用户编号
 	
-    private  int accounttype;//账户类型
-    
-    public static int USERACCOUNT_ACCOUNTTYPE_1 = 1;//个人
-    
-    public static int USERACCOUNT_ACCOUNTTYPE_2 = 2;//公司
-	
     private String paypassword;//支付密码
 	
     private int state;//账户状态
@@ -47,14 +41,6 @@ public class UserAccountVO {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
-	}
-
-	public int getAccounttype() {
-		return accounttype;
-	}
-
-	public void setAccounttype(int accounttype) {
-		this.accounttype = accounttype;
 	}
 
 	public String getPaypassword() {

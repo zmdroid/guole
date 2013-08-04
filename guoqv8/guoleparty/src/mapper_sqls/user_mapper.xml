@@ -17,13 +17,17 @@
     <select id="getUserCountByUserAccount" resultType="int" parameterType="String">  
        SELECT count(*) FROM t_user WHERE upper(userAccount)=upper(#{value})
     </select>
+     <!-- 校验公司名称及品牌名称是否已存在 -->  
+    <select id="getCorInfo" resultType="user" parameterType="java.util.Map">  
+       SELECT * FROM t_user WHERE corname = #{corname}
+    </select>
     <!-- 添加用户基本信息 -->  
     <insert id="addUserInfo" parameterType="user">
         <![CDATA[
-         INSERT INTO t_user(name,avatar,qq,email,mobile,integration,corname,coraddr,
-         officephone,officefax,userAccount,pwd,usertype,state)
-         VALUES(#{name},#{avatar},#{qq},#{email},#{mobile},#{integration},#{corname},#{coraddr},
-         #{officephone},#{officefax},#{userAccount},#{pwd},#{usertype},#{state})
+         INSERT INTO t_user(name,avatar,qq,email,mobile,integration,corname,cornum,coraddr,
+         corLinkMan,corLinkphone,corEmail,userAccount,pwd,usertype,cardId,state)
+         VALUES(#{name},#{avatar},#{qq},#{email},#{mobile},#{integration},#{corname},#{cornum},#{coraddr},
+         #{corLinkMan},#{corLinkphone},#{corEmail},#{userAccount},#{pwd},#{usertype},#{cardId},#{state})
         ]]>
 	</insert>
 	<!-- 更新用户基本信息 -->  
@@ -65,7 +69,14 @@
         ]]>
 	</update>
 	
-	<!-- 根据用户编号获取用户虚拟账户列表-->  
+	<!-- 添加企业申请信息 -->  
+    <insert id="addApplyCompanyInfo" parameterType="applyCompanyInfo">
+        <![CDATA[
+         INSERT INTO t_apply_company_info(userId,applyTime,state)
+         VALUES(#{userId},#{applyTime},#{state})
+        ]]>
+	</insert>
+	<!-- 根据用户编号获取用户虚拟账户-->  
     <select id="qurUserAccountByUserId" resultType="userAccount" parameterType="int">  
        SELECT * FROM t_account WHERE userId=#{value}
     </select>
@@ -76,9 +87,9 @@
 	<!-- 添加用户虚拟账户信息 -->  
     <insert id="addUserAccount" parameterType="userAccount">
         <![CDATA[
-         INSERT INTO t_account(userId,accounttype,
+         INSERT INTO t_account(userId,
          paypassword,state,balance)
-         VALUES(#{userId},#{accounttype},
+         VALUES(#{userId},
          #{paypassword},1,#{balance})
         ]]>
 	</insert>

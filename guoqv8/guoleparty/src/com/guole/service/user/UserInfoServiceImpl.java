@@ -1,6 +1,12 @@
 package com.guole.service.user;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.guole.dao.user.UserInfoDao;
+import com.guole.util.MD5Encrypt;
+import com.guole.vo.ApplyCompanyInfoVO;
 import com.guole.vo.UserAccountVO;
 import com.guole.vo.UserInfoVO;
 
@@ -35,19 +41,38 @@ public class UserInfoServiceImpl implements UserInfoService{
     
     /**
      * 添加用户账户信息
-     * @param userAccount 用户虚拟账户信息
+     * @param userAccount 用户信息
      * @return 
      */
-    public boolean addUserAccount(UserInfoVO userInfo,UserAccountVO userAccount){
-    	if(userInfoDao.addUserInfo(userInfo)){
+    public boolean addUserAccount(UserInfoVO userInfo) throws Exception{
+    	boolean rs = userInfoDao.addUserInfo(userInfo);
+    	if(rs){
     		UserInfoVO v = userInfoDao.getUserInfo(userInfo);
-    		userAccount.setUserId(v.getUserId());
-    		userAccount.setState(UserAccountVO.USERACCOUNT_STATE_1);
-    		userAccount.setBalance(0);
-    	    return userInfoDao.addUserAccount(userAccount);
+    		if(v.getUsertype()==UserInfoVO.USER_TYPE_2){//是否为企业用户，填写申请表
+    			ApplyCompanyInfoVO appCompanyVO = new ApplyCompanyInfoVO();
+    			appCompanyVO.setApplyTime(new Date());
+    			appCompanyVO.setUserId(v.getUserId());
+    			appCompanyVO.setState(ApplyCompanyInfoVO.APPLY_COMPANY_STATE_ING);
+    			rs = userInfoDao.addApplyCompanyInfo(appCompanyVO);
+    			if(!rs){
+    				throw new Exception();
+    			}
+    		}
+    		
+    		//初始化用户虚拟账户信息
+    		UserAccountVO userAccountVO =new UserAccountVO();
+			userAccountVO.setPaypassword(MD5Encrypt.getInstance().encrypt("111111".toLowerCase()));
+			userAccountVO.setUserId(v.getUserId());
+			userAccountVO.setState(UserAccountVO.USERACCOUNT_STATE_1);
+			userAccountVO.setBalance(0);
+			rs = userInfoDao.addUserAccount(userAccountVO);
+    	    if(!rs){
+    	    	throw new Exception();
+    	    }
     	}else{
-    		return false;
+    		throw new  Exception();
     	}
+    	return rs;
     }
     
     /**
@@ -133,6 +158,19 @@ public class UserInfoServiceImpl implements UserInfoService{
     public boolean getUserCountByUserAccount(String userAccount){
     	return userInfoDao.getUserCountByUserAccount(userAccount) > 0;
     }
+    
+    /**
+     * 校验公司名称是否已存在
+     * @param corname 公司名称
+     * @return 
+     */
+	@Override
+	public UserInfoVO getCorInfo(String corname) {
+		Map params = new HashMap();
+    	params.put("corname", corname);
+    	return userInfoDao.getCorInfo(params);
+	}
+    
     
     public UserInfoDao getUserInfoDao() {
 		return userInfoDao;

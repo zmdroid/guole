@@ -30,7 +30,7 @@ public interface UserInfoService {
      * @return 
      */
     @Transactional(rollbackFor={Exception.class},propagation = Propagation.REQUIRES_NEW)
-    public boolean addUserAccount(UserInfoVO userInfo,UserAccountVO userAccount);
+    public boolean addUserAccount(UserInfoVO userInfo) throws Exception;
     
     /**
      * 更新用户虚拟账户信息
@@ -104,5 +104,12 @@ public interface UserInfoService {
      * @return 
      */
     public boolean getUserCountByUserAccount(String userAccount);
+    
+    /**
+     * 校验公司名称是否已存在
+     * @param corname 公司名称
+     * @return 
+     */
+    public UserInfoVO getCorInfo(String corname);
 
 }

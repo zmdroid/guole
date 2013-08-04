@@ -1,10 +1,12 @@
 package com.guole.dao.user;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.guole.vo.ApplyCompanyInfoVO;
 import com.guole.vo.UserAccountVO;
 import com.guole.vo.UserInfoVO;
 
@@ -38,6 +40,14 @@ public interface UserInfoDao {
      */
     @Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
     public boolean addUserAccount(UserAccountVO userAccount);
+    
+    /**
+     * 添加企业用户申请信息
+     * @param userAccount 用户虚拟账户信息
+     * @return 
+     */
+    @Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
+    public boolean addApplyCompanyInfo(ApplyCompanyInfoVO applyCompanyVO);
     
     /**
      * 更新用户虚拟账户信息
@@ -112,6 +122,13 @@ public interface UserInfoDao {
      * @return 
      */
     public int getUserCountByUserAccount(String userAccount);
+    
+    /**
+     * 校验公司名称及品牌名称是否已存在
+     * @param params 参数组合
+     * @return 
+     */
+    public UserInfoVO getCorInfo(Map params);
     
 	/**
 	 * 更新用户的账户余额

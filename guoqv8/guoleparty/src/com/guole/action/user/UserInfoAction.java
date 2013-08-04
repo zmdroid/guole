@@ -81,25 +81,43 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 	 *用户注册
 	 */
 	public void register(){
+		result = "FAILURE";
+		boolean exists = false;
 		try{
 			if(userInfoService.getUserCountByUserAccount(userInfoVO.getUserAccount())){
 				result = "EXISTS";
 			}else{
-				//登陆密码加密
-				userInfoVO.setPwd(MD5Encrypt.getInstance().encrypt(userInfoVO.getPwd().toLowerCase()));
-				//设置默认头像
-				userInfoVO.setAvatar(Config.getInstance().get("defaultHead")+"");
-				userInfoVO.setState(2);
-				//取现密码初始：111111
-				UserAccountVO userAccountVO =new UserAccountVO();
-				userAccountVO.setPaypassword(MD5Encrypt.getInstance().encrypt("111111".toLowerCase()));
-				result = (userInfoService.addUserAccount(userInfoVO,userAccountVO) ? "SUCCESS" :"FAILURE");
-				if (result.equals("SUCCESS")){
-					//获取用户信息填充SESSION
-					UserInfoVO v = userInfoService.getUserInfo(userInfoVO);
-					session.put(Consts.CURRENT_USER_INFO, v);
-					
-				}
+			    	if(userInfoVO.getUsertype()==UserInfoVO.USER_TYPE_2){
+			    		if(userInfoService.getCorInfo(userInfoVO.getCorname().trim()) != null){
+			    			exists = true;
+			    			result = "COREXISTS";
+			    		}
+			    	}
+			    	if(!exists || userInfoVO.getUsertype()==UserInfoVO.USER_TYPE_1){
+						//登陆密码加密
+						userInfoVO.setPwd(MD5Encrypt.getInstance().encrypt(userInfoVO.getPwd().toLowerCase()));
+						//设置默认图像
+						userInfoVO.setAvatar(Config.getInstance().getString("defaultHead"));
+						//替换单引号和双引号
+						userInfoVO.setUserAccount(userInfoVO.getUserAccount());
+				    	userInfoVO.setName(userInfoVO.getName());
+				    	userInfoVO.setCorname(userInfoVO.getCorname());
+				    	userInfoVO.setCornum(userInfoVO.getCornum());
+				    	if(userInfoVO.getCoraddr() != null){
+				    		userInfoVO.setCoraddr(userInfoVO.getCoraddr());
+				    	}
+				    	userInfoVO.setCorLinkMan(userInfoVO.getCorLinkMan());
+				    	userInfoVO.setCorLinkphone(userInfoVO.getCorLinkphone());
+				    	userInfoVO.setCorEmail(userInfoVO.getCorEmail());
+				    	userInfoVO.setState(UserInfoVO.USER_STATE_1);
+						result = (userInfoService.addUserAccount(userInfoVO) ? "SUCCESS" :"FAILURE");
+						if (result.equals("SUCCESS")){
+							
+							UserInfoVO v = userInfoService.getUserInfo(userInfoVO);
+							//获取用户信息填充SESSION
+							session.put(Consts.CURRENT_USER_INFO, v);
+						}
+			    }
 			}
 		} catch (Exception e) {
 			logger.error("用户注册出错!", e);

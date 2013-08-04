@@ -25,7 +25,6 @@
 					<td>
 						<span class="IBoxTip">
 							<input class="IEnter WMids IN" type="text" name="userInfoVO.userAccount" id="userAccount" maxLength="60"/>
-							<label class="IExplain">输入用户名</label>
 						</span>
 						&nbsp;&nbsp;<font color="red"><span id="userAccountError"></span></font>
 					</td>
@@ -35,7 +34,6 @@
 					<td>
 						<span class="IBoxTip">
 							<input class="IEnter WMids IN" type="password" id="pwd" name="userInfoVO.pwd"  maxLength="32"/>
-							<label class="IExplain">输入登录密码</label>
 						</span>
 					    &nbsp;&nbsp;<font color="red"><span id="pwdError"></span></font></td>
 				  </tr>
@@ -44,7 +42,6 @@
 					<td>
 						<span class="IBoxTip">
 							<input class="IEnter WMids IN" type="password" id="pwd2" maxLength="32"/>
-							<label class="IExplain">重复登录密码</label>
 						</span>
 					    &nbsp;&nbsp;<font color="red"><span id="pwd2Error"></span></font></td>
 				  </tr>
@@ -53,7 +50,6 @@
 					<td>
 						<span class="IBoxTip">
 							<input class="IEnter WMids IN" type="text" id="name" name="userInfoVO.name" maxLength="20"/>
-							<label class="IExplain">输入注册人姓名</label>
 						</span>
 					    &nbsp;&nbsp;<font color="red"><span id="nameError"></span></font></td>
 				  </tr>
@@ -62,57 +58,48 @@
 					<td>
 						<span class="IBoxTip">
 							<input class="IEnter WMaxS IN" type="text" id="corname" name="userInfoVO.corname" maxLength="60"/>
-							<label class="IExplain">输入公司名称全称</label>
 						</span>
 					    &nbsp;&nbsp;<font color="red"><span id="cornameError"></span></font></td>
 				  </tr>
 				  <tr>
-					<td class="CA TTi"><span class="CD">*</span> 电话</td>
+					<td class="CA TTi"><span class="CD">*</span> 公司人数</td>
 					<td>
 						<span class="IBoxTip">
-							<input class="IEnter WMids IN" type="text" id="officephone" name="userInfoVO.officephone" maxLength="18"/>
-							<label class="IExplain">电话号码</label>
+							<input class="IEnter WMaxS IN" type="text" id="cornum" name="userInfoVO.cornum" maxLength="6"/>
 						</span>
-						<span>&nbsp;示例：029-88888888</span>
-					    &nbsp;&nbsp;<font color="red"><span id="officephoneError"></span></font></td>
+					    &nbsp;&nbsp;<font color="red"><span id="cornumError"></span></font></td>
 				  </tr>
 				  <tr>
-					<td class="CA TTi"><span class="CD">*</span> 传真</td>
+					<td class="CA TTi"><span class="CD">*</span> 公司地址</td>
 					<td>
 						<span class="IBoxTip">
-							<input class="IEnter WMids IN" type="text" id="officefax" name="userInfoVO.officefax" maxLength="18"/>
-							<label class="IExplain">输入传真号码</label>
+							<input class="IEnter WMaxS IN" type="text" id="coraddr" name="userInfoVO.coraddr" maxLength="60"/>
 						</span>
-						<span>&nbsp;示例：029-88888888</span>
-					    &nbsp;&nbsp;<font color="red"><span id="officefaxError"></span></font></td>
+					    &nbsp;&nbsp;<font color="red"><span id="coraddrError"></span></font></td>
 				  </tr>
 				  <tr>
-					<td class="CA TTi"><span class="CD">*</span> 手机</td>
+					<td class="CA TTi"><span class="CD">*</span> 联系人</td>
 					<td>
 						<span class="IBoxTip">
-							<input class="IEnter WMids IN" type="text" id="mobile" name="userInfoVO.mobile" maxLength="15"/>
-							<label class="IExplain">输入手机号码</label>
+							<input class="IEnter WMaxS IN" type="text" id="corLinkMan" name="userInfoVO.corLinkMan" maxLength="20"/>
 						</span>
-					    &nbsp;&nbsp;<font color="red"><span id="mobileError"></span></font></td>
+					    &nbsp;&nbsp;<font color="red"><span id="corLinkManError"></span></font></td>
 				  </tr>
 				  <tr>
-					<td class="CA TTi"><span class="CD">*</span> Email</td>
+					<td class="CA TTi"><span class="CD">*</span> 联系电话</td>
 					<td>
 						<span class="IBoxTip">
-							<input class="IEnter WMids IN" type="text" id="email" name="userInfoVO.email" maxLength="60"/>
-							<label class="IExplain">输入联系邮箱</label>
+							<input class="IEnter WMids IN" type="text" id="corLinkphone" name="userInfoVO.corLinkphone" maxLength="15"/>
 						</span>
-					    &nbsp;&nbsp;<font color="red"><span id="emailError"></span></font></td>
+					    &nbsp;&nbsp;<font color="red"><span id="corLinkphoneError"></span></font></td>
 				  </tr>
 				  <tr>
-					<td class="CA TTi"><span class="CD">*</span> QQ号码</td>
+					<td class="CA TTi"><span class="CD">*</span>联系邮箱</td>
 					<td>
 						<span class="IBoxTip">
-							<input class="IEnter WMids IN" type="text"  name="userInfoVO.qq" id="qq" maxlength="15"/>
-							<label class="IExplain">输入QQ号码</label>
+							<input class="IEnter WMids IN" type="text" id="corEmail" name="userInfoVO.corEmail" maxLength="60"/>
 						</span>
-						&nbsp;&nbsp;<font color="red"><span id="qqError"></span></font>
-					</td>
+					    &nbsp;&nbsp;<font color="red"><span id="corEmailError"></span></font></td>
 				  </tr>
 				  <tr>
 					<td class="CA TTi"></td>
@@ -142,28 +129,6 @@
 </html>
 <%@include file="/js.jsp" %>
 <script type="text/javascript" charset="utf-8">
-	$("#ArrivalCity").AutoFill(true,5,"#Fill-S");
-	$.get('${pageContext.request.contextPath}/getAllProductTypes.do?t=' + new Date().getTime(),null,function(data){
-		var pTypes = {};
-		for (var i = 0; i < data.length; i++) {
-			productType = data[i];
-			pTypes[productType.pType] = 1;
-		}
-		
-		var html = "";
-		for (var pType in pTypes) {
-			html += "<dl><dt>"+ pType +"</dt><dd>";
-			for (var i = 0; i < data.length; i++) {
-				productType = data[i];
-				if (pType == productType.pType) {
-					html += "<a href='javascript:;' class='FillClick'>" + productType.typeName + "</a>";	
-				}
-			}
-			html += "</dd></dl><dl>";
-		}
-
-		$("#lineProduct").html(html);
-	},'json');
     function resetForm(){
     	window.location.reload();
     }
@@ -174,7 +139,7 @@
 		  $('#regBtn').addClass("RegAgreeN");
 	  }
     }
-    $('#staffnum').bind("keypress", function(event) {
+    $('#cornum').bind("keypress", function(event) {
     	//控制只能输入的值
     	if (event.which && (event.which < 48 || event.which > 57) && event.which != 8 ) {
 	    	event.preventDefault();
@@ -262,182 +227,17 @@
 		  }else{
 			  $('#cornameError').html('');
 		  }
-		  //品牌名称
-		  var brands = $('#brands');
-		  if($.trim(brands.val()).length == 0){
-			  $('#brandsError').html("品牌名称不能为空!");
-			  setFocus(brands);
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#brandsError').html('');
-		  }
-		  //业务类型
-		  var busiTypeCheck = false;
-		  $('#busiType input:checkbox').each(function(index){
-			  if($(this).is(":checked")){
-				  busiTypeCheck = true;
-			  }
-		  });
-		  if(!busiTypeCheck){
-			  $('#busiTypeError').html("业务类型不能为空!");
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#busiTypeError').html('');
-		  }
-		  //线路类型
-		  var lineTypeCheck = false;
-		  $('#lineType input:checkbox').each(function(index){
-			  if($(this).is(":checked")){
-			    lineTypeCheck = true;
-			  }
-		  });
-		  if(!lineTypeCheck){
-			  $('#lineTypeError').html("线路类型不能为空!");
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#lineTypeError').html('');
-		  }
 		  //员工数量
-		  var staffnum = $('#staffnum');
-		  if($.trim(staffnum.val()).length > 0){
-			  if(!checkNumber(staffnum.val())){
-				  $('#staffnumError').html("员工数量只能输入数字!");
-				  setFocus(staffnum);
+		  var cornum = $('#cornum');
+		  if($.trim(cornum.val()).length > 0){
+			  if(!checkNumber(cornum.val())){
+				  $('#cornumError').html("员工数量只能输入数字!");
+				  setFocus(cornum);
 				  canClick = true;
 				  return;
 			  }else{
-				  $('#staffnumError').html('');
+				  $('#cornumError').html('');
 			  }
-		  }
-		  //产品类型
-		  var productTypes = $('#productTypes');
-		  if($.trim(productTypes.val()).length == 0){
-			  $('#productTypesError').html("产品类型不能为空!");
-			  setFocus(productTypes);
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#productTypesError').html('');
-		  }
-		  //电话
-		  var officephone = $('#officephone');
-		  if($.trim(officephone.val()).length == 0){
-			  $('#officephoneError').html("电话不能为空!");
-			  setFocus(officephone);
-			  canClick = true;
-			  return;
-		  }else{
-			  var pattern=/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
-			  if(!pattern.exec($.trim(officephone.val()))) { 
-			    $('#officephoneError').html('电话号码有误，请重新输入!');
-			    setFocus(officephone);
-				canClick = true;
-				return;
-			  } else{
-			    $('#officephoneError').html('');
-			  }
-		  }
-		  //传真
-		  var officefax = $('#officefax');
-		  if($.trim(officefax.val()).length == 0){
-			  $('#officefaxError').html("传真不能为空!");
-			  setFocus(officefax);
-			  canClick = true;
-			  return;
-		  }else{
-			  var pattern=/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
-			  if(!pattern.exec($.trim(officefax.val()))) { 
-			    $('#officefaxError').html('传真号码有误，请重新输入!');
-			    setFocus(officefax);
-				canClick = true;
-				return;
-			  } else{
-			    $('#officefaxError').html('');
-			  }
-		  }
-		  //手机
-		  var mobile = $('#mobile');
-		  if($.trim(mobile.val()).length == 0){
-			  $('#mobileError').html("手机号码不能为空!");
-			  setFocus(mobile);
-			  canClick = true;
-			  return;
-		  }else{
-			  var pattern=/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
-			  if(!pattern.exec($.trim(mobile.val())) || $.trim(mobile.val()).length > 11) { 
-			    $('#mobileError').html('手机号码输入有误，请输入!');
-			    setFocus(mobile);
-				canClick = true;
-				return;
-			  } else{
-			    $('#mobileError').html('');
-			  }
-		  }
-		  //邮箱
-		  var email = $('#email');
-		  if($.trim(email.val()).length == 0){
-			  $('#emailError').html("联系邮箱不能为空!");
-			  setFocus(email);
-			  canClick = true;
-			  return;
-		  }else{
-			  if(!checkEmail(email)){
-				  $('#emailError').html("联系邮箱格式不正确!");
-				  setFocus(email);
-				  canClick = true;
-				  return;
-			  }else{
-				  $('#emailError').html('');
-			  }
-		  }
-		  //QQ
-		  if($.trim($('#qq').val()).length == 0){
-			  $('#qqError').html('QQ号码不能为空!');
-			  setFocus($('#qq'));
-			  canClick = true;
-			  return;
-		  }else{
-			  if(!checkNumber($.trim($('#qq').val()))){
-				  $('#qqError').html("QQ号码只能输入数字!");
-				  setFocus($('#qq'));
-				  canClick = true;
-				  return;
-			  }else{
-				  $('#qqError').html('');
-			  }
-		  }
-		  //所在省份
-		  var province = $('#province');
-		  if($.trim(province.val()).length == 0){
-			  $('#provinceError').html("所在省份不能为空!");
-			  setFocus(province);
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#provinceError').html('');
-		  }
-		  //所在城市
-		  var city = $('#city');
-		  if($.trim(city.val()).length == 0){
-			  $('#cityError').html("所在城市不能为空!");
-			  setFocus(city);
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#cityError').html('');
-		  }
-		  //所在区县
-		  var district = $('#district');
-		  if($.trim(district.val()).length == 0){
-			  $('#districtError').html("所在区县不能为空!");
-			  setFocus(district);
-			  canClick = true;
-			  return;
-		  }else{
-			  $('#districtError').html('');
 		  }
 		  //公司地址
 		  var coraddr = $('#coraddr');
@@ -448,6 +248,51 @@
 			  return;
 		  }else{
 			  $('#coraddrError').html('');
+		  }
+		  //联系人类型
+		  var corLinkMan = $('#corLinkMan');
+		  if($.trim(corLinkMan.val()).length == 0){
+			  $('#corLinkManError').html("联系人不能为空!");
+			  setFocus(corLinkMan);
+			  canClick = true;
+			  return;
+		  }else{
+			  $('#corLinkManError').html('');
+		  }
+		  //电话
+		  var corLinkphone = $('#corLinkphone');
+		  if($.trim(corLinkphone.val()).length == 0){
+			  $('#corLinkphoneError').html("电话不能为空!");
+			  setFocus(corLinkphone);
+			  canClick = true;
+			  return;
+		  }else{
+			  var pattern=/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
+			  if(!pattern.exec($.trim(corLinkphone.val()))) { 
+			    $('#corLinkphoneError').html('电话号码有误，请重新输入!');
+			    setFocus(corLinkphone);
+				canClick = true;
+				return;
+			  } else{
+			    $('#corLinkphoneError').html('');
+			  }
+		  }
+		  //邮箱
+		  var corEmail = $('#corEmail');
+		  if($.trim(corEmail.val()).length == 0){
+			  $('#corEmailError').html("联系邮箱不能为空!");
+			  setFocus(corEmail);
+			  canClick = true;
+			  return;
+		  }else{
+			  if(!checkEmail(corEmail)){
+				  $('#corEmailError').html("联系邮箱格式不正确!");
+				  setFocus(email);
+				  canClick = true;
+				  return;
+			  }else{
+				  $('#corEmailError').html('');
+			  }
 		  }
 		  var postData = $("#registerForm").serialize();
     	  $.ajax( {
@@ -461,17 +306,14 @@
 			      }else if(data == "EXISTS"){
 			    	  $(this).Point('PointC','用户帐号已存在,请重新输入!');
 			    	  setFocus(userAccount);
-			      }else if(data == "QQEXISTS"){
-			    	  $(this).Point('PointC','联系QQ已存在,请重新输入!');
-			    	  setFocus($('#qq'));
 			      }else if(data == "COREXISTS"){
-			    	  $(this).Point('PointC','公司名称及品牌名称已存在,请重新输入!');
+			    	  $(this).Point('PointC','公司名称已存在,请重新输入!');
 			    	  setFocus($('#corname'));
 			      }else if(data == "ERROR"){
 			    	  $(this).Point('PointC','系统繁忙,请稍后再试!');
 			    	  setFocus(userAccount);
 			      }else{
-			          window.location.href = "${pageContext.request.contextPath}/pCenter";  
+			    	  window.location.href = "${pageContext.request.contextPath}/pCenter/home";  
 			      }
 			      canClick = true;
 			  }

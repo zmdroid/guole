@@ -1,10 +1,14 @@
 package com.guole.dao.user;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.guole.dao.base.BaseDaoImpl;
+import com.guole.vo.ApplyCompanyInfoVO;
 import com.guole.vo.UserAccountVO;
 import com.guole.vo.UserInfoVO;
 
@@ -23,7 +27,15 @@ public class UserInfoDaoImpl extends BaseDaoImpl implements UserInfoDao {
 	}
 
 	@Override
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
 	public boolean addUserAccount(UserAccountVO userAccount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
+	public boolean addApplyCompanyInfo(ApplyCompanyInfoVO applyCompanyVO) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -86,6 +98,16 @@ public class UserInfoDaoImpl extends BaseDaoImpl implements UserInfoDao {
 	public int getUserCountByUserAccount(String userAccount) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+    /**
+     * 校验公司名称及品牌名称是否已存在
+     * @param params 参数组合
+     * @return 
+     */
+	@Override
+	public UserInfoVO getCorInfo(Map params) {
+		return sqlSessionTemplate.selectOne("getCorInfo",params);
 	}
 	
 	/**
