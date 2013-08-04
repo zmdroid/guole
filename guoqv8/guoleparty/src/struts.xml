@@ -13,6 +13,7 @@
 	
 	<include file="strutsConfigs/user_struts.xml"></include>
 	<include file="strutsConfigs/giftcard_struts.xml"></include>
+	<include file="strutsConfigs/vipcard_struts.xml"></include>
 	<include file="strutsConfigs/accountmanage_struts.xml"></include>
 	<include file="strutsConfigs/postbox_struts.xml"></include>
 	<include file="strutsConfigs/comment_struts.xml"></include>

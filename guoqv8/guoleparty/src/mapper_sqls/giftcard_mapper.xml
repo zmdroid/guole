@@ -10,7 +10,7 @@
        SELECT * FROM t_gift_card_type WHERE state=1 order by id asc limit #{pageIndex},#{pageSize}
     </select>
     <!-- 获取礼品卡种类总数 -->  
-    <select id="getGiftCardTypeCount" resultType="int" parameterType="java.util.Map">  
+    <select id="getGiftCardTypeCount" resultType="int">  
        SELECT count(*) FROM t_gift_card_type WHERE state=1
     </select>
     <!-- 根据礼品卡类型编号获取礼品卡类型信息 -->  

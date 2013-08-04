@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="${pageContext.request.contextPath}/humanRegister">个人注册</a> <br>
     <a href="${pageContext.request.contextPath}/companyRegister">企业注册</a> <br>
     <a href="${pageContext.request.contextPath}/giftCards">礼品卡礼品卷</a> <br>
+    <a href="${pageContext.request.contextPath}/vipCards">会员卡-更多折扣</a> <br>
     <a href="${pageContext.request.contextPath}/comments">客户留言页</a> <br>
   </body>
 </html>

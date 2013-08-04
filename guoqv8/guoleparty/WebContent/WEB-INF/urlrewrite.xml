@@ -25,6 +25,12 @@
 	</rule>
 	
 	<rule>
+	    <name>会员卡</name>
+	    <from>/vipCards$</from>
+	    <to>/page/vipcard/vipcards.jsp</to>
+	</rule>
+	
+	<rule>
 	    <name>客户留言页</name>
 	    <from>/comments$</from>
 	    <to>/page/comment/comment.jsp</to>

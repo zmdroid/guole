@@ -10,6 +10,7 @@
         <typeAlias type="com.guole.vo.ApplyCompanyInfoVO" alias="applyCompanyInfo"/>
         <typeAlias type="com.guole.vo.GiftCardTypeVO" alias="giftCardType"/>
         <typeAlias type="com.guole.vo.GiftCardVO" alias="giftCardVO"/>
+        <typeAlias type="com.guole.vo.VIPCardVO" alias="vipCardVO"/>
         <typeAlias type="com.guole.vo.BillVO" alias="billVO"/>
         <typeAlias type="com.guole.vo.RechargeVO" alias="rechargeVO"/>
         <typeAlias type="com.guole.vo.MessageVO" alias="messageVO"/>
@@ -20,6 +21,7 @@
     <mappers>  
         <mapper resource="mapper_sqls/user_mapper.xml" />
         <mapper resource="mapper_sqls/giftcard_mapper.xml" />
+        <mapper resource="mapper_sqls/vipcard_mapper.xml" />
         <mapper resource="mapper_sqls/bill_mapper.xml" />
         <mapper resource="mapper_sqls/recharge_mapper.xml" />
         <mapper resource="mapper_sqls/postbox_mapper.xml" />
