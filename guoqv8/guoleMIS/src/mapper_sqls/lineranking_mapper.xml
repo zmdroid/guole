@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.ttsMIS.dao.line.LineRankingDao">
+    <select id="getLineRankingMaxSortNo" resultType="int" parameterType="java.lang.String">  
+       SELECT MAX(sortNo) FROM t_hotline_ranking
+    </select>
+    <!-- 获取榜单信息 -->  
+    <select id="loadLineRanking" resultType="lineVO" parameterType="java.lang.String">  
+       SELECT r.id rankingId,line.id id,line.supplierId,u.name supplierName,u.corname,line.fromplace,line.name,line.busiType,line.lineType,line.propics,
+       line.topic,line.linker,line.linkphone,r.id,r.updateTime,r.sortNo FROM t_line line,
+       t_hotline_ranking r,t_user u WHERE r.lineId = line.id AND u.userId=line.supplierId ORDER BY r.sortNo ${_parameter}
+    </select>
+    <select id="loadLineList" resultType="lineVO" parameterType="java.lang.String">  
+       SELECT line.id id,line.supplierId,u.name supplierName,line.name,line.busiType,line.lineType,line.propics,
+       line.topic,line.linker,line.linkphone FROM t_line line,
+       t_user u WHERE line.state='4' AND u.userId=line.supplierId ${_parameter}
+    </select>
+    <select id="loadFoundationList" resultType="String" parameterType="int">  
+       SELECT DATE_FORMAT(startDate,'%Y-%m-%d')startDate
+       FROM t_line_plan
+       WHERE lineId=#{value}
+    </select>
+     <select id="getLineCount" resultType="int" parameterType="java.lang.String">  
+       SELECT count(*)FROM t_line line,t_user u where line.state='4' AND u.userId=line.supplierId ${_parameter}
+    </select>
+    <!-- 获取榜单记录数 -->  
+    <select id="getRankingCount" resultType="int" parameterType="java.lang.String">  
+       SELECT count(*)FROM t_hotline_ranking
+    </select>
+    <update id="updateLineRankingSortNo" parameterType="int">
+        <![CDATA[
+         UPDATE t_hotline_ranking a,(select sortNo from t_hotline_ranking where id=#{value}) b
+         SET   a.sortNo = a.sortNo-1,a.updateTime=now()
+         WHERE a.sortNo>b.sortNo
+        ]]>
+	</update>
+	<delete id="removeRankingLine" parameterType="int">
+        <![CDATA[
+         DELETE from t_hotline_ranking WHERE id=#{value}
+        ]]>
+	</delete>
+	<update id="updateLineRankingSort" parameterType="java.util.Map">
+        <![CDATA[
+         UPDATE t_hotline_ranking
+         SET   sortNo = sortNo-1,updateTime=now()
+         WHERE sortNo>#{oldSortNo} and sortNo <= #{sortNo} 
+        ]]>
+	</update>
+	<update id="updateRankingSelfSortNo" parameterType="java.util.Map">
+        <![CDATA[
+         UPDATE t_hotline_ranking
+         SET   sortNo = #{sortNo},updateTime=now()
+         WHERE id=#{id}
+        ]]>
+	</update>
+	<update id="updateLineSortNo" parameterType="java.util.Map">
+        <![CDATA[
+         UPDATE t_hotline_ranking
+         SET   sortNo = sortNo+1,updateTime=now()
+         WHERE sortNo < #{oldSortNo} AND sortNo >= #{sortNo}
+        ]]>
+	</update>
+	<select id="isLineExists" resultType="int" parameterType="int">
+        <![CDATA[
+         SELECT count(*)
+		 FROM t_hotline_ranking
+		 WHERE lineId=#{value}
+       ]]>
+	</select>
+	<insert id="addRankingLine" parameterType="int">
+        <![CDATA[
+         INSERT INTO t_hotline_ranking(lineId,sortNo,updateTime)
+         select #{value},IFNULL(max(sortNo),0)+1,now() from t_hotline_ranking
+        ]]>
+	</insert>
+</mapper>

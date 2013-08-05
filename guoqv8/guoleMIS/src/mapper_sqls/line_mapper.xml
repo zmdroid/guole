@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.ttsMIS.dao.line.LineDao">
+    <!-- 查询线路列表 -->  
+    <select id="queryLineList" resultType="lineVO" parameterType="hashmap">  
+    	<![CDATA[
+        SELECT a.*, (select distinct name from t_user b where a.supplierId = b.userId) userName 
+        	FROM t_line a
+        WHERE state = 4 and ${sqlChip}
+        	LIMIT #{start}, #{limit}
+        ]]>  
+    </select>
+    <!-- 查询线路列表大小 -->
+    <select id="queryLineListSize" resultType="int" parameterType="String">  
+        <![CDATA[
+        SELECT count(*) FROM t_line WHERE state = 4 and ${value}
+        ]]>  
+    </select>
+    <!-- 根据线路ID查询线路信息 -->  
+    <select id="queryLineInfoById" resultType="lineVO" parameterType="int">  
+        <![CDATA[
+        SELECT *
+        	FROM t_line 
+        WHERE id = #{value}
+        ]]>  
+    </select>
+    <!-- 根据线路ID和供应商ID的查询线路信息列表 -->  
+    <select id="queryLineInfoByUidAndId" resultType="lineVO" parameterType="hashmap">  
+        <![CDATA[
+        SELECT *
+        	FROM t_line 
+        WHERE id = #{lineId} and supplierId = #{userId}
+        ]]>  
+    </select>
+    <!-- 根据线路状态查询线路列表 -->  
+    <select id="queryLineListByStatus" resultType="lineVO" parameterType="hashmap">  
+        <![CDATA[
+        SELECT * 
+        	FROM t_line 
+        WHERE ${sqlChip}
+        	ORDER BY updateTime DESC 
+        	LIMIT #{start}, #{limit}
+        ]]>  
+    </select>
+    <!-- 查询线路列表大小 -->
+    <select id="queryLineListCountByStatus" resultType="int" parameterType="String">  
+        <![CDATA[
+        SELECT count(*) FROM t_line WHERE ${value}
+        ]]>  
+    </select>
+    <!-- 复制线路 -->
+    <insert id="inserLineForCopy" parameterType="hashmap" useGeneratedKeys="true">
+    	<![CDATA[
+    	INSERT INTO t_line
+    		(
+    			supplierId, name, busiType, lineType, toplace, views, fromplace, toTransport, fromTransport, 
+    			days, nights, travelDocPath, travelDocName, topic, linker, linkphone, productType, features, 
+    			deadline, propics, attention, bookinfo, costinfo, visainfo, extra,routeinfo,state,publishTime, updateTime
+			)
+		SELECT supplierId, name, busiType, lineType, toplace, views, fromplace, toTransport, fromTransport, 
+    			days, nights, travelDocPath, travelDocName, topic, linker, linkphone, productType, features, 
+    			deadline, propics, attention, bookinfo, costinfo, visainfo, extra,routeinfo,5,now(), now() 
+		FROM t_line WHERE id = #{lineId} and supplierId = #{userId}
+    	]]>
+    	<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+       		SELECT LAST_INSERT_ID() as id
+        </selectKey>
+    </insert>
+    <!-- 复制计划 -->
+    <insert id="copyPlan" parameterType="hashmap">
+	    <![CDATA[
+	     INSERT INTO t_line_plan
+			(
+				lineId, startDate, adultprice1, adultprice2, childtprice1, childtprice2, num, state, discounttag, days,discountprice
+			)
+			SELECT 	
+				#{newId},startDate, adultprice1, adultprice2, childtprice1, childtprice2, num, state, discounttag, days,discountprice
+			FROM t_line_plan WHERE lineId = #{lineId}
+	    ]]> 
+    </insert>
+    <!-- 在线商品复制线路 -->
+    <insert id="inserLineForCopyFromPublish" parameterType="lineVO" useGeneratedKeys="true">
+    	<![CDATA[
+    	INSERT INTO t_line
+    		(
+    			supplierId,name,areaType,busiType,toplace,fromplace,
+				toTransport,fromTransport,topic,linker,linkphone,jointype,
+				features,periods,adultprice1,adultprice2,childprice1,childprice2,
+				num,deadline,paylimit,state,recommendinfo,searchtag,tag,discounttag,
+				propics,bookinfo,costinfo,visainfo,extra,days,publishTime, updateTime
+			)
+		VALUES
+			(
+				#{supplierId},#{name},#{areaType},#{busiType},#{toplace},#{fromplace},
+				#{toTransport},#{fromTransport},#{topic},#{linker},#{linkphone},#{jointype},
+				#{features},#{periods},#{adultprice1},#{adultprice2},#{childprice1},#{childprice2},
+				#{num},#{deadline},#{paylimit},#{state},#{recommendinfo},#{searchtag},#{tag},#{discounttag},
+				#{propics},#{bookinfo},#{costinfo},#{visainfo},#{extra},#{days},now(), now()
+			)
+    	]]> 
+    	<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+       		SELECT LAST_INSERT_ID() as id
+        </selectKey>
+    </insert>
+    <!-- 保存线路基本信息 -->
+    <insert id="insertLineBaseInfo" parameterType="lineVO" useGeneratedKeys="true">
+    	<![CDATA[
+    		INSERT INTO t_line
+    			(
+    				id, supplierId, name, busiType, lineType, toplace, views, fromplace, toTransport, fromTransport, 
+    			days, nights, travelDocPath, topic, linker, linkphone, productType, features, deadline, state, propics, 
+    			attention, bookinfo, costinfo, visainfo, extra, publishTime, updateTime
+    			)
+    		VALUES
+    			(
+    				#{id},#{supplierId},#{name},#{busiType},#{lineType},#{toplace},#{views},#{fromplace},#{toTransport},#{fromTransport},
+    				#{days},#{nights},#{travelDocPath},#{topic},#{linker},#{linkphone},#{productType},#{features},#{deadline},#{state},
+    				#{propics},#{attention},#{bookinfo},#{costinfo},#{visainfo},#{extra},#{publishTime},now()
+    			)
+    	]]>
+    	<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+       		SELECT LAST_INSERT_ID() as id
+        </selectKey>
+    </insert>
+    <!-- 更新线路图片 -->
+    <update id="updateLinePics" parameterType="hashmap">
+   		<![CDATA[
+    		UPDATE t_line SET 
+    			propics=#{propics},updateTime=now() 
+    		WHERE supplierId = #{userId} and id = #{lineId}
+    	]]>
+    </update>
+    <!-- 更新线路扩展信息 -->
+    <update id="updateLineMoreInfo" parameterType="lineVO">
+   		<![CDATA[
+    		UPDATE t_line SET 
+    			bookinfo=#{bookinfo},costinfo=#{costinfo},visainfo=#{visainfo},routeinfo=#{routeinfo},extra=#{extra},
+    			travelDocPath=#{travelDocPath},travelDocName=#{travelDocName},updateTime=now()  
+    		WHERE supplierId = #{supplierId} and id = #{id}
+    	]]>
+    </update>
+    <!-- 更新线路状态 -->
+    <update id="updateLineState" parameterType="hashmap">
+   		<![CDATA[
+    		UPDATE t_line SET 
+    			state=#{state},updateTime=now() 
+    		WHERE supplierId = #{userId} and id in(#{lineIds})
+    	]]>
+    </update>
+    <!-- 删除线路 -->
+    <delete id="deleteLines" parameterType="hashmap">
+     	<![CDATA[
+     	DELETE FROM t_line WHERE supplierId = #{userId} and id in (${lineIds}) and state = 5
+     	]]>  
+    </delete>
+    <!-- 更新线路所有信息 -->
+    <update id="updateLineInfo" parameterType="lineVO">
+   		<![CDATA[
+    		UPDATE t_line SET 
+    			name=#{name}, busiType=#{busiType}, lineType=#{lineType}, toplace=#{toplace},fromplace=#{fromplace}, views=#{views}, 
+				toTransport=#{toTransport},fromTransport=#{fromTransport}, days=#{days}, nights=#{nights}, travelDocPath=#{travelDocPath},travelDocName=#{travelDocName}, 
+				topic=#{topic},linker=#{linker},linkphone=#{linkphone}, productType=#{productType}, features=#{features}, deadline=#{deadline}, 
+				state=#{state}, propics=#{propics}, attention=#{attention}, bookinfo=#{bookinfo},costinfo=#{costinfo},visainfo=#{visainfo},extra=#{extra},
+				publishTime=#{publishTime},updateTime=now() ,routeinfo=#{routeinfo}
+    		WHERE supplierId = #{supplierId} and id = #{id} and state != 4
+    	]]>
+    </update>
+    <!-- 查询非上架线路列表 -->  
+    <select id="queryOffShelfLineList" resultType="lineVO" parameterType="hashmap">  
+        <![CDATA[
+        SELECT *,u.name as userName 
+        FROM t_line t 
+		left join t_user u on t.supplierId=u.userId 
+        WHERE ${sqlChip}
+        	ORDER BY updateTime DESC 
+        	LIMIT #{start}, #{limit}
+        ]]>  
+    </select>
+    <!-- 查询下架线路列表大小 -->
+    <select id="queryOffShelfLineListCount" resultType="int" parameterType="String">  
+        <![CDATA[
+        SELECT count(*) FROM t_line t WHERE ${value}
+        ]]>  
+    </select>
+    <!-- 设置线路主图 -->
+    <update id="updateLineFirstPic" parameterType="hashmap">
+   		<![CDATA[
+    		UPDATE t_line SET 
+    			propics=concat(#{pic},replace(propics,#{pic},'')),updateTime=now() 
+    		WHERE supplierId = #{userId} and id = #{lineId} and instr(propics,#{pic}) != 0
+    	]]>
+    </update>
+    <!-- 更具ID集合查询线路信息 -->
+    <select id="queryLineByIds" resultType="lineVO" parameterType="String">  
+        <![CDATA[
+        SELECT a.*,(select distinct name from t_user b where a.supplierId = b.userId) userName FROM t_line a WHERE id in (${value})
+        ]]>  
+    </select>
+    <!-- 手工下架线路 -->
+    <update id="offShelfLine" parameterType="hashmap">
+    	<![CDATA[
+     	UPDATE t_line SET
+     		state = 2,updateTime=now() 
+     	WHERE supplierId = #{userId} and id in (${lineIds}) and state = 4
+     	]]>  
+    </update>
+    
+       <select id="getLineByState" resultType="lineVO" parameterType="int">
+         <![CDATA[
+         	SELECT * FROM  t_line where state=#{state}
+        ]]>  
+    </select>
+    <update id="updateLineStateByLineId" parameterType="int">
+        update t_line set
+        state=1,updateTime=now() 
+        where id=#{lineId} and state=4
+    </update>
+</mapper>

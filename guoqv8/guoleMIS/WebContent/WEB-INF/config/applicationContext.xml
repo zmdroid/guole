@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="   
+          http://www.springframework.org/schema/beans    
+          http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+          http://www.springframework.org/schema/aop    
+          http://www.springframework.org/schema/aop/spring-aop-2.0.xsd   
+          http://www.springframework.org/schema/tx    
+          http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"> 
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/guole?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="username" value="root"/>
+		<property name="password" value="zm12393012998"/>
+		<property name="maxActive" value="15" />
+		<property name="maxIdle" value="10" />
+		<property name="maxWait" value="1000" />
+		<!--removeAbandoned: 是否自动回收超时连接-->  
+		<property name="removeAbandoned" value="true"/>  
+		<!--removeAbandonedTimeout: 超时时间(以秒数为单位)-->  
+		<property name="removeAbandonedTimeout" value="300"/>  
+		<property name="validationQuery">  
+		   <value>SELECT 1</value>  
+		</property>  
+	</bean>
+	
+	<!-- 配置sqlSessionFactory -->  
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+        <property name="configLocation" value="classpath:mybatis_config.xml" />  
+    </bean>
+  
+    <!-- 配置sqlSessionTemplate -->  
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">  
+        <constructor-arg index="0" ref="sqlSessionFactory" />  
+    </bean>  
+  
+    <!-- 配置事务 -->  
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+        <property name="dataSource" ref="dataSource" />  
+    </bean>  
+    <tx:annotation-driven transaction-manager="txManager" />
+    
+    <bean id="ImageUpload" class="com.ttsMIS.action.line.ImageUploadAction" scope="prototype"/>
+    <bean id="fileUpload" class="com.guoleMIS.action.FileUploadAction" scope="prototype"/>
+    <!-- 系统管理 -->
+    <import resource="system_spring.xml"/>
+    <!-- 会员管理配置 -->
+    <import resource="member_spring.xml"/>
+    <!-- 消息管理配置 -->
+    <import resource="notify_spring.xml"/>
+    <!-- 标签管理配置 -->
+    <import resource="tag_spring.xml"/>
+    <!-- 资讯管理配置 -->
+    <import resource="information_spring.xml"/>
+    <!-- 线路配置 -->
+	<import resource="line_spring.xml"/>
+	<!-- 线路推广配置 -->
+	<import resource="lineranking_spring.xml"/>
+	<!--广告管理配置 -->
+	<import resource="advert_spring.xml"/>
+	<!--产品类型配置 -->
+	<import resource="producttype_spring.xml"/>
+</beans>

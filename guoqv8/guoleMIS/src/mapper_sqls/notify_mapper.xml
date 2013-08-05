@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.guoleMIS.dao.member.NotifyDao">
+
+    <!-- 获取消息信息 -->  
+    <select id="loadNotifys" resultType="notify" parameterType="java.lang.String">  
+       SELECT notify.content,notify.type,date_format(notify.publishTime,'%Y-%m-%d %T')  publishTime,CASE notify.fromBy  WHEN '-1'  THEN '系统自动触发' 
+	   ELSE (SELECT t.userName FROM  t_admin  t WHERE  notify.fromBy=t.id)  END fromByName,
+	   (SELECT user.name FROM  t_user  user WHERE  notify.receiver=user.userId)  receiverName
+	   FROM t_notify notify WHERE ${_parameter}
+    </select>
+    <!-- 获取消息信息记录数 -->  
+    <select id="getNotifyInfosCount" resultType="int" parameterType="java.lang.String">  
+       SELECT count(*) FROM t_notify notify WHERE ${_parameter}
+    </select>
+    
+    <!-- 发送消息 -->  
+    <insert id="publishNotify" parameterType="notify">  
+        INSERT INTO t_notify (type,content,fromBy,publishTime,receiver)
+        VALUES(#{type},#{content},#{fromBy},now(),#{receiver})
+    </insert>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.guoleMIS.dao.info.InformationDao">
+
+    <insert id="insertInformation" parameterType="information">
+        INSERT INTO t_travel_info (title, userId, picUrl,content, source, publishTime,type,state) 
+        VALUES (#{title},#{userId},#{picUrl},#{content},#{source},#{publishTime},#{type},#{state})
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+          SELECT LAST_INSERT_ID()  
+        </selectKey>
+    </insert>
+    
+	<select id="getInformationByinfoId" resultType="information" parameterType="int">
+		select * from t_travel_info where id=#{infoId}
+	</select>
+	
+	<update id="updateInformation"  parameterType="information">
+		UPDATE t_travel_info SET title=#{title},picUrl=#{picUrl},content=#{content},source=#{source},publishTime=#{publishTime} WHERE id=#{id};
+	</update>
+
+	<delete id="deleteInformationByinfoId" parameterType="int">
+	    DELETE FROM t_travel_info WHERE id=#{id};
+	</delete>
+	
+	<select id="getInformations" resultType="information" parameterType="java.util.Map">
+		select * from t_travel_info where type=#{type} order by publishTime desc limit #{pageIndex},#{pageSize}
+	</select>
+	
+	<select id="getInformationsCount" resultType="int" parameterType="int">
+		select count(*) from t_travel_info where type=#{type}
+	</select>
+	
+	<update id="updateInformationStateById"  parameterType="java.util.Map">
+	    UPDATE t_travel_info SET state=${state} WHERE id=${id};
+	</update>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.ttsMIS.dao.line.TagDao">
+
+    <!-- 获取标签信息 -->  
+    <select id="loadTags" resultType="tag" parameterType="java.lang.String">  
+       SELECT * FROM t_tag WHERE ${_parameter}
+    </select>
+    <!-- 获取标签信息记录数 -->  
+    <select id="getTagInfosCount" resultType="int" parameterType="java.lang.String">  
+       SELECT count(*) FROM t_tag WHERE ${_parameter}
+    </select>
+    
+    <!-- 根据标签编号获取标签信息 -->  
+    <select id="getTagInfoById" resultType="tag" parameterType="int">  
+       SELECT * FROM t_tag WHERE id=#{value}
+    </select>
+    <!-- 根据标签名称获取标签信息 -->  
+    <select id="getTagInfoByName" resultType="int" parameterType="java.util.Map">  
+       SELECT count(*) FROM t_tag WHERE name = #{name} AND id != #{id}
+    </select>
+    <!-- 添加标签 -->  
+    <insert id="addTag" parameterType="tag">  
+        INSERT INTO t_tag (name, remark, status)
+        VALUES(#{name},#{remark},'1')
+    </insert>
+    <!-- 更新标签信息 -->
+    <update id="modifyTag" parameterType="tag">
+        <![CDATA[
+         UPDATE t_tag 
+		 SET   name=#{name},
+		       remark=#{remark}
+		 WHERE id=#{id}
+        ]]>
+	</update>
+	<!-- 删除标签信息 -->
+    <update id="removeTag" parameterType="int">
+        <![CDATA[
+         UPDATE t_tag 
+		 SET   status=0
+		 WHERE  id=${value}
+        ]]>
+	</update>
+	<!-- 恢复已删除的标签信息 -->
+    <update id="rebackTag" parameterType="int">
+        <![CDATA[
+         UPDATE t_tag 
+		 SET   status=1
+		 WHERE  id=${value}
+        ]]>
+	</update>
+</mapper>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="line" extends="struts-default">
+		<action name="getLineList" method="getLineList" class="com.ttsMIS.action.line.LineAction" />
+		<action name="forwardDetailPage" method="forwardDetailPage" class="com.ttsMIS.action.line.LineAction">
+			<result name="success">/page/product/lineDetail.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="getPersonalLineList" method="getPersonalLineList" class="com.ttsMIS.action.line.LineAction" />
+		<action name="lineOffShelf" method="lineOffShelf" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="lineSelling" method="lineSelling" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="copyLine" method="copyLine" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="forwardManageLineModifyPage" method="forwardManageLineModifyPage" class="com.ttsMIS.action.line.LineAction">
+			<result name="success">/page/product/lineModify.jsp</result>
+			<result name="login">/login</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="forwardManageLineViewPage" method="forwardManageLineViewPage" class="com.ttsMIS.action.line.LineAction">
+			<result name="success">/page/product/lineDetail.jsp</result>
+			<result name="login">/login</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="saveLineBaseInfo" method="saveLineBaseInfo" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="uploadLinePic" class="ImageUpload" method="uploadLinePic">
+		    <interceptor-ref name="fileUpload">
+	           <!-- 配置允许上传的文件类型 -->
+	           <param name="allowedTypes">image/x-png,image/png,image/gif,image/jpeg,image/pjpeg</param>
+	           <!-- 配置允许上传的文件大小 -->
+	           <param name="maximumSize">8388608</param>
+	        </interceptor-ref>
+	        <interceptor-ref name="defaultStack"/>
+		</action>
+		<action name="saveLiePics" method="saveLiePics" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="saveLinePlan" method="saveLinePlan" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="saveLineMoreInfo" method="saveLineMoreInfo" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="deleteLines" method="deleteLines" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="modifyLineInfo" method="modifyLineInfo" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="getOffLineList" method="getOffLineList" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="changeFirstPic" method="changeFirstPic" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="updateLinePlan" method="updateLinePlan" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="terminateLinePlans" method="terminateLinePlans" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="forwardCopyLinePage" method="forwardCopyLinePage" class="com.ttsMIS.action.line.LineAction">
+			<result name="success">/page/product/lineCopy.jsp</result>
+			<result name="login">/login</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="copyLineToPublish" method="copyLineToPublish" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="copyLineToPreselling" method="copyLineToPreselling" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="getLineByIds" method="getLineByIds" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="publishLine" method="publishLine" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="getLineNum" method="getLineNum" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="wordUpload" class="com.ttsMIS.action.FileUploadAction" method="upload">
+		    <interceptor-ref name="fileUpload">
+	           <!-- 配置允许上传的文件类型 -->
+	           <param name="allowedTypes">application/x-zip-compressed,application/octet-stream,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</param>
+	           <!-- 配置允许上传的文件大小 -->
+	           <param name="maximumSize">8388608</param>
+	        </interceptor-ref>
+	        <interceptor-ref name="defaultStack"/>
+		</action>
+		<action name="saveLinePlanBatch" method="saveLinePlanBatch" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="openLinePlans" method="openLinePlans" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="getLineCountByLineType" method="getLineCountByLineType" class="com.ttsMIS.action.line.LineAction"/>
+		<action name="delelePlans" method="delelePlans" class="com.ttsMIS.action.line.LineAction"/>
+	</package>
+</struts>

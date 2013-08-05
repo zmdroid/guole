@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="member" extends="struts-default">
+		<action name="loadMembers" method="loadMembers" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="freezeAccount" method="freezeAccount" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="unFreezeAccount" method="unFreezeAccount" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="transit" method="transit" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="refuse" method="refuse" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="batchTransit" method="batchTransit" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="batchRefuse" method="batchRefuse" class="com.guoleMIS.action.member.MemberInfoAction" />
+		<action name="memberDetail" method="memberDetail" class="com.guoleMIS.action.member.MemberInfoAction">
+			<result name="success">/page/member/memberInfo.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="aduitSinglingMember" method="aduitSinglingMember" class="com.guoleMIS.action.member.MemberInfoAction">
+			<result name="success">/page/member/aduitSinglingMember.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</struts>

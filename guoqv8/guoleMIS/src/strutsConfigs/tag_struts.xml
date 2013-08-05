@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="tag" extends="struts-default">
+		<action name="loadTags" method="loadTags" class="com.ttsMIS.action.line.TagAction" />
+		<action name="loadAllTags" method="loadAllTags" class="com.ttsMIS.action.line.TagAction" />
+		<action name="addTag" method="addTag" class="com.ttsMIS.action.line.TagAction" />
+		<action name="modifyTag" method="modifyTag" class="com.ttsMIS.action.line.TagAction" />
+		<action name="removeTag" method="removeTag" class="com.ttsMIS.action.line.TagAction" />
+		<action name="rebackTag" method="rebackTag" class="com.ttsMIS.action.line.TagAction" />
+		<action name="editTag" method="editTag" class="com.ttsMIS.action.line.TagAction">
+			<result name="success">/page/product/editTag.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</struts>
