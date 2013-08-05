@@ -11,7 +11,7 @@
           http://www.springframework.org/schema/tx/spring-tx-2.0.xsd"> 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/guole?useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/guole?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
 		<property name="username" value="root"/>
 		<property name="password" value="zm12393012998"/>
 		<property name="maxActive" value="15" />
@@ -64,4 +64,6 @@
     <import resource="postbox_spring.xml"/>
     <!-- 问答信息配置 -->  
     <import resource="comment_spring.xml"/>
+    <!-- 团购商品配置 -->  
+    <import resource="groupbuy_spring.xml"/>
 </beans>

@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.guole.action.user.UserInfoAction;
+import com.guole.service.user.UserInfoService;
 import com.guole.service.vip.VIPCardService;
 import com.guole.util.MD5Encrypt;
 import com.guole.util.ResponseUtil;
@@ -20,6 +21,7 @@ public class VIPCardAction extends ActionSupport implements SessionAware {
 	private final static Logger logger = Logger.getLogger(UserInfoAction.class);
 	
 	private VIPCardService vipCardService;
+	private UserInfoService userInfoService;
 	
 	private Map<String ,Object> session ;
 	

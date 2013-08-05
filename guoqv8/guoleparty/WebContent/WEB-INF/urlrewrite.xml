@@ -19,6 +19,17 @@
 	</rule>
 	
 	<rule>
+	    <name>团购</name>
+	    <from>/tuangou$</from>
+	    <to>/page/group/groups.jsp</to>
+	</rule>
+	<rule>
+	    <name>团购详细页</name>
+	    <from>/tuangou/([0-9]+)$</from>
+	    <to>%{context-path}/getGroupbuyById.do?recordNo=$1</to>
+	</rule>
+	
+	<rule>
 	    <name>礼品卡礼品卷</name>
 	    <from>/giftCards$</from>
 	    <to>/page/giftcard/giftcardtype.jsp</to>

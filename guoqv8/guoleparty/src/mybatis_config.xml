@@ -15,6 +15,7 @@
         <typeAlias type="com.guole.vo.RechargeVO" alias="rechargeVO"/>
         <typeAlias type="com.guole.vo.MessageVO" alias="messageVO"/>
         <typeAlias type="com.guole.vo.CommentVO" alias="commentVO"/>
+        <typeAlias type="com.guole.vo.GroupbuyInfoVO" alias="groupbuyInfo"/>
     </typeAliases>
     <!-- 定义映射资源 -->
     
@@ -26,5 +27,6 @@
         <mapper resource="mapper_sqls/recharge_mapper.xml" />
         <mapper resource="mapper_sqls/postbox_mapper.xml" />
         <mapper resource="mapper_sqls/comment_mapper.xml" />
+        <mapper resource="mapper_sqls/groupbuy_mapper.xml" />
     </mappers>
 </configuration>
