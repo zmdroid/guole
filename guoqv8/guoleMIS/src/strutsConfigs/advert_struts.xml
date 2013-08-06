@@ -10,7 +10,7 @@
 		<action name="getAdvertById" method="getAdvertById" class="com.guoleMIS.action.advert.AdvertAction"/>
 		<action name="modifyAdvertState" method="modifyAdvertState" class="com.guoleMIS.action.advert.AdvertAction"/>
 		
-		<action name="uploadAdvertPic" method="uploadAdvertPic" class="com.guoleMIS.action.ImageUploadAction">
+		<action name="uploadAdvertPic" method="uploadTmpPic" class="com.guoleMIS.action.ImageUploadAction">
 		     <interceptor-ref name="fileUpload">
 	           <!-- 配置允许上传的文件类型 -->
 	           <param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/jpeg,image/pjpeg</param>

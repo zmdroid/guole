@@ -28,7 +28,7 @@ public class InitSystemListener implements ServletContextListener{
 		Map<String,Object> properties = new HashMap<String,Object>();
 		/****************1.加载静态配置文件****************/
 		//加载属性文件
-		final ResourceBundle resource = ResourceBundle.getBundle("ttsMIS");
+		final ResourceBundle resource = ResourceBundle.getBundle("guoleMIS");
 	
 		for(Object key:resource.keySet()){
 			properties.put(key+"", resource.getObject(key+""));
@@ -43,9 +43,6 @@ public class InitSystemListener implements ServletContextListener{
 
 		logger.info("System config loaded...");
 		
-		event.getServletContext().setAttribute("wordsPageSize", config.get("words.page.size"));
-		event.getServletContext().setAttribute("dicWordCountPath", config.get("dic.wordCount.path"));
-		event.getServletContext().setAttribute("dicRenewPath", config.get("dic.renew.path"));
 		event.getServletContext().setAttribute("fileUrl", config.getString("resWebRootUrl")+config.getString("fileDir"));
 		event.getServletContext().setAttribute("imgUrl", config.getString("resWebRootUrl")+config.getString("imageDir"));
 		event.getServletContext().setAttribute("fileDir", config.getString("resRootUrl")+config.getString("fileDir"));

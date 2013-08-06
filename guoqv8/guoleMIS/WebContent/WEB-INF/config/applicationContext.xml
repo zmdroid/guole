@@ -43,7 +43,6 @@
     </bean>  
     <tx:annotation-driven transaction-manager="txManager" />
     
-    <bean id="ImageUpload" class="com.ttsMIS.action.line.ImageUploadAction" scope="prototype"/>
     <bean id="fileUpload" class="com.guoleMIS.action.FileUploadAction" scope="prototype"/>
     <!-- 系统管理 -->
     <import resource="system_spring.xml"/>
@@ -51,16 +50,12 @@
     <import resource="member_spring.xml"/>
     <!-- 消息管理配置 -->
     <import resource="notify_spring.xml"/>
-    <!-- 标签管理配置 -->
-    <import resource="tag_spring.xml"/>
     <!-- 资讯管理配置 -->
     <import resource="information_spring.xml"/>
-    <!-- 线路配置 -->
-	<import resource="line_spring.xml"/>
-	<!-- 线路推广配置 -->
-	<import resource="lineranking_spring.xml"/>
 	<!--广告管理配置 -->
 	<import resource="advert_spring.xml"/>
+	<!--礼品卡管理配置 -->
+	<import resource="giftcard_spring.xml"/>
 	<!--产品类型配置 -->
 	<import resource="producttype_spring.xml"/>
 </beans>

@@ -58,9 +58,9 @@
 							<td align="left">
 							  <c:forEach var="item" items="${sessionScope.current_user_info.permission}">   
 								<c:if test="${item.addr eq 'publishNotify.do'}">     
-									<input type="button" class="btn btn-green big" onclick="save();" value="发布">&nbsp;&nbsp;&nbsp;&nbsp;
 								</c:if> 
 							  </c:forEach> 
+									<input type="button" class="btn btn-green big" onclick="save();" value="发布">&nbsp;&nbsp;&nbsp;&nbsp;
 							  <input type="button" class="btn btn-green big" onclick="window.close();" value="取消">
 							</td>
 						</tr>

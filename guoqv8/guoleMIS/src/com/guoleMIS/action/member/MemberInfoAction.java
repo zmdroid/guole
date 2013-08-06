@@ -284,9 +284,6 @@ public class MemberInfoAction extends ActionSupport implements SessionAware{
 	public void transit(){
 		try{
 			memberInfoVO.setState(MemberInfoVO.USER_STATE_2);
-			int days = Integer.parseInt(config.getString("valid.days"));
-			Calendar cal = Calendar.getInstance(); 
-			cal.add(Calendar.DATE, days); 
 			result = (memberInfoService.aduitMember(memberInfoVO) ? "SUCCESS" :"ERROR");
 		} catch (Exception e) {
 			logger.error("审核通过用户信息出错!", e);

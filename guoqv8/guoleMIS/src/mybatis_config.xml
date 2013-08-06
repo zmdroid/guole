@@ -11,11 +11,11 @@
         <typeAlias type="com.guoleMIS.vo.RecruitVO" alias="recruit"/>
         <typeAlias type="com.guoleMIS.vo.MemberInfoVO" alias="member"/>
         <typeAlias type="com.guoleMIS.vo.NotifyVO" alias="notify"/>
-        <typeAlias type="com.guoleMIS.vo.TagVO" alias="tag"/>
         <typeAlias type="com.guoleMIS.vo.InformationVO" alias="information"/>
         <typeAlias type="com.guoleMIS.vo.AdvertVO" alias="advert"/>
-        <typeAlias type="com.guoleMIS.vo.LineVO" alias="lineVO"/>
         <typeAlias type="com.guoleMIS.vo.ProductTypeVO" alias="producttype"/>
+        <typeAlias type="com.guoleMIS.vo.GiftCardTypeVO" alias="giftCardType"/>
+        <typeAlias type="com.guoleMIS.vo.GiftCardVO" alias="giftCard"/>
     </typeAliases>
     <!-- 定义映射资源 --> 
     <mappers>  
@@ -26,9 +26,8 @@
         <mapper resource="mapper_sqls/member_mapper.xml" />
         <mapper resource="mapper_sqls/notify_mapper.xml" />
         <mapper resource="mapper_sqls/information_mapper.xml" />
-        <mapper resource="mapper_sqls/tag_mapper.xml" />
-        <mapper resource="mapper_sqls/line_mapper.xml" />
         <mapper resource="mapper_sqls/advert_mapper.xml" />
+        <mapper resource="mapper_sqls/giftcard_mapper.xml" />
         <mapper resource="mapper_sqls/producttype_mapper.xml" />
     </mappers>
 </configuration>

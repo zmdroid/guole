@@ -55,25 +55,10 @@ public class ImageUploadAction extends ActionSupport implements SessionAware{
 		}
 	}
 	
-	
-	/**
-	 * 上传资讯主图片
-	 */
-	public void uploadInfoPic() {
-		//上传图片
-		String[] imageURI = ImageUtil.upload( imageFile, imageFileFileName, imageFileContentType);
-		String path = "";
-		if (null != imageURI && imageURI.length > 0) {
-			path = imageURI[0];
-			ResponseUtil.sendResult(path.substring(path.lastIndexOf("/") + 1, path.length()));
-		}else{
-			ResponseUtil.sendResult(ERROR);
-		}
-	}
 	/**
 	 * 上传广告主图片
 	 */
-	public void uploadAdvertPic() {
+	public void uploadTmpPic() {
 		//上传图片
 		String[] imageURI = ImageUtil.upload( imageFile, imageFileFileName, imageFileContentType);
 		String path = "";
@@ -84,7 +69,7 @@ public class ImageUploadAction extends ActionSupport implements SessionAware{
 			ResponseUtil.sendResult(ERROR);
 		}
 	}
-
+	
 	public File getImageFile() {
 		return imageFile;
 	}

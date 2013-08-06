@@ -10,7 +10,7 @@
 		<action name="getInformationById" method="getInformationById" class="com.guoleMIS.action.info.InformationAction"/>
 		<action name="modifyInformationState" method="modifyInformationState" class="com.guoleMIS.action.info.InformationAction"/>
 		
-		<action name="uploadInfoPic" method="uploadInfoPic" class="com.guoleMIS.action.ImageUploadAction">
+		<action name="uploadInfoPic" method="uploadTmpPic" class="com.guoleMIS.action.ImageUploadAction">
 		     <interceptor-ref name="fileUpload">
 	           <!-- 配置允许上传的文件类型 -->
 	           <param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/jpeg,image/pjpeg</param>

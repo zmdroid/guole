@@ -78,15 +78,7 @@
     <update id="aduitMember" parameterType="member">
         <![CDATA[
          UPDATE t_user 
-		 SET   state=#{state},enableTime=#{enableTime},cutoffTime=#{cutoffTime}
-		 WHERE userId=#{userId}
-        ]]>
-	</update>
-	 <!-- 审核签约会员信息 -->
-    <update id="aduitAndModCutoffTime" parameterType="member">
-        <![CDATA[
-         UPDATE t_user 
-		 SET   state=2,enableTime=#{enableTime},cutoffTime=#{cutoffTime}
+		 SET   state=#{state}
 		 WHERE userId=#{userId}
         ]]>
 	</update>
@@ -102,8 +94,8 @@
     <update id="cutoffAccount" parameterType="String">
         <![CDATA[
          UPDATE t_user 
-		 SET   state='4'
-		 WHERE cutoffTime IS NOT NULL AND state!='4' AND LEFT(cutoffTime,10) = LEFT(now(),10)
+		 SET   state=4
+		 WHERE cutoffTime IS NOT NULL AND state!=4 AND LEFT(cutoffTime,10) = LEFT(now(),10)
         ]]>
 	</update>
 </mapper>

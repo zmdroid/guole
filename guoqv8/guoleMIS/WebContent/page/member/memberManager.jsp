@@ -182,9 +182,6 @@ function loadItems(){
 										if(item.state == '1' || item.state == '2'){
 										   html += '|&nbsp;&nbsp;<a href="javascript:refuse('+item.userId+');">审核拒绝</a>&nbsp;&nbsp;';
 										}
-										 if(item.state == '1' || item.state == '3'){
-										   html += '|&nbsp;&nbsp;<a href="javascript:aduitMemberInfo('+item.userId+');">签约审核</a>&nbsp;&nbsp;';
-										 }
 										if(item.state == '1' || item.state == '2' || item.state == '3'){
 										   html += '|&nbsp;&nbsp;<a href="javascript:freeze('+item.userId+');">冻结</a>&nbsp;&nbsp;';
 										}
@@ -211,9 +208,6 @@ function loadItems(){
 			     }
 		  });
  }
-function aduitMemberInfo(userId){
-	window.open("${pageContext.request.contextPath}/aduitSinglingMember.do?userId="+userId);
-}
 function allChk(obj){
 	 var chks = document.getElementsByName("chk");
 	 if(!chks || chks.length == 0){

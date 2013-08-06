@@ -55,6 +55,7 @@ function convertWithdrawingState(state){
  * @returns {String}
  */
 function convertDate(dateJSON){
+	if(null==dateJSON)return;
 	var hour = (dateJSON.hours+'').length<2?('0'+dateJSON.hours):dateJSON.hours;
 	var min = (dateJSON.minutes+'').length<2?('0'+dateJSON.minutes):dateJSON.minutes;
 	var month = dateJSON.month + 1;
@@ -134,6 +135,17 @@ function getZhaopinState(state) {
 }
 //获取广告状态
 function getAdvertState(state) {
+	state = parseInt(state);
+	switch(state) {
+	case 1:
+		return "正常";
+	case 2:
+		return "下架";
+	}
+}
+
+//获取礼品卡类型状态
+function getGiftCardTypeState(state) {
 	state = parseInt(state);
 	switch(state) {
 	case 1:

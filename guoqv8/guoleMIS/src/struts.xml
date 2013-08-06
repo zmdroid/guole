@@ -15,13 +15,8 @@
 	<include file="strutsConfigs/zhaopin_struts.xml"></include>
 	<include file="strutsConfigs/member_struts.xml"></include>
 	<include file="strutsConfigs/notify_struts.xml"></include>
-	<include file="strutsConfigs/tag_struts.xml"></include>
 	<include file="strutsConfigs/information_struts.xml"></include>
-	<include file="strutsConfigs/line_struts.xml"></include>
-	<include file="strutsConfigs/lineranking_struts.xml"></include>
-	<include file="strutsConfigs/words_struts.xml"></include>
-	<include file="strutsConfigs/place_struts.xml"></include>
-	<include file="strutsConfigs/dic_struts.xml"></include>
 	<include file="strutsConfigs/advert_struts.xml"></include>
+	<include file="strutsConfigs/giftcard_struts.xml"></include>
 	<include file="strutsConfigs/producttype_struts.xml"></include>
 </struts>

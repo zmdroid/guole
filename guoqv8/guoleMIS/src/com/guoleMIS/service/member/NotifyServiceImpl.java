@@ -53,7 +53,7 @@ public class NotifyServiceImpl extends BaseServiceImpl<Serializable> implements 
 		NotifyVO notifyVO;
 		String[] receiverArray = receivers.split(",");
 		int size = receiverArray.length;
-		Jedis jedis = this.getJedis();
+//		Jedis jedis = this.getJedis();
 		for(int index = 0; index < size; index++ ){
 			notifyVO = new NotifyVO();
 			notifyVO.setContent(content);
@@ -65,7 +65,7 @@ public class NotifyServiceImpl extends BaseServiceImpl<Serializable> implements 
 				break;
 			}else{
 				//更新未读消息计数
-				jedis.incr(String.format(Consts.POSTBOX_UNREAD_FORMAT,notifyVO.getReceiver()));
+				//jedis.incr(String.format(Consts.POSTBOX_UNREAD_FORMAT,notifyVO.getReceiver()));
 			}
 		}
 		return success;

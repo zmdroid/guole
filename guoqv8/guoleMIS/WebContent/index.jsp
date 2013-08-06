@@ -33,26 +33,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="IndexBox">
 				<dl class="Line">
 					<dt>产品管理</dt>
-					<dd><a href="${pageContext.request.contextPath}/page/product/lineOnline.jsp">线路库</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/product/lineManager.jsp">线路管理</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/product/lineRankingManager.jsp">线路推广</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/product/tag.jsp">标签管理</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/product/words.jsp">线路搜索关键字库</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/product/dic.jsp">分词器字典</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/product/place.jsp">目的地管理</a></dd>
+					<dd><a href="#">线路库</a></dd>
+					<dd><a href="#">线路管理</a></dd>
+					<dd><a href="#">线路推广</a></dd>
+					<dd><a href="#">标签管理</a></dd>
 				</dl>				
 				<dl class="System">
 					<dt>系统管理</dt>
-					<dd><a href="${pageContext.request.contextPath}/page/system/permission.jsp">资源管理</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/system/role.jsp">角色管理</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/system/manager.jsp">用户管理</a></dd>
+					<dd><a href="#">资源管理</a></dd>
+					<dd><a href="#">角色管理</a></dd>
+					<dd><a href="#">用户管理</a></dd>
 				</dl>				
 				<dl class="Member">
 					<dt>会员管理</dt>
-					<dd><a href="${pageContext.request.contextPath}/page/member/memberManager.jsp">会员信息管理</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/member/supplyRankingManager.jsp">供应商榜单</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/member/notifyManager.jsp">消息管理</a></dd>
-					<dd><a href="${pageContext.request.contextPath}/page/member/typeManager.jsp">产品类型</a></dd>
+					<dd><a href="#">会员信息管理</a></dd>
+					<dd><a href="#">供应商榜单</a></dd>
+					<dd><a href="#">消息管理</a></dd>
+					<dd><a href="#">产品类型</a></dd>
 				</dl>				
 			</div>
 		</div>

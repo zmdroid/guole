@@ -20,26 +20,6 @@
 					</c:if>
 						<a href="javascript:;">商品管理</a>
 					<ul>
-						<c:if test="${not empty current_user_permission['lineFB.jsp'] }">
-						</c:if>
-							<li><a href="${pageContext.request.contextPath}/page/product/lineFB.jsp">线路副本管理</a></li>
-						<c:if test="${not empty current_user_permission['lineOnline.jsp'] }">
-						</c:if>
-							<li><a href="${pageContext.request.contextPath}/page/product/lineOnline.jsp">线路库</a></li>
-						<c:if test="${not empty current_user_permission['lineManager.jsp'] }">
-						</c:if>
-							<li><a href="${pageContext.request.contextPath}/page/product/lineManager.jsp">线路管理</a></li>
-						<c:if test="${not empty current_user_permission['lineRankingManager.jsp'] }">
-						</c:if>
-							<li><a href="${pageContext.request.contextPath}/page/product/lineRankingManager.jsp">线路推广</a></li>
-						<c:if test="${not empty current_user_permission['tag.jsp'] }">
-						</c:if>
-							<li><a href="${pageContext.request.contextPath}/page/product/tag.jsp">标签管理</a></li>
-						<li><a href="${pageContext.request.contextPath}/page/product/words.jsp">线路搜索关键字库</a></li>
-						<li><a href="${pageContext.request.contextPath}/page/product/dic.jsp">分词器字典</a></li>
-						<c:if test="${not empty current_user_permission['place.jsp']}">
-						</c:if>
-							<li><a href="${pageContext.request.contextPath}/page/product/place.jsp">目的地管理</a></li>
 					</ul>
 				</li>
 				<li ${(param.type == "memberManager" || param.type == "supplyRankingManager" || param.type == "notifyManager") ? "class='current'" : ""}>
@@ -60,10 +40,29 @@
 					</ul>
 				</li>	
 				<li>
-					<a href="${pageContext.request.contextPath}/page/zhaopin/zhaopinlist.jsp">秒杀管理</a>
-				</li>	
+					<a href="javascript:;">团购秒杀管理</a>
+					<ul>
+						<li>
+							<a href="${pageContext.request.contextPath}/page/zhaopin/zhaopinlist.jsp">秒杀管理</a>
+						</li>
+						<li>
+							<a href="${pageContext.request.contextPath}/page/information/informationlist.jsp">团购管理</a>
+						</li>
+					</ul>
+				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/page/information/informationlist.jsp">团购管理</a>
+					<a href="javascript:;">礼品卡会员卡管理</a>
+					<ul>
+						<li>
+							<a href="${pageContext.request.contextPath}/page/card/giftcardtypelist.jsp">礼品卡类型</a>
+						</li>
+						<li>
+							<a href="${pageContext.request.contextPath}/page/card/giftcardlist.jsp">礼品卡</a>
+						</li>
+						<li>
+							<a href="${pageContext.request.contextPath}/page/card/vipcardlist.jsp">会员卡</a>
+						</li>
+					</ul>
 				</li>	
 				<li>
 					<a href="${pageContext.request.contextPath}/page/annou/announcement.jsp">公告管理</a>

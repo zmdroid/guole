@@ -7,7 +7,7 @@
 
     <!-- 获取消息信息 -->  
     <select id="loadNotifys" resultType="notify" parameterType="java.lang.String">  
-       SELECT notify.content,notify.type,date_format(notify.publishTime,'%Y-%m-%d %T')  publishTime,CASE notify.fromBy  WHEN '-1'  THEN '系统自动触发' 
+       SELECT notify.content,notify.type,date_format(notify.publishTime,'%Y-%m-%d %T')  publishTime,CASE notify.fromBy  WHEN '-1'  THEN '系统手动触发' 
 	   ELSE (SELECT t.userName FROM  t_admin  t WHERE  notify.fromBy=t.id)  END fromByName,
 	   (SELECT user.name FROM  t_user  user WHERE  notify.receiver=user.userId)  receiverName
 	   FROM t_notify notify WHERE ${_parameter}

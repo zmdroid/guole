@@ -56,11 +56,11 @@
 							</td>
 							<c:forEach var="item" items="${sessionScope.current_user_info.permission}">   
 								<c:if test="${item.addr eq 'publishNotify.jsp'}">     
+								</c:if> 
+							</c:forEach> 
 									<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									  <input type="button" class="btn btn-green big" onclick="publishNotify();" value="发布">
 									</td> 
-								</c:if> 
-							</c:forEach> 
 						</tr>
 					</table>
 				  </form>
