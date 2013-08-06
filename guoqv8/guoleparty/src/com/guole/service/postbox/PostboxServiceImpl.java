@@ -20,9 +20,9 @@ public class PostboxServiceImpl extends BaseServiceImpl<Serializable> implements
 	private PostboxDao postboxDao;
 	
 	private Config conf = Config.getInstance();
-	
 	@Override
 	public void addMessage(MessageVO message) {
+		
 		Jedis jedis = null;
 		try {
 			int rs = postboxDao.insertMessage(message);
