@@ -113,7 +113,6 @@ public class GiftCardServiceImpl implements GiftCardService {
 	 * @param pics
 	 */
 	private void renameInfoPics(String pics,String name) {
-		System.out.println("-----------------3"+name);
 		String lineResPath = config.getString("resRootUrl")+config.getString("imageDir")+config.getString("giftDir")+"/";
 		File ddFile = new File(lineResPath);
 		if(!ddFile.exists()){
@@ -126,10 +125,8 @@ public class GiftCardServiceImpl implements GiftCardService {
 		for (String pic : imgs){
 			sFile = new File(tmpPath + "/" + pic);
 			dFile = new File(lineResPath + "/" + name+".jpg");
-			System.out.println("-----------------4"+dFile.getAbsolutePath());
 			if (sFile.exists()) {
 				sFile.renameTo(dFile);
-				System.out.println("-----------------5"+sFile.getAbsolutePath());
 				thumbPic(dFile.getName());
 			}
 		}

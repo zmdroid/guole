@@ -46,7 +46,7 @@
 							<a href="${pageContext.request.contextPath}/page/zhaopin/zhaopinlist.jsp">秒杀管理</a>
 						</li>
 						<li>
-							<a href="${pageContext.request.contextPath}/page/information/informationlist.jsp">团购管理</a>
+							<a href="${pageContext.request.contextPath}/page/tuan/tuanlist.jsp">团购管理</a>
 						</li>
 					</ul>
 				</li>
@@ -69,6 +69,9 @@
 				</li>	
 				<li>
 					<a href="${pageContext.request.contextPath}/page/advert/advertlist.jsp">广告管理</a>
+				</li>	
+				<li>
+					<a href="${pageContext.request.contextPath}/page/comment/commentManager.jsp">留言管理</a>
 				</li>	
 				<li>
 						<c:if test="${not empty current_user_permission['/XT'] }">

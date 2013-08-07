@@ -16,6 +16,8 @@
         <typeAlias type="com.guoleMIS.vo.ProductTypeVO" alias="producttype"/>
         <typeAlias type="com.guoleMIS.vo.GiftCardTypeVO" alias="giftCardType"/>
         <typeAlias type="com.guoleMIS.vo.GiftCardVO" alias="giftCard"/>
+        <typeAlias type="com.guoleMIS.vo.GroupbuyInfoVO" alias="groupbuyInfo"/>
+        <typeAlias type="com.guoleMIS.vo.CommentVO" alias="commentVO"/>
     </typeAliases>
     <!-- 定义映射资源 --> 
     <mappers>  
@@ -29,5 +31,7 @@
         <mapper resource="mapper_sqls/advert_mapper.xml" />
         <mapper resource="mapper_sqls/giftcard_mapper.xml" />
         <mapper resource="mapper_sqls/producttype_mapper.xml" />
+         <mapper resource="mapper_sqls/groupbuy_mapper.xml" />
+         <mapper resource="mapper_sqls/comment_mapper.xml" />
     </mappers>
 </configuration>
