@@ -61,4 +61,6 @@
 	<import resource="groupbuy_spring.xml"/>
 	<!--用户留言配置 -->
 	<import resource="comment_spring.xml"/>
+	<!--账户信息配置 -->
+	<import resource="finance_spring.xml"/>
 </beans>

@@ -43,6 +43,9 @@ public class InitSystemListener implements ServletContextListener{
 
 		logger.info("System config loaded...");
 		
+		event.getServletContext().setAttribute("rechargePageSize", config.get("recharge.list.page.size"));
+		event.getServletContext().setAttribute("rechargeStateDo", config.get("recharge.state.do"));
+		
 		event.getServletContext().setAttribute("fileUrl", config.getString("resWebRootUrl")+config.getString("fileDir"));
 		event.getServletContext().setAttribute("imgUrl", config.getString("resWebRootUrl")+config.getString("imageDir"));
 		event.getServletContext().setAttribute("fileDir", config.getString("resRootUrl")+config.getString("fileDir"));

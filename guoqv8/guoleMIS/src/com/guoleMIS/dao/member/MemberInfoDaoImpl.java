@@ -1,9 +1,11 @@
 package com.guoleMIS.dao.member;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.guoleMIS.dao.base.BaseDaoImpl;
+import com.guoleMIS.vo.MemberAccountVO;
 import com.guoleMIS.vo.MemberInfoVO;
 
 public class MemberInfoDaoImpl extends BaseDaoImpl implements MemberInfoDao {
@@ -118,5 +120,43 @@ public class MemberInfoDaoImpl extends BaseDaoImpl implements MemberInfoDao {
 	public void cutoffAccount() {
 	    sqlSessionTemplate.update("cutoffAccount",null);
 	}
+
+	@Override
+	public List<MemberInfoVO> loadCompanyApplys(String conditions) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getCompanyApplysCount(String conditions) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public MemberAccountVO getMemberAccountByUserId(int userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double getUserAccountBalanceTotal() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean modifyUserBalance(HashMap<String, Object> param)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public double queUserBalance(int userId) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 
 }

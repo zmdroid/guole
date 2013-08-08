@@ -22,4 +22,11 @@
 	    <function-class>com.qingning.tag.Function</function-class>  
 	    <function-signature>java.lang.String getConfig(java.lang.String)</function-signature>  
 	  </function>
+	  
+	  <function>  
+	  <name>convert</name>  
+	    <!--这里最为重要，指定类所在位置，以及类方法的一些重要信息-->  
+	    <function-class>com.guoleMIS.util.Fn</function-class>  
+	    <function-signature>java.lang.String  convert(java.lang.Object)</function-signature>  
+	  </function>  
 </taglib>

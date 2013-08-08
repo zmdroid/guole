@@ -21,4 +21,5 @@
 	<include file="strutsConfigs/producttype_struts.xml"></include>
 	<include file="strutsConfigs/groupbuy_struts.xml"></include>
 	<include file="strutsConfigs/comment_struts.xml"></include>
+	<include file="strutsConfigs/finance_struts.xml"></include>
 </struts>

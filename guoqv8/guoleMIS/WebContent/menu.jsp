@@ -22,6 +22,17 @@
 					<ul>
 					</ul>
 				</li>
+				<li ${(param.type == "recharge" || param.type == "withDrawing" || param.type == "accountDetail") ? "class='current'" : ""}>
+						<c:if test="${not empty current_user_permission['/CW'] }">
+						</c:if>
+						<a href="javascript:;">财务管理</a>
+					<ul>
+								<li><a href="${pageContext.request.contextPath}/page/finance/recharge.jsp">充值管理</a></li>
+								<li><a href="${pageContext.request.contextPath}/page/finance/refund.jsp">退款管理</a></li>
+								<li><a href="${pageContext.request.contextPath}/page/finance/accountDetail.jsp">账户明细</a></li>
+								<li><a href="${pageContext.request.contextPath}/page/finance/platformaccount.jsp">平台账务</a></li>
+					</ul>
+				</li>
 				<li ${(param.type == "memberManager" || param.type == "supplyRankingManager" || param.type == "notifyManager") ? "class='current'" : ""}>
 						<c:if test="${not empty current_user_permission['/HY'] }">
 						</c:if>

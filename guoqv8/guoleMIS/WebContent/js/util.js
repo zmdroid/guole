@@ -19,8 +19,8 @@ function convertTradeType(num){
 function convertTradeChannel(num){
 	switch(num){
 		case 1:return '支付宝';
-		case 2:return '线下';
-		case 3:return '支票';
+		case 2:return '线下汇款';
+		case 3:return '银行转账';
 		case 4:return '平台内';
 	}
 }
@@ -39,13 +39,9 @@ function convertBillType(num){
 
 function convertWithdrawingState(state){
 	switch(state){
-		case '0':return '申请';
-		case '1':return '出纳拒绝';
-		case '2':return '出纳通过';
-		case '3':return '会计拒绝';
-		case '4':return '会计通过';
-		case '9':return '成功';
-		case 'D':return '取消';
+		case 0:return '申请';
+		case 1:return '通过';
+		case 2:return '拒绝';
 	}
 }
 

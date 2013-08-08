@@ -1,5 +1,6 @@
 package com.guoleMIS.dao.member;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.springframework.transaction.annotation.Propagation;
@@ -7,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.guoleMIS.dao.member.MemberInfoDao;
 import com.guoleMIS.vo.MemberInfoVO;
+import com.guoleMIS.vo.MemberAccountVO;
 
 /**
  * 会员信息持久层接口
@@ -164,5 +166,46 @@ public interface MemberInfoDao {
      * @return 
      */
 	public void cutoffAccount();
+	
+	
+    /**
+     * 获取企业申请信息列表
+     * @param filter 查询条件
+     * @return 
+     */
+    public List<MemberInfoVO> loadCompanyApplys(String conditions);
     
+    /**
+     * 获取企业申请信息记录数
+     * @param filter 查询条件
+     * @return 
+     */
+    public int getCompanyApplysCount(String conditions);
+    
+	/**
+     * 根据会员编号获取会员虚拟账户
+     * @param userId 用户编号
+     * @return
+     */
+    public MemberAccountVO getMemberAccountByUserId(int userId);
+    
+    public double getUserAccountBalanceTotal();
+    
+	/**
+	 * 更新用户的账户余额
+	 * @param userId,balance
+	 * @return boolean
+	 * @throws Exception
+	 */
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
+	public boolean modifyUserBalance(HashMap<String, Object> param) throws Exception;
+	
+	/**
+	 * 获取用户的账户余额
+	 * @param userId,balance
+	 * @return boolean
+	 * @throws Exception
+	 */
+	@Transactional(rollbackFor={Exception.class},propagation = Propagation.MANDATORY)
+	public double queUserBalance(int userId) throws Exception;
 }

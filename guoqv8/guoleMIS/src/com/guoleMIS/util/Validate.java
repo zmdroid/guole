@@ -38,15 +38,7 @@ public class Validate {
     * @return
     */
    public static boolean isNumber(String numStr) {
-	   if (null == numStr) return false;
 	   Pattern pattern = Pattern.compile("[0-9]*"); 
 	   return pattern.matcher(numStr).matches();   
-   }
-   
-   /**
-    * 是否含有中文（也包含日文和韩文）
-    */
-   public static boolean isChineseChar(String str){     
-       return str.replaceAll("\\w", "").matches("^[\u4E00-\u9FA5\uF900-\uFA2D]+$");
    }
 }

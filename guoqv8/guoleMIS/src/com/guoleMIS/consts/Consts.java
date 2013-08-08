@@ -26,40 +26,38 @@ public class Consts {
 	
 	
 	/**
-	 * 线路状态 - 过期下架
+	 * 充值单状态
+	 * 申请
+	 * 通过
+	 * 拒绝
+	 * 
 	 */
-	public static final String LINE_STATE_EXPIRE = "1";
-	/**
-	 * 线路状态 - 手动下架
-	 */
-	public static final String LINE_STATE_ARTIFICIAL = "2";
-	/**
-	 * 线路状态 - 违规下架
-	 */
-	public static final String LINE_STATE_INFRINGE = "3";
-	/**
-	 * 线路状态 - 在售
-	 */
-	public static final String LINE_STATE_SELLING = "4";
-	/**
-	 * 线路状态 - 待售
-	 */
-	public static final String LINE_STATE_PRESELL = "5";
-	/**
-	 * 线路状态 - 审核不通过
-	 */
-	public static final String LINE_STATE_REFUSE = "6";
+	public static final int RECHARGEVO_STATE_APPLY=0;
+	public static final int RECHARGEVO_STATE_SUCCESS=1;
+	public static final int RECHARGEVO_STATE_FAILS=2;
+	
 	
 	/**
-	 * 线路类型 - 跟团游
+	 * 账单流水交易类型
 	 */
-	public static final String LINE_TYPE_GROUP = "1";
+	public static final int BILL_TRADETYPE_RECHARGE = 1;
+	public static final int BILL_TRADETYPE_LINE = 2;
+	public static final int BILL_TRADETYPE_REFUND = 3;
 	/**
-	 * 线路类型 - 自由行
+	 * 流水类型
+	 * 收入
+	 * 支出
 	 */
-	public static final String LINE_TYPE_FREE = "2";
+	public static final char BILL_TYPE_INCOME = 1;
+	public static final char BILL_TYPE_PAY = 2;
+	
 	/**
-	 * 线路类型 - 地接
+	 * 前台
 	 */
-	public static final String LINE_TYPE_NATIVE = "3";
+	public static final int PLATFORM_TPM = 1;
+	
+	/**
+	 * 后台
+	 */
+	public static final int PLATFORM_OPERATOR = 1;
 }
