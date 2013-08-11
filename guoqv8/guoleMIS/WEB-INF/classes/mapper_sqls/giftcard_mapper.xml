@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.guoleMIS.dao.gift.GiftCardDao">
+	<!-- 礼品卡分类 -->
+    <insert id="insertGiftCardType" parameterType="giftCardType">
+        INSERT INTO t_gift_card_type (name, money, state,remark, img) 
+        VALUES (#{name},#{money},#{state},#{remark},#{img})
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+          SELECT LAST_INSERT_ID()  
+        </selectKey>
+    </insert>
+    
+    <update id="updateGiftCardType"  parameterType="giftCardType">
+		UPDATE t_gift_card_type SET name=#{name},money=#{money},state=#{state},remark=#{remark},img=#{img} WHERE id=#{id};
+	</update>
+	
+    <select id="getGiftCardTypes" resultType="giftCardType" parameterType="java.util.Map">
+        select * from t_gift_card_type where 1=1 order by id desc limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getGiftCardTypesCount" resultType="int">
+        select count(*) from t_gift_card_type
+    </select>
+    
+    <select id="qurGifyCardTypeById" resultType="giftCardType" parameterType="int">
+        select * from t_gift_card_type where id=#{id}
+    </select>
+    
+    <delete id="delGiftCardTypeById" parameterType="int">
+        delete from t_gift_card_type where id=#{id}
+    </delete>
+    
+    <update id="modifyGiftCardTypeStateById" parameterType="java.util.Map">
+        update t_gift_card_type set state=#{state} where id=#{id}
+    </update>
+	<!-- 礼品卡分类 end-->
+    
+    <!--                  礼品卡                       -->
+    <insert id="insertGiftCard" parameterType="giftCard">
+        INSERT INTO t_gift_card (cardType, cardNum, pwd,state, remark, createTime) 
+        VALUES (#{cardType},#{cardNum},#{pwd},#{state},#{remark},#{createTime})
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+          SELECT LAST_INSERT_ID()  
+        </selectKey>
+    </insert>
+    
+    <update id="updateGiftCard"  parameterType="giftCard">
+		UPDATE t_gift_card SET cardType=#{cardType},cardNum=#{cardNum},pwd=#{pwd},state=#{state},remark=#{remark},createTime=#{createTime},useTime=#{useTime} WHERE id=#{id};
+	</update>
+	
+    <select id="getGiftCards" resultType="giftCard" parameterType="java.util.Map">
+        select card.*,type.img typeImg,type.name typeName from t_gift_card card left join t_gift_card_type type on type.id=card.cardType  where 1=1 order by id desc limit #{pageIndex},#{pageSize}
+    </select>
+    <select id="getGiftCardsCount" resultType="int">
+        select count(*) from t_gift_card
+    </select>
+    
+    <select id="qurGifyCardById" resultType="giftCard" parameterType="int">
+        select * from t_gift_card where id=#{id}
+    </select>
+    
+    <delete id="delGiftCardById" parameterType="int">
+        delete from t_gift_card where id=#{id}
+    </delete>
+    
+    <update id="modifyGiftCardStateById" parameterType="java.util.Map">
+        update t_gift_card set state=#{state} where id=#{id}
+    </update>
+    <!-- 礼品卡end -->
+</mapper>

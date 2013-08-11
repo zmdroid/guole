@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.ttsMIS.dao.producttype.ProductTypeDao">
+
+    <insert id="insertProductType" parameterType="producttype">
+        INSERT INTO t_product_type (pType, typeName, remark,state) 
+        VALUES (#{ptype},#{typeName},#{remark},#{state})
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+          SELECT LAST_INSERT_ID()  
+        </selectKey>
+    </insert>
+    
+	<select id="getProductTypeById" resultType="producttype" parameterType="int">
+		select * from t_product_type where id=#{infoId}
+	</select>
+	
+	<update id="updateProductType"  parameterType="producttype">
+		UPDATE t_product_type SET pType=#{ptype},typeName=#{typeName},remark=#{remark},state=#{state} WHERE id=#{id};
+	</update>
+
+	<delete id="deleteProductTypeById" parameterType="int">
+	    DELETE FROM t_product_type WHERE id=#{id};
+	</delete>
+	
+	<select id="getProductTypes" resultType="producttype" parameterType="java.util.Map">
+		SELECT * FROM t_product_type 
+		<where>
+		    <if test="seachkey!=null">
+		        and typeName  like CONCAT(CONCAT('%',#{seachkey}),'%')
+		    </if>
+		    <if test="ptype!=null">
+		        and ptype=#{ptype}
+		    </if>
+		     <if test="state>=0">
+		        and state=#{state}
+		    </if>
+		</where>
+		order by id desc limit #{pageIndex},#{pageSize};
+	</select>
+	
+	<select id="getProductTypesCount" resultType="int" parameterType="java.util.Map">
+		select count(*) from t_product_type
+		<where>
+		    1=1
+		    <if test="seachkey!=null">
+		        and typeName  like CONCAT(CONCAT('%',#{seachkey}),'%')
+		    </if>
+		    <if test="ptype!=null">
+		        and ptype=#{ptype}
+		    </if>
+		    <if test="state>=0">
+		        and state=#{state}
+		    </if>
+		</where>
+	</select>
+	
+	<update id="updateProductTypeStateById"  parameterType="java.util.Map">
+	    UPDATE t_product_type SET state=${state} WHERE id=${id};
+	</update>
+	<select id="getProductTypeList" resultType="java.util.Map">  
+       SELECT * FROM t_product_type WHERE state=1
+    </select>
+</mapper>

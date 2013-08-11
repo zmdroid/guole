@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.guoleMIS.dao.advert.AdvertDao">
+
+    <insert id="insertAdvert" parameterType="advert">
+        INSERT INTO t_ad (adTitle, adPic, adRemark,pages, state, linkUrl) 
+        VALUES (#{adTitle},#{adPic},#{adRemark},#{pages},#{state},#{linkUrl})
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+          SELECT LAST_INSERT_ID()  
+        </selectKey>
+    </insert>
+    
+	<select id="getAdvertById" resultType="advert" parameterType="int">
+		select * from t_ad where id=#{infoId}
+	</select>
+	
+	<update id="updateAdvert"  parameterType="advert">
+		UPDATE t_ad SET adTitle=#{adTitle},adPic=#{adPic},adRemark=#{adRemark},pages=#{pages},state=#{state},linkUrl=#{linkUrl} WHERE id=#{id};
+	</update>
+
+	<delete id="deleteAdvertById" parameterType="int">
+	    DELETE FROM t_ad WHERE id=#{id};
+	</delete>
+	
+	<select id="getAdverts" resultType="advert" parameterType="java.lang.String">
+		select a.* from t_ad a where #{_paramter}
+	</select>
+	
+	<select id="getAdvertsCount" resultType="int" parameterType="java.lang.String">
+		select count(*) from t_ad a
+		where ${_parameter}	1=1    
+	</select>
+	
+	<update id="updateAdvertStateById"  parameterType="java.util.Map">
+	    UPDATE t_ad SET state=${state} WHERE id=${id};
+	</update>
+	
+</mapper>

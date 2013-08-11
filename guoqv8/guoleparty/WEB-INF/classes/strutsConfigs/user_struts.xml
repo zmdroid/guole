@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="user" extends="struts-default">
+		<action name="login" method="login" class="com.guole.action.user.UserInfoAction" />
+		<action name="register" method="register" class="com.guole.action.user.UserInfoAction" />
+		<action name="loginOut" method="loginOut" class="com.guole.action.user.UserInfoAction">
+		    <result name="success">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="modifyUserInfo" method="modifyUserInfo" class="com.guole.action.user.UserInfoAction" />
+		<action name="modifyUserCorInfo" method="modifyUserCorInfo" class="com.guole.action.user.UserInfoAction" />
+		<action name="aduitSeller" method="applySeller" class="com.guole.action.user.UserInfoAction" />
+		<action name="modifyUserAccount" method="modifyUserAccount" class="com.guole.action.user.UserInfoAction" />
+		<action name="updatePaypassword" method="updatePaypassword" class="com.guole.action.user.UserInfoAction" />
+		<action name="updatepassword" method="updatepassword" class="com.guole.action.user.UserInfoAction" />
+		<action name="updateHead" method="updateHead" class="com.guole.action.user.UserInfoAction" />
+		<action name="baseInfo" method="baseInfo" class="com.guole.action.user.UserInfoAction">
+			<result name="success">/Page/manage/basicInfo.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="forwardManageCenter" method="forwardManageCenter" class="com.guole.action.user.UserInfoAction">
+			<result name="login">/login</result>
+			<result name="buyer">/Page/manage/index.jsp</result>
+			<result name="seller">/Page/manage/sellerIndex.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="uploadPicture" class="ImageUpload" method="uploadPicture">
+		    <interceptor-ref name="fileUpload">
+	           <!-- 配置允许上传的文件类型 -->
+	           <param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/jpeg,image/pjpeg,application/octet-stream</param>
+	           <!-- 配置允许上传的文件大小 -->
+	           <param name="maximumSize">8388608</param>
+	        </interceptor-ref>
+	        <interceptor-ref name="defaultStack"/>
+			<result name="success">/Page/family/uploadPicture.jsp</result>
+		</action>
+		<action name="updateHead" method="updateHead" class="com.guole.action.user.UserInfoAction" />
+	</package>
+</struts>
