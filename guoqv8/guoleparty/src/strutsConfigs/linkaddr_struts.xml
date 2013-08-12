@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="linkaddr" extends="struts-default">
+		<action name="forwordLinkAddrPage" method="forwordLinkAddrPage" class="com.guole.action.linkaddr.LinkAddrAction">
+			<result name="success">/page/pcenter/linkaddr.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="getAllLinkAddrByUserId" method="getAllLinkAddrByUserId" class="com.guole.action.linkaddr.LinkAddrAction"/>
+		<action name="addUpdateLinkAddr" method="addUpdateLinkAddr" class="com.guole.action.linkaddr.LinkAddrAction"/>
+		<action name="delLinkAddr" method="delLinkAddr" class="com.guole.action.linkaddr.LinkAddrAction"/>
+	</package>
+</struts>
