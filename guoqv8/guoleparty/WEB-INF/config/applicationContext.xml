@@ -66,4 +66,6 @@
     <import resource="comment_spring.xml"/>
     <!-- 团购商品配置 -->  
     <import resource="groupbuy_spring.xml"/>
+    <!-- 用户关联送货地址配置 -->  
+    <import resource="linkaddr_spring.xml"/>
 </beans>

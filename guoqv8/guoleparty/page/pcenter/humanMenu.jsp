@@ -30,7 +30,7 @@
 			<dl>
 				<dt>订单管理</dt>
 				<dd><a href="${pageContext.request.contextPath}/pcenter/home">我的订单</a></dd>
-				<dd><a href="${pageContext.request.contextPath}/pcenter/home">收货地址</a></dd>
+				<dd><a href="${pageContext.request.contextPath}/pcenter/linkaddr">收货地址</a></dd>
 			</dl>
 		</div>
 		<!--功能菜单 end-->

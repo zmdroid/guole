@@ -18,4 +18,5 @@
 	<include file="strutsConfigs/postbox_struts.xml"></include>
 	<include file="strutsConfigs/comment_struts.xml"></include>
 	<include file="strutsConfigs/groupbuy_struts.xml"></include>
+	<include file="strutsConfigs/linkaddr_struts.xml"></include>
 </struts>

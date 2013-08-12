@@ -88,4 +88,10 @@
 	    <from>/pcenter/message$</from>
 	    <to>/page/pcenter/message.jsp</to>
 	</rule>
+	
+	<rule>
+	    <name>个人中心-送货地址页</name>
+	    <from>/pcenter/linkaddr$</from>
+	    <to>%{context-path}/forwordLinkAddrPage.do</to>
+	</rule>
 </urlrewrite>

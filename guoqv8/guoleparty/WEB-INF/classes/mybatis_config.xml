@@ -16,6 +16,7 @@
         <typeAlias type="com.guole.vo.MessageVO" alias="messageVO"/>
         <typeAlias type="com.guole.vo.CommentVO" alias="commentVO"/>
         <typeAlias type="com.guole.vo.GroupbuyInfoVO" alias="groupbuyInfo"/>
+        <typeAlias type="com.guole.vo.LinkAddrVO" alias="linkaddr"/>
     </typeAliases>
     <!-- 定义映射资源 -->
     
@@ -28,5 +29,6 @@
         <mapper resource="mapper_sqls/postbox_mapper.xml" />
         <mapper resource="mapper_sqls/comment_mapper.xml" />
         <mapper resource="mapper_sqls/groupbuy_mapper.xml" />
+        <mapper resource="mapper_sqls/linkaddr_mapper.xml" />
     </mappers>
 </configuration>
