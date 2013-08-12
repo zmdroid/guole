@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="producttype" extends="struts-default">
+		<action name="saveUpdateProductType" method="saveUpdateProductType" class="com.guoleMIS.action.producttype.ProductTypeAction"/>
+		<action name="getProductTypes" method="getProductTypes" class="com.guoleMIS.action.producttype.ProductTypeAction"/>
+		<action name="deleteProductType" method="deleteProductType" class="com.guoleMIS.action.producttype.ProductTypeAction"/>
+		<action name="getProductTypeById" method="getProductTypeById" class="com.guoleMIS.action.producttype.ProductTypeAction"/>
+		<action name="modifyProductTypeState" method="modifyProductTypeState" class="com.guoleMIS.action.producttype.ProductTypeAction"/>
+		<action name="getAllProductTypes" method="getAllProductTypes" class="com.guoleMIS.action.producttype.ProductTypeAction" />
+	</package>
+</struts>

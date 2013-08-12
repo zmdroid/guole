@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.guoleMIS.dao.finance.RefundDao">
+
+    <select id="queryRefund" resultType="refundVO" parameterType="java.lang.String">  
+        select r.*,u.name userName
+        from t_refund r
+        left join t_user u on u.userId=r.receiver
+        where ${_parameter}
+    </select>
+    
+    <select id="queryRefundCountPage" resultType="int" parameterType="java.lang.String">  
+        select count(*) 
+        from t_refund r
+        where ${_parameter} 1=1
+    </select>
+    <select id="queryRefundDetail" resultType="refundVO" parameterType="int">  
+        select r.*,u.name userName
+        from t_refund r
+        left join t_user u on u.userId=r.receiver
+        where id=#{id}
+    </select>
+    <insert id="insertRefund" parameterType="refundVO">  
+         INSERT INTO t_refund(orderNo,receiver,moneynum,backtime,reason)
+         VALUES(#{orderId},#{receiver},#{moneynum},#{backtime},#{reason})
+    	 <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id" >  
+          SELECT LAST_INSERT_ID()  
+        </selectKey>
+    </insert>
+</mapper>

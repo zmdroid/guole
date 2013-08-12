@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>      
+<!DOCTYPE configuration      
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"      
+     "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>
+    <!-- 全局别名设置，在映射文件中只需写别名，而不必写出整个类路径 -->
+    <typeAliases>  
+        <typeAlias type="com.guoleMIS.vo.ManagerVO" alias="managerVO"/>
+        <typeAlias type="com.guoleMIS.vo.RoleVO" alias="roleVO"/>
+        <typeAlias type="com.guoleMIS.vo.PermissionVO" alias="permissionVO"/>
+        <typeAlias type="com.guoleMIS.vo.RecruitVO" alias="recruit"/>
+        <typeAlias type="com.guoleMIS.vo.MemberInfoVO" alias="member"/>
+        <typeAlias type="com.guoleMIS.vo.MemberAccountVO" alias="memberAccount"/>
+        <typeAlias type="com.guoleMIS.vo.NotifyVO" alias="notify"/>
+        <typeAlias type="com.guoleMIS.vo.InformationVO" alias="information"/>
+        <typeAlias type="com.guoleMIS.vo.AdvertVO" alias="advert"/>
+        <typeAlias type="com.guoleMIS.vo.ProductTypeVO" alias="producttype"/>
+        <typeAlias type="com.guoleMIS.vo.GiftCardTypeVO" alias="giftCardType"/>
+        <typeAlias type="com.guoleMIS.vo.GiftCardVO" alias="giftCard"/>
+        <typeAlias type="com.guoleMIS.vo.GroupbuyInfoVO" alias="groupbuyInfo"/>
+        <typeAlias type="com.guoleMIS.vo.CommentVO" alias="commentVO"/>
+      	<typeAlias type="com.guoleMIS.vo.BillVO" alias="billVO"/>
+        <typeAlias type="com.guoleMIS.vo.BillLogVO" alias="billLogVO"/>
+		<typeAlias type="com.guoleMIS.vo.RefundVO" alias="refundVO"/>
+		<typeAlias type="com.guoleMIS.vo.RechargeVO" alias="rechargeVO"/>
+		<typeAlias type="com.guoleMIS.vo.OrderVO" alias="orderVO"/>
+		<typeAlias type="com.guoleMIS.vo.OrderDetailVO" alias="orderdetailVO"/>
+    </typeAliases>
+    <!-- 定义映射资源 --> 
+    <mappers>  
+        <mapper resource="mapper_sqls/recruit_mapper.xml" />
+       	<mapper resource="mapper_sqls/manager_mapper.xml" />
+        <mapper resource="mapper_sqls/role_mapper.xml" />
+        <mapper resource="mapper_sqls/permission_mapper.xml" />
+        <mapper resource="mapper_sqls/member_mapper.xml" />
+        <mapper resource="mapper_sqls/notify_mapper.xml" />
+        <mapper resource="mapper_sqls/information_mapper.xml" />
+        <mapper resource="mapper_sqls/advert_mapper.xml" />
+        <mapper resource="mapper_sqls/giftcard_mapper.xml" />
+        <mapper resource="mapper_sqls/producttype_mapper.xml" />
+         <mapper resource="mapper_sqls/groupbuy_mapper.xml" />
+         <mapper resource="mapper_sqls/comment_mapper.xml" />
+         <mapper resource="mapper_sqls/bill_mapper.xml" />
+         <mapper resource="mapper_sqls/recharge_mapper.xml" />
+         <mapper resource="mapper_sqls/recharge_log_mapper.xml" />
+         <mapper resource="mapper_sqls/refund_mapper.xml" />
+         <mapper resource="mapper_sqls/order_mapper.xml" />
+         <mapper resource="mapper_sqls/orderdetail_mapper.xml" />
+    </mappers>
+</configuration>

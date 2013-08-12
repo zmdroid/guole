@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.ttsMIS.dao.zhaopin.ZhaopinDao">
+
+	<select id="getRecruits" resultType="recruit" parameterType="java.lang.String">
+		select r.*,u.corname companyName from t_recruit r
+		left join t_user u on u.userId=r.userId
+		where ${_parameter}	    
+	</select>
+	
+	<select id="getRecruitsCount" resultType="int" parameterType="java.lang.String">
+		select count(*) from t_recruit r
+		left join t_user u on u.userId=r.userId
+		where ${_parameter}	1=1    
+	</select>
+	
+	<select id="getRecruitById" resultType="recruit" parameterType="int">
+		select r.*,u.corname companyName from t_recruit r
+		left join t_user u on u.userId=r.userId 
+		where r.id= ${_parameter}	    
+	</select>
+	
+	<update id="updateRecruitStateById"  parameterType="java.util.Map">
+	    UPDATE t_recruit SET state=${state} WHERE id=${id};
+	</update>
+</mapper>

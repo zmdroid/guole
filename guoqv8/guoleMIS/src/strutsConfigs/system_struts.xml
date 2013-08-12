@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="system" extends="struts-default">
+		<action name="login" method="login" class="com.guoleMIS.action.system.SystemAction">
+			<result name="success">/index.jsp</result>
+			<result name="input" type="redirect">/login.jsp?error=1</result>
+			<result name="frozen" type="redirect">/login.jsp?error=2</result>
+		</action>
+		<action name="logout" method="logout" class="com.guoleMIS.action.system.SystemAction">
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="getManagers" method="getManagers" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getRoles" method="getRoles" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getRole" method="getRole" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="updateRole" method="updateRole" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="removeRole" method="removeRole" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getResources" method="getResources" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getPermissions" method="getPermissions" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getTopPermissions" method="getTopPermissions" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="addRole" method="addRole" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="addPermission" method="addPermission" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="addManager" method="addManager" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getManager" method="getManager" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="updateManagerInfo" method="updateManagerInfo" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="freeze" method="freeze" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="unfreeze" method="unfreeze" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="updatePermission" method="updatePermission" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="removePermission" method="removePermission" class="com.guoleMIS.action.system.SystemAction"/>
+		<action name="getPermission" method="getPermission" class="com.guoleMIS.action.system.SystemAction"/>
+	</package>
+</struts>

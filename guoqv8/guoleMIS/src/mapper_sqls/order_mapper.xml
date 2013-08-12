@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.guoleMIS.dao.order.OrderDao">
+    
+    <resultMap type="orderVO" id="orderMap">  
+		<id column="id" property="id"/>
+        <collection property="orderDetailList" javaType="ArrayList" column="id" ofType="orderdetailVO"   
+        select="com.guoleMIS.dao.orderdetail.OrderDetailDao.qurOrderDetailByOrderId"/>  
+    </resultMap>
+
+    <select id="getOrderByOrderId" resultMap="orderMap" parameterType="int">  
+        select o.*
+        from t_order o
+        where id=#{id}
+    </select>
+    <select id="queryOrderList" resultType="orderVO" parameterType="java.lang.String">  
+        select o.*,u.name carName
+        from t_order o
+        left join t_user u on u.userId=o.userId
+        where ${_parameter}
+    </select>
+    
+    <select id="queryOrderListCount" resultType="int" parameterType="java.lang.String">  
+        select count(*) 
+        from t_order o 
+        where ${_parameter} 1=1
+    </select>
+    
+    <update id="modifyOrderState" parameterType="java.util.Map">
+		UPDATE t_order
+		SET state=#{state}
+		WHERE id = #{id}
+    </update>
+</mapper>

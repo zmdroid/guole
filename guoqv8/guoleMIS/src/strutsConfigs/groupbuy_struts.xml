@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="groupbuy" extends="struts-default">
+	    <action name="saveUpdateGroupbuyInfo" method="saveUpdateGroupbuyInfo" class="com.guoleMIS.action.groupbuy.GroupbuyAction" />
+	    <action name="getGroupbuys" method="getGroupbuys" class="com.guoleMIS.action.groupbuy.GroupbuyAction" />
+	    <action name="getGroupbuyById" method="getGroupbuyById" class="com.guoleMIS.action.groupbuy.GroupbuyAction" />
+	    <action name="deleteGroupbuyInfo" method="deleteGroupbuyInfo" class="com.guoleMIS.action.groupbuy.GroupbuyAction" />
+	    <action name="modifyGroupbuyOnLine" method="modifyGroupbuyOnLine" class="com.guoleMIS.action.groupbuy.GroupbuyAction" />
+	</package>
+</struts>

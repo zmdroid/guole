@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="zhaopin" extends="struts-default">
+		<action name="getZhaopinlist" method="getZhaopinlist" class="com.guoleMIS.action.zhaopin.ZhaopinAction"/>
+		<action name="getZhaopinDetail" method="getZhaopinDetail" class="com.guoleMIS.action.zhaopin.ZhaopinAction">
+			<result name="success">/page/zhaopin/zhaopindetail.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="modifyZhaopinState" method="modifyZhaopinState" class="com.guoleMIS.action.zhaopin.ZhaopinAction"/>
+	</package>
+</struts>

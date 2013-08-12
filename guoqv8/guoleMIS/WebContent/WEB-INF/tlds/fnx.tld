@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    
+  <description>自定义函数库</description>
+  <display-name>JSTL fn</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>fnx</short-name>
+  <uri>http://www.guoqv8.com/fnx</uri>
+  
+	  <function>  
+	    <name>decodeText</name> 
+	    <function-class>com.qingning.tag.Function</function-class>  
+	    <function-signature>java.lang.String  decodeText(java.lang.String)</function-signature>  
+	  </function>  
+	
+	  <function>  
+	    <name>getConfig</name> 
+	    <function-class>com.qingning.tag.Function</function-class>  
+	    <function-signature>java.lang.String getConfig(java.lang.String)</function-signature>  
+	  </function>
+	  
+	  <function>  
+	  <name>convert</name>  
+	    <!--这里最为重要，指定类所在位置，以及类方法的一些重要信息-->  
+	    <function-class>com.guoleMIS.util.Fn</function-class>  
+	    <function-signature>java.lang.String  convert(java.lang.Object)</function-signature>  
+	  </function>
+	  <function>  
+	    <name>dateToString</name>  
+	    <!--这里最为重要，指定类所在位置，以及类方法的一些重要信息-->  
+	    <function-class>com.guoleMIS.util.Fn</function-class>  
+	    <function-signature>java.lang.String  dateToString(java.util.Date)</function-signature>  
+	  </function>    
+</taglib>
