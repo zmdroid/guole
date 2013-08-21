@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>发布线路</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<!-- Favicons --> 
+<link rel="shortcut icon" type="image/png" HREF="../img/favicons/favicon.png"/>
+<link rel="icon" type="image/png" HREF="../img/favicons/favicon.png"/>
+<link rel="apple-touch-icon" HREF="../img/favicons/apple.png" />
+<!-- Main Stylesheet --> 
+<link rel="stylesheet" href="../css/style.css" type="text/css" />
+<!-- jQuery with plugins -->
+<script type="text/javascript" SRC="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" SRC="../js/jquery.ui.core.min.js"></script>
+<script type="text/javascript" SRC="../js/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" SRC="../js/jquery.ui.tabs.min.js"></script>
+<!-- jQuery tooltips -->
+<script type="text/javascript" SRC="../js/jquery.tipTip.min.js"></script>
+<!-- Superfish navigation -->
+<script type="text/javascript" SRC="../js/jquery.superfish.min.js"></script>
+<script type="text/javascript" SRC="../js/jquery.supersubs.min.js"></script>
+<!-- jQuery form validation -->
+<script type="text/javascript" SRC="../js/jquery.validate_pack.js"></script>
+<!-- jQuery popup box -->
+<script type="text/javascript" SRC="../js/jquery.nyroModal.pack.js"></script>
+
+
+
+<!-- Internet Explorer Fixes --> 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	/* setup navigation, content boxes, etc... */
+	Administry.setup();
+	
+	$("#tabs").tabs();
+	
+	$(".AutoFill").AutoFill({
+		Mode:"only",//方式 单一:"only" 多个:"odd"
+		Initial:"",//初始值
+		Json:""
+	})
+
+});
+
+</script>
+</head>
+<body>
+	<!-- Header -->
+	<div id="Header">
+		<div class="wrapper">
+			<!-- Logo-->
+			<div id="title"><span>后台管理系统</span></div>
+			<!-- Top navigation -->
+			<div id="topnav">
+				<a href="#"><img class="avatar" SRC="../img/user_32.png" alt="" /></a>
+				欢迎！ <b>用户名</b> 
+				<span>|</span> <a href="#">设置</a>
+				<span>|</span> <a href="#">退出系统</a><br />
+				<small>您有 <a href="#" class="high"><b>1</b> 条新消息!</a></small>
+			</div>
+			<!-- End of Top navigation -->
+			<!-- Main navigation -->
+			<div id="menu">
+				<ul class="sf-menu">
+					<li><a href="../index.html">首页</a></li>
+					<li class="current">
+						<a href="javascript:;">产品管理</a>
+						<ul>
+							<li class="current">
+								<a href="LineMan.html">线路地接管理</a>
+								<ul>
+									<li class="current"><a href="LinePost.html">发布线路</a></li>
+									<li><a href="LineEdit.html">编辑线路</a></li>
+								</ul>
+							</li>
+							<li><a href="Tag.html">标签管理</a></li>
+							<li><a href="Destination.html">目的地管理</a></li>
+							<li><a href="Inquiry.html">询价单管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">产品广告管理</a>
+						<ul>
+							<li><a href="AdMan.html">广告管理</a></li>
+							<li><a href="Help.html">帮助管理</a></li>
+							<li><a href="Album.html">专辑管理</a></li>
+							<li><a href="Raiders.html">攻略管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">财务管理</a>
+						<ul>
+							<li><a href="Recharge.html">充值管理</a></li>
+							<li><a href="Withdraw.html">提现管理</a></li>
+							<li><a href="Refund.html">退款管理</a></li>
+							<li><a href="Commission.html">佣金管理</a></li>
+							<li><a href="Accounts.html">帐务管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">会员管理</a>
+						<ul>
+							<li><a href="Buyers.html">买家平台</a></li>
+							<li><a href="Seller.html">卖家平台</a></li>
+							<li><a href="Message.html">消息管理</a></li>
+						</ul>
+					</li>
+					<li><a href="Order.html">订单管理</a></li>	
+					<li>
+						<a href="javascript:;">系统管理</a>
+						<ul>
+							<li><a href="RightsAss.html">权限分配</a></li>
+							<li><a href="UserMan.html">用户管理</a></li>
+						</ul>
+					</li>	
+				</ul>
+			</div>
+			<!-- End of Main navigation -->
+			<div class="cle"></div>
+		</div>
+	</div>
+	<!-- End of Header -->
+	<!-- Page title -->
+	<div id="pagetitle">
+		<div class="wrapper">
+			<h1>发布线路</h1>
+			<form action="" method="get"><input class="" type="text" id="q" name="q" /></form>
+		</div>
+	</div>
+	<!-- End of Page title -->
+	
+	<!-- Page content -->
+	<div id="page">
+		<!-- Wrapper -->
+		<div class="wrapper">
+					<!--发布商品-->
+					<div class="PostTrade">
+						<div class="StepBox">
+							<ul class="Step StepA">
+								<li class="Active"><a href="">基本信息</a></li>
+								<li><a href="">线路图片</a></li>
+								<li><a href="">行程</a></li>
+								<li><a href="">出团计划</a></li>
+								<li><a href="">扩展信息</a></li>
+							</ul>
+						</div>
+						<div id="tabsdate">
+							<div class="box box-info">线路基本信息</div>
+							<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="CA">运营商名称:</td>
+									<td><input class="WidG" type="text" name="textfield">
+										<div class="InBox">
+								<div class="InDomain">
+									<span class="InTip PR">
+										<input class="InEnter WMids" type="text" name="textfield2" id="textfield">
+										<label class="InExplain" style="line-height: 25px; opacity: 1; display: none;">输入QQ号</label>
+									</span>
+									<span class="InNumber" style="line-height: 25px;">
+										<em>0</em>/<em>30</em>
+									</span>
+								</div>
+								<div class="InTextBox"><img src="../../Images/blank.gif" alt="" class="I InPoint"> Email是您登录的账户名</div>
+							</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="CA">线路名称:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>
+								<tr>
+									<td class="CA">线路类型:</td>
+									<td>
+										<select name="select" id="select">
+											<option>线路类型</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="CA">目的地:</td>
+									<td>
+										<div class="AutoFill">
+											<ul class="FillBox">
+												<li class="BitInput OnInput"><input type="text" class="MainInput"></li>
+											</ul>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<td class="CA">出发地:</td>
+									<td>
+										<div class="AutoFill">
+											<ul class="FillBox">
+												<li class="BitInput OnInput"><input type="text" class="MainInput"></li>
+											</ul>
+										</div>
+
+										<select name="select2" id="select2">
+											<option>西安</option>
+											<option>上海</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="CA">线路主题:</td>
+									<td>
+										<select name="select3" id="select3">
+											<option>古镇旅游</option>
+											<option>森林旅游</option>
+											<option>草原旅游</option>
+											<option>江河瀑布</option>
+											<option>海岛旅游</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="CA">线路联系人:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>
+								<tr>
+									<td class="CA">联系人电话:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>
+								<tr>
+									<td class="CA">参团形式:</td>
+									<td>
+										<select name="select3" id="select3">
+											<option>自由行</option>
+											<option>散拼团</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td class="CA">线路特色:</td>
+									<td><textarea class="WidJ" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+								</tr>
+							</table>
+							<div class="PostBut"><a href="" class="btn btn-green big">保存，下一步</a></div>
+						</div>
+						<div id="tabspic" class="DisNo">
+							<div class="box box-info">至少上传一张图片</div>
+							<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="CA">上传图片:</td>
+									<td><input type="file" name="fileField" id="fileField">
+									</td>
+								</tr>
+								<tr>
+									<td class="CA"></td>
+									<td>
+										<ul class="PostPic">												
+											<li>
+												<b>X</b>
+												<img src="../../Images/Avatar/1.jpg" width="120" height="90"/>
+											</li>
+											<li>
+												<b>X</b>
+												<img src="../../Images/Avatar/1.jpg" width="120" height="90"/>
+											</li>
+										</ul>
+									</td>
+								</tr>							
+							</table>
+							<div class="PostBut"><a href="" class="btn btn-green big">保存，下一步</a></div>
+						</div>
+						<div id="tabsstr" class="DisNo">
+							<div class="box box-info">可列多个行程安排</div>
+							<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="CA">天数:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>
+								<tr>
+									<td class="CA">活动区域:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>									
+								<tr>
+									<td class="CA">景点:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>									
+								<tr>
+									<td class="CA">交通:</td>
+									<td>
+										<select name="select6" id="select6">
+											<option>无</option>
+											<option>汽车</option>
+											<option>火车</option>
+											<option>轮船</option>
+											<option>飞机</option>
+										</select>
+									</td>
+								</tr>									
+								<tr>
+									<td class="CA">住宿:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>									
+								<tr>
+									<td class="CA">用餐:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>									
+								<tr>
+									<td class="CA"></td>
+									<td><a href="" class="btn btn-blue big">添加</a></td>
+								</tr>
+							</table>
+							<table class="PostStroke" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th scope="col">天数</th>
+									<th scope="col">活动区域</th>
+									<th scope="col">景点</th>
+									<th scope="col">交通</th>
+									<th scope="col">住宿</th>
+									<th scope="col">用餐</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>亚洲-中国-内蒙古</td>
+									<td>无</td>
+									<td>火车</td>
+									<td>火车</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>亚洲-中国-内蒙古</td>
+									<td>希拉穆仁大草原</td>
+									<td>汽车</td>
+									<td>蒙古包</td>
+									<td>中餐,晚餐</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>亚洲-中国-内蒙古</td>
+									<td>库布齐沙漠旅游区</td>
+									<td>汽车</td>
+									<td>达拉特旗或东胜</td>
+									<td>早餐,中餐,晚餐</td>
+								</tr>
+							</table>
+							<div class="PostBut"><a href="" class="btn btn-green big">保存，下一步</a></div>
+						</div>
+						<div id="tabsplan" class="DisNo">
+							<div class="box box-info">填写出团价格</div>
+							<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="CA">团期:</td>
+									<td><input class="WidG" type="text" name="textfield"></td>
+								</tr>
+								<tr>
+									<td class="CA">成人价格:</td>
+									<td>同行结算价<input class="WidA" type="text" name="textfield"> 元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										直客参考价<input class="WidA" type="text" name="textfield"> 元</td>
+								</tr>									
+								<tr>
+									<td class="CA">儿童价格:</td>
+									<td>同行结算价<input class="WidA" type="text" name="textfield"> 元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										直客参考价<input class="WidA" type="text" name="textfield"> 元</td>
+								</tr>									
+								<tr>
+									<td class="CA">可售总数:</td>
+									<td><input class="WidA" type="text" name="textfield"> 人</td>
+								</tr>									
+								<tr>
+									<td class="CA">报名截止日期:</td>
+									<td><input class="WidD" type="text" name="textfield"></td>
+								</tr>									
+							</table>
+							<div class="PostBut"><a href="" class="btn btn-green big">保存，下一步</a></div>
+						</div>
+						<div id="tabsext" class="DisNo">
+							<div class="box box-info">线路扩展信息</div>
+							<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td class="CA">线路特色:</td>
+									<td><textarea class="WidJ" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+								</tr>
+								<tr>
+									<td class="CA">行程详情:</td>
+									<td><textarea class="WidJ" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+								</tr>									
+								<tr>
+									<td class="CA">费用说明:</td>
+									<td><textarea class="WidJ" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+								</tr>									
+								<tr>
+									<td class="CA">预订须知:</td>
+									<td><textarea class="WidJ" name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+								</tr>									
+							</table>
+							<div class="PostBut"><a href="" class="btn btn-green big">完成</a></div>
+						</div>
+					</div>
+					<!--发布商品 end-->
+			<div class="cle"></div>					
+		</div>
+		<!-- End of Wrapper -->
+	</div>
+	<!-- End of Page content -->
+
+	<!-- Scroll to top link -->
+	<a href="#" id="totop">^ 顶部</a>
+
+<!-- Admin template javascript load -->
+<script type="text/javascript" SRC="../js/administry.js"></script>
+<!--弹框-->
+<div id="Area" class="DisNo">
+<div class="AreaBox">
+		<dl class="Province">
+			<dt>选择省份</dt>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<dd>宝鸡</dd>
+			<dd>铜川</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<dd>宝鸡</dd>
+			<dd>铜川</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<dd>宝鸡</dd>
+			<dd>铜川</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<div class="cle"></div>
+		</dl>
+		<dl class="AreaList">
+			<dt>选择城市</dt>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<dd>宝鸡</dd>
+			<dd>铜川</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<dd>宝鸡</dd>
+			<dd>铜川</dd>
+			<dd>北京</dd>
+			<dd>上海</dd>
+			<dd>天津</dd>
+			<dd>重庆</dd>
+			<dd>西安</dd>
+			<dd>宝鸡</dd>
+			<dd>铜川</dd>
+		</dl>
+		<dl class="AreaSelect">
+			<dd class="Active">北京</dd>
+			<dd class="Active">上海</dd>
+			<dd class="Active">天津</dd>
+			<dd class="Active">重庆</dd>
+			<dd class="Active">西安</dd>
+			<dd class="Active">宝鸡</dd>
+			<dd class="Active">铜川</dd>
+			<dd class="Active">北京</dd>
+			<dd class="Active">上海</dd>
+			<dd class="Active">天津</dd>
+			<dd class="Active">重庆</dd>
+			<dd class="Active">西安</dd>
+		</dl>
+		<div class="AreaBut"><a href="" class="nyroModalClose btn btn-green big">确认</a><a href="" class="nyroModalClose btn big">取消</a></div>
+	</div>
+</div>
+
+<div class="FillChoose">	
+	<div class="FillCheck">
+		<img class="FillCloseImg" src="../img/Close.gif"/>
+		<div class="FillTitle">可直接输入中文名/拼音/英文名/三字码</div>
+		<ul class="FillTabs">
+			<li>热门</li>
+			<li>ABCDEFG</li>
+			<li>HIJKL</li>
+			<li>MNOPQRST</li>
+			<li>WXYZ</li>
+		</ul>
+		<div class="FillTabsCon">
+			<div>
+				<ul>
+					<li><a id="001" class="Filllist" href="#">上海</a></li>
+					<li><a id="002" class="Filllist" href="#">北京</a></li>
+					<li><a id="003" class="Filllist" href="#">广州</a></li>
+					<li><a id="004" class="Filllist" href="#">昆明</a></li>
+					<li><a id="005" class="Filllist" href="#">西安</a></li>
+					<li><a id="006" class="Filllist" href="#">成都</a></li>
+					<li><a id="007" class="Filllist" href="#">深圳</a></li>
+					<li><a id="008" class="Filllist" href="#">厦门</a></li>
+					<li><a id="009" class="Filllist" href="#">乌鲁木齐</a></li>
+					<li><a id="010" class="Filllist" href="#">南京</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="013" class="Filllist" href="#">安庆</a></li>
+					<li><a id="013" class="Filllist" href="#">阿勒泰</a></li>
+					<li><a id="013" class="Filllist" href="#">安康</a></li>
+					<li><a id="013" class="Filllist" href="#">鞍山</a></li>
+					<li><a id="013" class="Filllist" href="#">安顺</a></li>
+					<li><a id="013" class="Filllist" href="#">安阳</a></li>
+					<li><a id="013" class="Filllist" href="#">阿克苏</a></li>
+					<li><a id="013" class="Filllist" href="#">包头</a></li>
+					<li><a id="013" class="Filllist" href="#">蚌埠</a></li>
+					<li><a id="013" class="Filllist" href="#">北海</a></li>
+					<li><a id="013" class="Filllist" href="#">北京</a></li>
+					<li><a id="013" class="Filllist" href="#">百色</a></li>
+					<li><a id="013" class="Filllist" href="#">保山</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="022" class="Filllist" href="#">呼和浩特</a></li>
+					<li><a id="022" class="Filllist" href="#">哈密</a></li>
+					<li><a id="022" class="Filllist" href="#">黑河</a></li>
+					<li><a id="022" class="Filllist" href="#">海拉尔</a></li>
+					<li><a id="022" class="Filllist" href="#">哈尔滨</a></li>
+					<li><a id="022" class="Filllist" href="#">海口</a></li>
+					<li><a id="022" class="Filllist" href="#">衡阳</a></li>
+					<li><a id="022" class="Filllist" href="#">黄山</a></li>
+					<li><a id="022" class="Filllist" href="#">杭州</a></li>
+					<li><a id="022" class="Filllist" href="#">邯郸</a></li>
+					<li><a id="022" class="Filllist" href="#">合肥</a></li>
+					<li><a id="022" class="Filllist" href="#">黄龙</a></li>
+					<li><a id="022" class="Filllist" href="#">汉中</a></li>
+					<li><a id="022" class="Filllist" href="#">和田</a></li>
+					<li><a id="022" class="Filllist" href="#">惠州</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="033" class="Filllist" href="#">牡丹江</a></li>
+					<li><a id="033" class="Filllist" href="#">芒市</a></li>
+					<li><a id="033" class="Filllist" href="#">满洲里</a></li>
+					<li><a id="033" class="Filllist" href="#">绵阳</a></li>
+					<li><a id="033" class="Filllist" href="#">梅县</a></li>
+					<li><a id="033" class="Filllist" href="#">漠河</a></li>
+					<li><a id="033" class="Filllist" href="#">南京</a></li>
+					<li><a id="033" class="Filllist" href="#">南充</a></li>
+					<li><a id="033" class="Filllist" href="#">南宁</a></li>
+					<li><a id="033" class="Filllist" href="#">南阳</a></li>
+					<li><a id="033" class="Filllist" href="#">南通</a></li>
+					<li><a id="033" class="Filllist" href="#">那拉提</a></li>
+					<li><a id="033" class="Filllist" href="#">南昌</a></li>
+					<li><a id="033" class="Filllist" href="#">宁波</a></li>
+					<li><a id="033" class="Filllist" href="#">攀枝花</a></li>
+					<li><a id="033" class="Filllist" href="#">衢州</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="044" class="Filllist" href="#">威海</a></li>
+					<li><a id="044" class="Filllist" href="#">武汉</a></li>
+					<li><a id="044" class="Filllist" href="#">梧州</a></li>
+					<li><a id="044" class="Filllist" href="#">文山</a></li>
+					<li><a id="044" class="Filllist" href="#">无锡</a></li>
+					<li><a id="044" class="Filllist" href="#">潍坊</a></li>
+					<li><a id="044" class="Filllist" href="#">武夷山</a></li>
+					<li><a id="044" class="Filllist" href="#">乌兰浩特</a></li>
+					<li><a id="044" class="Filllist" href="#">温州</a></li>
+					<li><a id="044" class="Filllist" href="#">乌鲁木齐</a></li>
+					<li><a id="044" class="Filllist" href="#">芜湖</a></li>
+					<li><a id="044" class="Filllist" href="#">万州</a></li>
+					<li><a id="044" class="Filllist" href="#">乌海</a></li>
+					<li><a id="044" class="Filllist" href="#">兴义</a></li>
+					<li><a id="044" class="Filllist" href="#">西昌</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<ul class="FillFeed">
+		<li class="FillFeedList"><span>SHANGHAI</span>上海</li>
+	</ul>
+</div>
+
+<!--弹框 end-->
+</body>
+</html>

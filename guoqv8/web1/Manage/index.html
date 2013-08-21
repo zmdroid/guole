@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>后台管理首页</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<!-- Favicons --> 
+<link rel="shortcut icon" type="image/png" HREF="img/favicons/favicon.png"/>
+<link rel="icon" type="image/png" HREF="img/favicons/favicon.png"/>
+<link rel="apple-touch-icon" HREF="img/favicons/apple.png" />
+<!-- Main Stylesheet --> 
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<!-- jQuery with plugins -->
+<script type="text/javascript" SRC="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" SRC="js/jquery.ui.core.min.js"></script>
+<script type="text/javascript" SRC="js/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" SRC="js/jquery.ui.tabs.min.js"></script>
+<!-- jQuery tooltips -->
+<script type="text/javascript" SRC="js/jquery.tipTip.min.js"></script>
+<!-- Superfish navigation -->
+<script type="text/javascript" SRC="js/jquery.superfish.min.js"></script>
+<script type="text/javascript" SRC="js/jquery.supersubs.min.js"></script>
+<!-- jQuery form validation -->
+<script type="text/javascript" SRC="js/jquery.validate_pack.js"></script>
+<!-- jQuery popup box -->
+<script type="text/javascript" SRC="js/jquery.nyroModal.pack.js"></script>
+<!-- jQuery data tables -->
+<script type="text/javascript" SRC="js/jquery.dataTables.min.js"></script>
+
+
+
+<!-- Internet Explorer Fixes --> 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	/* setup navigation, content boxes, etc... */
+	Administry.setup();
+	
+
+});
+</script>
+</head>
+<body>
+	<!-- Header -->
+	<div id="Header">
+		<div class="wrapper">
+			<!-- Logo-->
+			<div id="title"><span>后台管理系统</span></div>
+			<!-- Top navigation -->
+			<div id="topnav">
+				<a href="#"><img class="avatar" SRC="img/user_32.png" alt="" /></a>
+				欢迎！ <b>用户名</b> 
+				<span>|</span> <a href="#">设置</a>
+				<span>|</span> <a href="#">退出系统</a><br />
+				<small>您有 <a href="#" class="high"><b>1</b> 条新消息!</a></small>
+			</div>
+			<!-- End of Top navigation -->
+			<!-- Main navigation -->
+			<div id="menu">
+				<ul class="sf-menu">
+					<li class="current"><a href="index.html">首页</a></li>
+					<li>
+						<a href="javascript:;">产品管理</a>
+						<ul>
+							<li>
+								<a href="page/LineMan.html">线路地接管理</a>
+								<ul>
+									<li><a href="page/LinePost.html">发布线路</a></li>
+									<li><a href="page/LineEdit.html">编辑线路</a></li>
+								</ul>
+							</li>
+							<li><a href="page/Tag.html">标签管理</a></li>
+							<li><a href="page/Destination.html">目的地管理</a></li>
+							<li><a href="page/Inquiry.html">询价单管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">产品广告管理</a>
+						<ul>
+							<li><a href="page/AdMan.html">广告管理</a></li>
+							<li><a href="page/Help.html">帮助管理</a></li>
+							<li><a href="page/Album.html">专辑管理</a></li>
+							<li><a href="page/Raiders.html">攻略管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">财务管理</a>
+						<ul>
+							<li><a href="page/Recharge.html">充值管理</a></li>
+							<li><a href="page/Withdraw.html">提现管理</a></li>
+							<li><a href="page/Commission.html">佣金管理</a></li>
+							<li><a href="page/Accounts.html">帐务管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">会员管理</a>
+						<ul>
+							<li><a href="page/Buyers.html">买家平台</a></li>
+							<li><a href="page/Seller.html">卖家平台</a></li>
+							<li><a href="page/Message.html">消息管理</a></li>
+						</ul>
+					</li>
+					<li><a href="page/Order.html">订单管理</a></li>	
+					<li>
+						<a href="javascript:;">系统管理</a>
+						<ul>
+							<li><a href="page/RightsAss.html">权限分配</a></li>
+							<li><a href="page/UserMan.html">用户管理</a></li>
+						</ul>
+					</li>	
+				</ul>
+			</div>
+			<!-- End of Main navigation -->
+			<div class="cle"></div>
+		</div>
+	</div>
+	<!-- End of Header -->
+	<!-- Page title -->
+	<div id="pagetitle">
+		<div class="wrapper">
+			<h1>首页</h1>
+			<form action="" method="get"><input class="" type="text" id="q" name="q" /></form>
+		</div>
+	</div>
+	<!-- End of Page title -->
+	
+	<!-- Page content -->
+	<div id="page">
+		<!-- Wrapper -->
+		<div class="wrapper">
+			<div class="IndexBox">
+				<dl class="Line">
+					<dt>产品管理</dt>
+					<dd><a href="">线路库</a></dd>
+					<dd><a href="">线路管理</a></dd>
+					<dd><a href="">线路推广</a></dd>
+					<dd><a href="">标签管理</a></dd>
+					<dd><a href="">线路搜索关键字库</a></dd>
+					<dd><a href="">分词器字典</a></dd>
+					<dd><a href="">目的地管理</a></dd>
+				</dl>				
+				<dl class="System">
+					<dt>系统管理</dt>
+					<dd><a href="">资源管理</a></dd>
+					<dd><a href="">角色管理</a></dd>
+					<dd><a href="">用户管理</a></dd>
+				</dl>				
+				<dl class="Member">
+					<dt>会员管理</dt>
+					<dd><a href="">会员信息管理</a></dd>
+					<dd><a href="">供应商榜单</a></dd>
+					<dd><a href="">消息管理</a></dd>
+					<dd><a href="">产品类型</a></dd>
+				</dl>				
+			</div>
+		<div>
+		<!-- End of Wrapper -->
+	</div>
+	<!-- End of Page content -->
+
+	<!-- Scroll to top link -->
+	<a href="#" id="totop">^ 顶部</a>
+
+<!-- Admin template javascript load -->
+<script type="text/javascript" SRC="js/administry.js"></script>
+</body>
+</html>

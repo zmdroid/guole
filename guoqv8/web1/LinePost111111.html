@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>发布线路</title>
+<link rel="stylesheet" type="text/css" href="Manage/css/style.css" />
+<script type="text/javascript" SRC="_lib/jQuery/jquery.min.js"></script>
+<script type="text/javascript">
+(function($,window,document){
+'use strict';
+var $Win=$(window);
+var $OnInput="";
+jQuery.fn.extend({
+	AutoFill:function(options){
+		$(".FillTabs li:first-child").addClass("Active");
+		$(".FillTabs li").on("click",function(){
+			if($(this).attr('invalid')){return;}
+			var _index = $(this).index();
+			$(this).addClass("Active").siblings().removeClass("Active");
+			$(this).parent(".FillTabs").next(".FillTabsCon").find(">div").eq(_index).stop(!0,!1).show().siblings().hide();
+		});	
+		var $Th=$(this),			
+			_FillBox=$(".FillBox",$Th);
+			//_BitBox=_FillBox.find(".BitBox"),			
+		$OnInput=_FillBox.find(".OnInput",$Th);
+		var _MainInput=$OnInput.find(".MainInput");
+			if(!this.config){
+			this.config = $.extend({
+					Multi:"",//方式 单一:"only" 多个:"odd"
+					Initial:"",//初始值 
+					Json:""
+				},options);
+			} else if(options){this.config = $.extend(this.config, options);};
+			$Th._Multi=this.config.Multi;
+			$OnInput.attr("Multi",this.config.Multi);
+			var _Json=this.config.Json,
+				_Initial=this.config.Initial,
+				//_Multi=this.config.Multi,
+				//_FillCheck=$(".FillCheck"),
+				_FillCloseImg=$(".FillCloseImg"),
+				_FillChoose=$(".FillChoose"),
+				//_FillFeed = $('.FillFeed'),
+				_OffsetL=0,
+				_OffsetT=0;
+				//_BitBoxVal=[];
+			//添加项
+			var FnAddItem = function(id,text){
+				var _html='<li class="BitBox" sn="'+id+'">'+text+'<a class="BitClose" href="#"></a><input type="hidden" value="'+text+'"></li>';
+				var _Multi= eval($OnInput.attr("Multi"));
+				if(_Multi){	
+					$OnInput.before(_html);
+				};
+				if(!_Multi){
+					$OnInput.siblings().remove();
+					_FillCloseImg.click();
+					$OnInput.before(_html);
+				};
+				//alert(_FillBox.html())
+			};
+			//初始数据
+			var _InitialLength=_Initial.length;
+			for(var i=0;i<_InitialLength;i++){
+				FnAddItem(_Initial[i].id,_Initial[i].name,$Th._Multi)
+			};
+			//选中数组	
+/* 			var FnBitBox=function(){
+				var _Length=_BitBox.length;
+				for(var i=0;i<_Length;i++){
+					var _Val=_BitBox.eq(i).find("input").val();
+					_BitBoxVal.push(_Val);
+				};
+			}; */
+			//计算位置
+			var FnOffset=function(){
+				var fillbox = $OnInput.parent();
+				_OffsetL = fillbox.offset().left;
+				_OffsetT = fillbox.offset().top+fillbox.innerHeight()+1;
+			};
+			//关闭框
+			_FillCloseImg.click(function(){
+				_FillChoose.hide()
+			});
+			//点击框
+			_FillBox.on("click mousedown",function(){
+				$OnInput=$(this).find(".OnInput");
+				FnOffset()
+				_FillChoose.show().css({"left":_OffsetL,"top":_OffsetT});
+			});
+			/* .on("keypress keydown keyup",function(){
+				if($(this).val()==""){
+					_FillCheck.show();
+					_FillFeed.hide();				
+				}else{
+					_FillFeed.css({'overflow':'auto'}).show();
+					_FillCheck.hide();
+					_FillFeed.find("dt").text(_MainInput.val());
+					findCity(_MainInput.val());
+				}
+			}) */
+			/* $(".FillFeedList").live("click",function(){
+				_FillCloseImg.click();
+				var _ID=$(this).attr("id");
+				FnAddItem(_ID,$(this).html());			
+				_MainInput.val("");
+				_FillCheck.show();
+				_FillFeed.hide();
+			}); */
+			//多选
+			$(".Filllist").live("click",function(event){
+				event.preventDefault();			
+				var _ID=$(this).attr("id");
+				var lis = $OnInput.siblings();
+				var skip = false;
+				lis.each(function(){
+					var sn = $(this).attr('sn');	
+					if(sn==_ID){
+						skip=true;
+						return;
+					}
+				});
+				
+				if(skip)return;
+
+					FnAddItem(_ID,$(this).html());
+					FnOffset();
+					_FillChoose.css({"left":_OffsetL,"top":_OffsetT})
+
+			});
+			
+
+			 
+			/* // 查找城市
+			function findCity(keyword) {
+				var json = _Json;
+				var tab,data,area,html="";
+				for (var i = 1; i < json.length; i++) {
+					tab = json[i] ;
+					data = tab.datas;
+					for (var j = 0; j < data.length; j++) {
+						area = data[j];
+						if (area.pin.toLowerCase().indexOf(keyword.toLowerCase()) == 0 || area.jian.toLowerCase().indexOf(keyword.toLowerCase()) == 0) {
+							html+="<li class='FillFeedList'><span>"+area.pin+"</span>"+area.name+"</li>";
+						}
+					}
+				}
+				$(".FillFeed").html(html);
+			}; */
+			$(document).on("click",".BitBox",function() {
+				$(this).fadeOut('fast',function() {
+					$(this).remove();
+				});
+				return false;
+			});
+		
+		//end
+	}
+});
+})(jQuery,window,document);
+
+
+
+$(document).ready(function(){
+	var AreaData =[
+	{"tag":"热门","datas":
+		[
+			{'id':'001','name':'北京','pin':'beijing','jian':'BJ'},
+			{'id':'002','name':'上海','pin':'shanghai','jian':'SH'}
+		]
+	},
+	{"tag":"ABCDEFG","datas":
+		[
+			{'id':'001','name':'北京','pin':'beijing','jian':'BJ'},
+			{'id':'002','name':'上海','pin':'shanghai','jian':'SH'}
+		]
+	}
+	];
+	var AreaInitial2 =[
+		{'id':'002','name':'上海','pin':'shanghai','jian':'SH'}
+	];
+	var AreaInitial =[
+		{'id':'001','name':'北京','pin':'beijing','jian':'BJ'},
+		{'id':'001','name':'北京','pin':'beijing','jian':'BJ'},
+		{'id':'001','name':'北京','pin':'beijing','jian':'BJ'},
+		{'id':'001','name':'北京','pin':'beijing','jian':'BJ'},
+		{'id':'002','name':'上海','pin':'shanghai','jian':'SH'}
+	];
+	
+	$(".AutoFill").AutoFill({
+		Multi:false,//方式 单一:"only" 多个:"odd"
+		Initial:AreaInitial2,//初始值
+		Json:AreaData
+	});
+	$(".WDWSS").AutoFill({
+		Multi:true,//方式 单一:"only" 多个:"odd"
+		Initial:AreaInitial,//初始值
+		Json:AreaData
+	});
+	/* setup navigation, content boxes, etc... */
+	
+});
+
+</script>
+</head>
+<body>
+<br/><br/><br/>	  
+<div class="WAll">
+	<div class="AutoFill">
+		<ul class="FillBox">
+			<li class="BitInput OnInput"><input type="text" class="MainInput"/></li>
+		</ul>
+	</div>
+	<div class="WDWSS">
+		<ul class="FillBox sssss">
+			<li class="BitInput OnInput wse"><input type="text" class="MainInput"/></li>
+		</ul>
+	</div>
+</div>
+
+<div class="FillChoose">	
+	<div class="FillCheck">
+		<img class="FillCloseImg" src="Images/Icon/Close.gif"/>
+		<div class="FillTitle">可直接输入中文名/拼音/英文名/三字码</div>
+		<ul class="FillTabs">
+			<li>热门</li>
+			<li>ABCDEFG</li>
+			<li>HIJKL</li>
+			<li>MNOPQRST</li>
+			<li>WXYZ</li>
+		</ul>
+		<div class="FillTabsCon">
+			<div>
+				<ul>
+					<li><a id="001" class="Filllist" href="javascript:;">上海</a></li>
+					<li><a id="002" class="Filllist" href="javascript:;">北京</a></li>
+					<li><a id="003" class="Filllist" href="javascript:;">广州</a></li>
+					<li><a id="004" class="Filllist" href="javascript:;">昆明</a></li>
+					<li><a id="005" class="Filllist" href="javascript:;">西安</a></li>
+					<li><a id="006" class="Filllist" href="javascript:;">成都</a></li>
+					<li><a id="007" class="Filllist" href="javascript:;">深圳</a></li>
+					<li><a id="008" class="Filllist" href="javascript:;">厦门</a></li>
+					<li><a id="009" class="Filllist" href="javascript:;">乌鲁木齐</a></li>
+					<li><a id="010" class="Filllist" href="javascript:;">南京</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="013" class="Filllist" href="#">安庆</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="022" class="Filllist" href="#">呼和浩特</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="033" class="Filllist" href="#">牡丹江</a></li>
+				</ul>
+			</div>
+			<div class="DisNo">
+				<ul>
+					<li><a id="044" class="Filllist" href="#">威海</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<ul class="FillFeed">
+		<li class="FillFeedList"><span>SHANGHAI</span>上海</li>
+	</ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

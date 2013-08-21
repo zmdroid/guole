@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="copyright" content="ihunle.com">
+<meta name="description" content="这里填您网站的简介">
+<meta name="keywords" content="关键字1,关键字2,关键字3,...">
+<title>线路订单</title>
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../../Style/Public.css" />
+<script type="text/javascript" src="../../_lib/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../_lib/jQuery/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../Script/Calls.js"></script>
+</head>
+<body>
+<!--Header-->
+<div id="Header">
+	<div class="HeaderNav">
+		<div class="WAll">
+			<span class="Greet">
+				欢迎使用陕西旅游交易平台!  | <img src="../../Images/blank.gif" class="VMid E ETel"/> 010-84984495
+			</span>
+			<!--用户信息-->
+			<dl class="UserNav">
+				<dd><a class="Link" href="../../Login.html">登陆</a></dd>
+				<dd><a class="Link" href="../../Registered.html">免费注册</a></dd>
+				<dd><a class="Link HomePage" href="javascript:;">设为首页</a></dd>
+				<dd><a class="Link Collect" href="javascript:;">加入收藏</a></dd>
+				<dd class="UserNavName">
+					<span class="NameL">
+						<a class="Link" href="index.html">
+							<img class="UserPic" src="../../Images/Avatar/1.jpg" width="20" height="20"/>
+							用户名称
+							<img src="../../Images/blank.gif" alt="" class="I IArrowDownW"/>
+						</a>
+					</span>
+					<ul class="DisNo List">
+						<li><a target="_top" href="">我的订单</a></li>
+						<li><a target="_top" href="">我的询价单</a></li>
+						<li class="Line"></li>
+						<li><a target="_top" href="">我的账单</a></li>
+						<li><a target="_top" href="">账单明细</a></li>
+						<li class="Line"></li>
+						<li><a target="_top" href="#">退出</a></li>
+					</ul>
+				</dd>
+				<dd class="UserNavNotice">
+					<a class="Link" href="../Manage/Message.html">消息中心 <span class="CB FB F12">(8)</span></a>
+				</dd>
+			</dl>
+			<!--用户信息 end-->
+		</div>
+	</div>
+	<div class="HeaderTop">
+		<div class="WAll">
+			<dl class="SiteServe">
+				<dt><img src="../../Images/blank.gif" class="SiteI SiteITi"/></dt>
+				<dd><img src="../../Images/blank.gif" class="SiteI SiteIY"/>优质供应商认证</dd>
+				<dd><img src="../../Images/blank.gif" class="SiteI SiteIC"/>产品低价保障</dd>
+				<dd><img src="../../Images/blank.gif" class="SiteI SiteIT"/>提供交易担保，资金100%安全</dd>
+			</dl>
+			<span class="Logo"><a href="index.html"><img src="../../Images/blank.gif" width="100" height="30"></a></span>
+		</div>
+	</div>	
+	<div class="HeaderBot">
+		<div class="WAll">
+			<ul class="FR HLogin">
+				<li><a href="../../Login.html">登录</a></li>
+				<li class="Line">|</li>
+				<li><a href="../../Registered.html">注册</a></li>
+			</ul>
+			<!--导航-->
+			<ul class="MainNav">
+				<li><a href="index.html">首页</a></li>
+				<li class="Active"><a href="Tours/tuan.html">今日团购</a></li>
+				<li><a href="Tours/Scattered.html">缤纷水果</a></li>
+				<li><a href="Advisory/index.html">鲜果切</a></li>
+				<li><a href="Supply.html">果盘</a></li>
+				<li><a href="Recruitment.html">礼品卡</a></li>
+				<li><a href="News.html">企业平台</a></li>
+			</ul>
+			<!--导航 end-->
+		</div>
+	</div>
+</div>
+<!--Header end--> 
+<!--PageBody-->
+<div id="PageBody">
+	<div class="WAll">
+		<div class="MainBox MainBG">
+			<div class="OrderStep">
+				<ul>
+					<li>1.我的购物车</li>
+					<li class="Active">2.确认订单信息</li>
+					<li>3.订单提交成功</li>
+				</ul>
+			</div>
+			<div class="OrderBox">
+				<div class="OrderInfo">
+					<div class="LinkAddr">
+						<div class="Order_Box_Tit">
+							联系方式
+							<p style="margin-left:32px;cursor:pointer;float:right;width:90px;font-size:12px;" class="mem_list_btn">修改</p>
+						</div>
+						<div id="mem_dete" style="display: block;">
+							<p style="float:left;font-size:14px;padding-left:31px;">eee,13289319876,asdfasd</p>
+							<div style="clear:both"></div>
+						</div>
+						<div id="mem_edit" style="border: 2px solid rgb(253, 102, 0); padding: 20px; margin-bottom: 20px; display: none;">
+							<div id="mem_list">
+								<p style="color: rgb(0, 0, 0); background-color: rgb(255, 244, 211);">
+									<input type="radio" class="radio" name="addr_id" value="3683" checked="checked">&nbsp;
+									<span class="mem_info">eee,13289319876,asdfasd</span>
+									<span class="daysend" style="display:none">0</span>
+									<span style="margin-left:32px;cursor:pointer" class="mem_edit_btn">编辑</span>
+								</p>
+								<p style="color: rgb(0, 0, 0);">
+									<span class="mem_info">
+										<input type="radio" name="addr_id" value="0" checked="checked">&nbsp;使用企业平台，享受公司协议价
+									</span>
+								</p>
+								<p style="color: rgb(0, 0, 0);">
+									<span class="mem_info">
+										<input type="radio" name="addr_id" value="0" checked="checked">&nbsp;使用新地址&nbsp;&nbsp;&nbsp;&nbsp;(亲，目前
+											<a style="color:#5500FF;" target="_blank" href="http://www.guocool.com/index.php/about/delivery#gc_1">配送范围</a>
+											只在北京哦！我们会拼了命的冲出北京，走向全世界！)
+									</span>
+								</p>
+							</div>
+							<div id="copy_div" style="position: relative; padding: 10px; line-height: 24px; display: none;">
+								<p>联&nbsp;&nbsp;系&nbsp;&nbsp;人：<input type="text" class="copy" id="copy_mem" value="请输入您的姓名" onfocus="if(value=='请输入您的姓名'){value='';this.style.color='#000'}" onblur="if(!value){value='请输入您的姓名';this.style.color='#999'}"><span class="msg"></span></p>
+								<p>联系电话：<input type="text" class="copy" id="copy_tel" value="请输入您的联系方式" onfocus="if(value=='请输入您的联系方式'){value='';this.style.color='#000'}" onblur="if(!value){value='请输入您的联系方式';this.style.color='#999'}"><span class="msg"></span></p>
+								<p>所在公司：<input type="text" class="copy" id="copy_inp" autocomplete="off" style="" value="输入企业名称，查询是否开通企业账户" onfocus="if(value=='输入企业名称，查询是否开通企业账户'){value='';this.style.color='#000'}" onblur="if(!value){value='输入企业名称，查询是否开通企业账户';this.style.color='#999'}"><span class="msg"></span></p>
+								<p>支付密码：<input type="text" class="copy" id="paypwd" style="width:80px;" value="输入支付密码" onfocus="if(value=='输入支付密码'){this.type='password';value='';this.style.color='#000'}" onblur="if(!value){this.type='text';value='输入支付密码';this.style.color='#999'}">
+									<input type="button" id="copy_pass_sub" style="width:48px;border:none;background-color:#0095D9;cursor:pointer;color:#fff" value="验证"><span id="copy_msg" style="color: red;padding-left:30px">如您不知道支付密码，可向公司行政人员索取</span>
+								</p>
+								<p id="copy_dizhi" style="display:none">收货地址：<span id="copy_addr"></span><input type="text" class="copy" id="copy_ess" value=""></p>
+						
+								<div id="search_copy" style="display:none;overflow:auto;background-color:#fff;position: absolute;top:106px;left:80px;width:240px;height:120px;z-index:12;border:1px solid #aaa;border-top:none">
+								</div>
+							</div>
+							<div id="mem_info" style="display: block;">
+								<table style="position: relative;">
+									<tbody>
+										<tr>
+											<td>联&nbsp;&nbsp;系&nbsp;&nbsp;人：</td>
+											<td><input name="receivename" id="receivename" type="text" value="eee"><span class="msg"></span></td>
+										</tr>
+
+										<tr>
+											<td>联系电话：</td>
+											<td><input name="receivemobile" id="receivemobile" type="text" value="123123"><span class="msg"></span></td>
+										</tr>
+										<tr>
+											<td>详细地址：</td>
+											<td><input name="receiveaddress" id="sq_3" type="text" value="asdfasd"><span class="msg"></span></td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+							<div>
+								<input type="button" class="addr_sub_btn" value="确认修改">
+							</div>
+						</div>
+					</div>
+					<div class="Order_Box_Tit">
+						支付方式
+						<p style="margin-left:32px;cursor:pointer;float:right;width:90px;font-size:12px;" class="pay_list_btn">修改</p>
+					</div>
+					<div id="paytype" style="display: block;">
+						<p style="margin-left:-0px;float:left;font-size:14px;"><span class="pay_radio">&nbsp;<b>在线支付</b>&nbsp;&nbsp;</span><span class="pay_val">即时到帐，支持绝大数银行借记卡及部分银行信用卡</span></p>
+					</div>
+					<div class="buy_box_con" id="paytype_edit" style="border: 2px solid rgb(253, 102, 0); padding: 20px; margin-bottom: 20px; display: none;">
+						<p id="olpay" style="background-color:#fff4d3">
+							<input type="radio" checked="" name="zhifu" value="ol">
+							<span class="pay_radio">&nbsp;<b>在线支付</b>&nbsp;&nbsp;</span>
+							<span class="pay_val">即时到帐，支持绝大数银行借记卡及部分银行信用卡</span>
+						</p>
+						<p id="dfpay">
+							<input type="radio" name='zhifu' value='df'/>
+							<span class='pay_radio'>&nbsp;<b>货到付款</b>&nbsp;&nbsp;</span>
+							<span class='pay_val'>送货上门后再收款，支持现金、支票支付 <a href="http://www.guocool.com/index.php/about/delivery" style=" color:#5500FF">查看运费及配送范围</a></span>
+						</p>
+						<div style="margin-top:10px;">
+							<input type="button" class="pay_sub_btn" value="确认修改">
+						</div>
+					</div>
+					<div class="Order_Box_Tit">
+						商品清单
+						<p style="margin-left:32px;cursor:pointer;float:right;width:90px;font-size:12px;" onclick="if(confirm(&quot;确定要返回修改吗？&quot;)){window.location.href=&quot;#&quot;;}">修改</p>
+					</div>
+					<div class="buy_box_con">
+						<div style="width: 920px;margin-left:18px;">
+							<table class="CartTable">
+								<tbody>
+									<tr class="">
+										<th width="5%">商品图片</th>
+										<th width="20%">商品名称</th>
+										<th width="10%">单价（元）</th>
+										<th width="10%">商品数量</th>
+										<th width="10%">总价（元）</th>
+										<th width="10%">赠送积分</th>
+										<th width="10%">折扣</th>
+										<th width="15%">小计（元）</th>
+									</tr>
+									<tr class="proshow">
+										<td width="5%"><img style="" src="http://www.guocool.com/source/images/vip_1.jpg"></td>
+										<td width="20%">VIP银卡</td>
+										<td width="10%">￥300</td>
+										<td width="10%">1</td>
+										<td width="10%">￥300.0</td>
+										<td width="10%">300</td>
+										<td width="10%">--</td>
+										<td width="15%">￥300</td>
+									</tr>
+									<tr class="proshow">
+										<td width="5%"><img style="" src="http://www.guocool.com//UserFiles/pictures/2013-07-31/1375259606.jpg"></td>
+										<td width="20%">活力组合</td>
+										<td width="10%">￥50</td>
+										<td width="10%">1</td>
+										<td width="10%">￥50.0</td>
+										<td width="10%">50</td>
+										<td width="10%">--</td>
+										<td width="15%">￥50</td>
+									</tr>									
+									<tr class="proshow">
+										<td width="5%"><img style="" src="http://www.guocool.com//UserFiles/pictures/2013-07-31/1375259606.jpg"></td>
+										<td width="20%">活力组合</td>
+										<td width="10%">￥50</td>
+										<td width="10%">1</td>
+										<td width="10%">￥50.0</td>
+										<td width="10%">50</td>
+										<td width="10%">--</td>
+										<td width="15%">￥50</td>
+									</tr>									
+									<tr class="proshow">
+										<td width="5%"><img style="" src="http://www.guocool.com//UserFiles/pictures/2013-07-31/1375259606.jpg"></td>
+										<td width="20%">活力组合</td>
+										<td width="10%">￥50</td>
+										<td width="10%">1</td>
+										<td width="10%">￥50.0</td>
+										<td width="10%">50</td>
+										<td width="10%">--</td>
+										<td width="15%">￥50</td>
+									</tr>
+								</tbody>
+							</table>
+						<div>
+							<textarea rows="5" name="other" style="color:#999;width:910px;" onfocus="if(value=='您的备注'){value='';this.style.color='#000'}" onblur="if(!value){value='您的备注';this.style.color='#999'}" cols="148">您的备注</textarea>
+						</div>
+					</div>
+					<div style="margin-top:10px;padding-right:0px; border-top: 1px solid #CCC;">
+						<div style="margin-top:10px">
+							<span id="copy_text">全场购物满 69元 即可免除配送费！</span>
+							<span class="FR CartTotal CA">
+								配送费：￥0元，应付总额：
+								<span id="totlemoney" class="CB">￥1295元</span>
+								<span id="ent_money"></span>
+							</span>
+							<div style="clear:both"></div>
+						</div>
+						<div class="FR">
+							<a href="#" class="But ButB" value="提交订单">提交订单</a>
+							<div style="clear:both"></div>
+						</div>
+					</div>
+
+	</div>
+				</div>
+			</div>
+			<div class="Cle"></div>
+		</div>
+	</div>
+</div>
+<!--PageBody end--> 
+<!--Footer-->
+<div id="Footer">
+	<div class="WAll">
+	</div>
+</div>
+<!--Footer end-->
+</body>
+
+<script type="text/javascript" src="../../Script/Gobuy.js"></script>
+</html>

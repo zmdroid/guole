@@ -1,0 +1,233 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>用户中心</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../../Style/Public.css" />
+	<script type="text/javascript" src="../../_lib/jQuery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../_lib/jQuery/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../../Script/Calls.js"></script>
+  </head>
+
+<body>
+<!--Header-->
+<div id="Header">
+	<div class="HeaderNav">
+		<div class="WAll">
+			<span class="Greet">
+				欢迎使用陕西旅游交易平台!  | <img src="../../Images/blank.gif" class="VMid E ETel"/> 010-84984495
+			</span>
+			<!--用户信息-->
+			<dl class="UserNav">
+				<dd><a class="Link" href="../../Login.html">登陆</a></dd>
+				<dd><a class="Link" href="../../Registered.html">免费注册</a></dd>
+				<dd><a class="Link HomePage" href="javascript:;">设为首页</a></dd>
+				<dd><a class="Link Collect" href="javascript:;">加入收藏</a></dd>
+				<dd class="UserNavName">
+					<span class="NameL">
+						<a class="Link" href="index.html">
+							<img class="UserPic" src="../../Images/Avatar/1.jpg" width="20" height="20"/>
+							用户名称
+							<img src="../../Images/blank.gif" alt="" class="I IArrowDownW"/>
+						</a>
+					</span>
+					<ul class="DisNo List">
+						<li><a target="_top" href="">我的订单</a></li>
+						<li><a target="_top" href="">我的询价单</a></li>
+						<li class="Line"></li>
+						<li><a target="_top" href="">我的账单</a></li>
+						<li><a target="_top" href="">账单明细</a></li>
+						<li class="Line"></li>
+						<li><a target="_top" href="#">退出</a></li>
+					</ul>
+				</dd>
+				<dd class="UserNavNotice">
+					<a class="Link" href="../Manage/Message.html">消息中心 <span class="CB FB F12">(8)</span></a>
+				</dd>
+			</dl>
+			<!--用户信息 end-->
+		</div>
+	</div>
+	<div class="HeaderTop">
+		<div class="WAll">
+			<dl class="SiteServe">
+				<dt><img src="../../Images/blank.gif" class="SiteI SiteITi"/></dt>
+				<dd><img src="../../Images/blank.gif" class="SiteI SiteIY"/>优质供应商认证</dd>
+				<dd><img src="../../Images/blank.gif" class="SiteI SiteIC"/>产品低价保障</dd>
+				<dd><img src="../../Images/blank.gif" class="SiteI SiteIT"/>提供交易担保，资金100%安全</dd>
+			</dl>
+			<span class="Logo"><a href="index.html"><img src="../../Images/blank.gif" width="100" height="30"></a></span>
+		</div>
+	</div>	
+	<div class="HeaderBot">
+		<div class="WAll">
+			<ul class="FR HLogin">
+				<li><a href="../../Login.html">登录</a></li>
+				<li class="Line">|</li>
+				<li><a href="../../Registered.html">注册</a></li>
+			</ul>
+			<!--导航-->
+			<ul class="MainNav">
+				<li><a href="index.html">首页</a></li>
+				<li class="Active"><a href="Tours/tuan.html">今日团购</a></li>
+				<li><a href="Tours/Scattered.html">缤纷水果</a></li>
+				<li><a href="Advisory/index.html">鲜果切</a></li>
+				<li><a href="Supply.html">果盘</a></li>
+				<li><a href="Recruitment.html">礼品卡</a></li>
+				<li><a href="News.html">企业平台</a></li>
+			</ul>
+			<!--导航 end-->
+		</div>
+	</div>
+</div>
+<!--Header end--> 
+<!--PageBody-->
+<div id="PageBody">
+	<div class="WAll">
+		<div class="ManBox MainBG">
+			<div class="FR Right">
+				<div class="RBody">	
+					<!--面包屑-->
+					<div class="Breadcrumbs">
+						<a href="">首页</a> >
+						<a href="">我的商品</a> >
+						商品管理
+					</div>
+					<!--面包屑 end-->
+					<!--查询-->
+					<div class="Inquiry">
+						<table class="InTable" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td class="CA">交易单号:</td>
+								<td>
+									<span class="IBoxTip">
+										<input class="IEnter" type="text" id="tradeId">
+										<label class="IExplain">交易单号</label>
+									</span>
+								</td>
+								<td class="CA">起止日期:</td>
+								<td>
+									<input class="" type="text" id="timeRange1">-<input class="" type="text" id="timeRange2">
+								</td>
+								<td><a href="javascript:void(0);" class="But">筛选</a></td>
+							</tr>
+							<tr>
+								<td class="CA">明细类型:</td>
+								<td class="InChoose">
+									<a href="#" class="Active">充值</a>
+									<a href="#" class="Active">交易</a>
+									<a href="#" class="Active">返款</a>
+								</td>
+								<td class="CA">金额范围:</td>
+								<td colspan="2" class="InChoose">
+									<input class="" type="text" id="moneyRange1">-<input class="" type="text" id="moneyRange2">
+								</td>
+							</tr>
+						</table>
+					</div>
+					<!--查询 end-->
+					<!--列表-->
+					<div class="ManList">
+						<div class="List" id="container">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th scope="col">流水号</th>
+									<th scope="col">交易类型</th>
+									<th scope="col">交易详情</th>
+									<th scope="col">时间</th>
+									<th scope="col">金额</th>
+									<th scope="col">收/支</th>
+									<th scope="col">余额</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>充值</td>
+									<td>单号：<a target="_new" href="#">1</a>
+									</td>
+									<td class="CA">2013-12-12</td>
+									<td><span class="CD">+55</span></td>
+									<td>收入</td>
+									<td>55</td>
+								</tr>								
+								<tr>
+									<td>1</td>
+									<td>充值</td>
+									<td>单号：<a target="_new" href="#">1</a>
+									</td>
+									<td class="CA">2013-12-12</td>
+									<td><span class="CD">+55</span></td>
+									<td>收入</td>
+									<td>55</td>
+								</tr>								
+								<tr>
+									<td>1</td>
+									<td>充值</td>
+									<td>单号：<a target="_new" href="#">1</a>
+									</td>
+									<td class="CA">2013-12-12</td>
+									<td><span class="CD">+55</span></td>
+									<td>收入</td>
+									<td>55</td>
+								</tr>								
+								<tr>
+									<td>1</td>
+									<td>充值</td>
+									<td>单号：<a target="_new" href="#">1</a>
+									</td>
+									<td class="CA">2013-12-12</td>
+									<td><span class="CD">+55</span></td>
+									<td>收入</td>
+									<td>55</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			
+			<div class="FL Left ManBuyers">
+				<div class="LBody">
+					<!--用户头像-->
+					<div class="UserPhoto">
+						<img src="../../Images/Avatar/1.jpg" width="150" height="150"/>
+						<div class="Name">用户名</div>
+					</div>
+					<!--用户头像 end-->
+				    <!--左栏-->
+					<div class="ManSidebar">
+						<dl>
+							<dt>基本信息</dt>
+							<dd><a href="BasicInfo.html">基本信息</a></dd>
+						</dl>
+						<dl>
+							<dt>订单管理</dt>
+							<dd><a href="Order.html">我的订单</a></dd>
+							<dd><a href="linkAddr.html">送货地址</a></dd>
+						</dl>
+						<dl>
+							<dt>账户管理</dt>
+							<dd><a href="Recharge.html">账户充值</a></dd>
+							<dd class="Active"><a href="bill.html">账户明细</a></dd>
+							<dd><a href="MyBill.html">我的账单</a></dd>
+						</dl>
+					</div>
+				   <!--左栏 end--> 
+				</div>
+			</div>
+			<div class="Cle"></div>
+		</div>
+	</div>
+</div>
+<!--PageBody end--> 
+<!--Footer-->
+<!--Footer end-->
+</body>
+
+</html>
